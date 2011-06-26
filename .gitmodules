@@ -1,0 +1,3 @@
+[submodule "modules/simplegeo"]
+	path = modules/simplegeo
+	url = https://github.com/simplegeo/Services_SimpleGeo.git

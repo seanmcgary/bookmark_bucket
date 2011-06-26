@@ -17,7 +17,7 @@ class lib_libraries_pageFramework
 
     public function  __construct()
     {
-        $this->load = new loader();
+        $this->load = core_loadFactory::get_inst('core_load', 'load');
     }
 
     public function load_javascript($source)
@@ -72,10 +72,6 @@ class lib_libraries_pageFramework
         {
 
             $this->load->view($rightCol, $rightCol_data);
-        }
-        else
-        {
-            $this->load->view('template/rightColDefault_view', $rightCol_data);
         }
         
         $this->load->view('template/footer_view');

@@ -7,7 +7,7 @@
 @$config['base_url'] = "http://" .  $_SERVER['HTTP_HOST'].'/';
 
 // ex: /sub_dir --> http://yourdomain.com/sub_dir/ WITH TRAILING SLASH
-$config['url_extension'] = 'experimental/bookmarks/';
+$config['url_extension'] = '';
 
 // leave blank for mod_rewrite.
 // otherwise, include trailing slash

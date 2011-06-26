@@ -1,0 +1,83 @@
+TODO
+===
+
+Launch Critical
+---
+
+- Chrome browser extension
+    - Authenticate with appkey (see account page)
+    - Listen for bookmark changes (client browser)
+        - Sync those changes to the server
+    - Listen for bookmark changes (server/cloud)
+        - Sync changes in the cloud to the local browser/device
+
+- Sort bookmarks
+    - By date
+    - by popularity (num clicks)
+    - by number of times bookmarked
+
+- Share on *social network*
+    - Facebook
+    - Twitter
+    - Email
+
+- Email notifications
+    - On signup
+
+- Bookmark a bookmark
+    - Add an already existing bookmark to your bookmarks
+
+- Manage Bookmarks
+    - Delete bookmarks
+    - Change privacy setting (public/private)
+
+- "Beta Mode"
+    - Invite only
+
+High Priority
+---
+- Suggested Pages
+    - Suggest pages for registered users based on links clicked and links bookmarked
+    - DEPENDS on tag implementation
+
+- Link statistics
+    - Times clicked
+    - Demographic (locations of people that clicked)
+    - Graph of click history
+
+- Find posts from people around you
+    - Based on tag(s)
+    - Based on tag(s) and location
+
+
+Medium Priority
+---
+- RSS Feeds
+    - levels
+        - User
+        - "Everyone"
+        - By Tag
+    - Notes
+        - generate and cache each XML/RSS file in a mongo collection
+        - do this on the back end
+            - work queue
+
+- Share on *social network*
+    - Tumblr
+    - Reddit(?)
+
+
+Low priority
+---
+
+
+Completed
+===
+- Tabs on bookmars page
+    - me
+    - everyone
+    - my friends
+    - popular/hot
+    - new
+
+- Implement tags for bookmarks

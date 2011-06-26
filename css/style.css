@@ -1,0 +1,431 @@
+body {
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+    font-family: 'Lato', Helvetica, Arial, sans-serif;
+    font-style: normal;
+    word-spacing: 0em;
+    line-height: 1.2;
+    color: #434343;
+    background:
+        url('images/background.png');
+}
+
+h1 {
+    margin: 0px 0px 10px 0px;
+    padding: 0px 0px 0px 0px;
+    font-size: 2em;
+}
+
+h2 {
+    margin: 0px 0px 10px 0px;
+    padding: 0px 0px 0px 0px;
+    font-size: 1.5em;
+}
+
+h3 {
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+    font-size: 1.2em;
+}
+
+span.failure {
+    color: #db0000;
+}
+
+span.success {
+    color: #24a724;
+}
+
+span.working {
+    color: #ff7700;
+}
+
+.float-right {
+    float: right;
+}
+
+.float-left {
+    float: left;
+}
+
+input[type="submit"].submit-form {
+    margin: 0px 0px 0px 0px;
+    padding: 5px 10px 5px 10px;
+    border: none;
+    cursor: pointer;
+    background: #24a724;
+    color: #fff;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    font-size: .9em;
+}
+
+input[type="submit"].submit-form-large {
+    margin: 0px 0px 0px 0px;
+    padding: 15px 30px 15px 30px;
+    border: none;
+    cursor: pointer;
+    background: #24a724;
+    color: #fff;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    font-size: 1.2em;
+}
+
+input[type="submit"].submit-form:hover, input[type="submit"].submit-form-large:hover {
+    background: #2dc12d;
+}
+
+.header {
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+    height: 75px;
+    background: #3274d0;
+}
+
+    .header .header-container {
+        margin: 0px auto 0px auto;
+        padding: 0px 0px 0px 0px;
+        width: 960px;
+        height: 75px;
+    }
+
+        .header .header-container .logo {
+            margin: 6px 0px 0px 0px;
+            padding: 0px 0px 0px 0px;
+            width: 300px;
+            height: 75px;
+            position: relative;
+            float: left;
+            font-size: 3em;
+            color: #fff;
+        }
+
+            .header .header-container .logo a, a:visited {
+                text-decoration:  none;
+                color: #fff;
+            }
+
+            .header .header-container .logo a:hover {
+                text-decoration: none;
+                color: #bfdaff;
+            }
+
+        .header .header-container .right {
+            margin: 0px 0px 0px 0px;
+            padding: 0px 0px 0px 0px;
+            width: 300px;
+            height: 75px;
+            position: relative;
+            float: right;
+            text-align: right;
+            color: #fff;
+        }
+
+            .header .header-container .right a, a:visited {
+                text-decoration: none;
+                color: #bfdaff;
+            }
+
+                .header .header-container .right a:hover {
+                    color: #9cc6ff;
+                }
+
+
+.navigation {
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+    height: 50px;
+    border-top: 1px solid #999999;
+    border-bottom: 1px solid #999999;
+}
+
+    .navigation .navigation-container {
+        margin: 0px auto 0px auto;
+        padding: 0px 0px 0px 0px;
+        height: 50px;
+        width: 960px;
+    }
+
+        .navigation .navigation-container ul {
+            margin: 0px 0px 0px 0px;
+            padding: 0px 0px 0px 0px;
+            list-style: none;
+        }
+
+            .navigation .navigation-container ul li {
+                margin: 0px 0px 0px 0px;
+                padding: 0px 0px 0px 0px;
+                list-style: none;
+            }
+
+.container {
+    margin: 10px auto 0px auto;
+    padding: 10px 10px 10px 10px;
+    width: 960px;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+}
+
+.bookmark-container {
+    margin: 0px 0px 20px 0px;
+    padding: 10px 10px 10px 10px;
+    border: 1px solid #999999;
+    border-radius: 10px;
+    background: #fff;
+    -moz-border-radius: 10px;
+}
+
+    .bookmark-container .inputbox {
+        margin: 0px 0px 0px 0px;
+        padding: 0px 0px 0px 0px;
+        height: 50px;
+    }
+
+        .bookmark-container .inputbox .http {
+            margin: 2px 0px 0px 0px;
+            padding: 0px 0px 0px 0px;
+            position: relative;
+            width: 50px;
+            float: left;
+        }
+
+        .bookmark-container .inputbox .title {
+            margin: 2px 0px 0px 0px;
+            padding: 0px 0px 0px 0px;
+            position: relative;
+            float: left;
+            width: 50px;
+        }
+
+        .bookmark-container .inputbox input[type="text"] {
+            margin: 0px 0px 0px 2px;
+            padding: 0px 0px 0px 0px;
+            height: 25px;
+            width: 883px;
+            border: 1px solid rgba(0, 0, 0, .1);
+            font-size: 1.1em;
+            font-family: 'Lato', Helvetica, Arial, sans-serif;
+            color: #434343;
+            position: relative;
+            float: left;
+        }
+
+    ul.bookmark-categories {
+        margin: 0px 0px 0px 0px;
+        padding: 0px 0px 0px 0px;
+        list-style: none;
+        display: inline;
+    }
+
+        ul.bookmark-categories li {
+            margin: 0px 0px 0px 0px;
+            padding: 5px 10px 5px 10px;
+            list-style: none;
+            display: inline;
+        }
+
+            ul.bookmark-categories li:not(:last-of-type) {
+                margin-right: 20px;
+            }
+
+            ul.bookmark-categories li:hover {
+                background: #3274d0;
+                color: #fff;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+
+        ul.bookmark-categories li.selected {
+            background: #3274d0;
+            color: #fff;
+            border-radius: 5px;
+        }
+
+.bookmark-category-container {
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+    overflow: hidden;
+}
+
+ul.manage-bookmarks_list {
+    margin: 20px 0px 0px 10px;
+    padding: 0px 0px 0px 0px;
+    list-style: none;
+}
+
+ul.bookmarks_list {
+    margin: 20px 0px 0px 10px;
+    padding: 0px 0px 0px 0px;
+    list-style: none;
+    display: none;
+}
+
+    ul.bookmarks_list, ul.manage-bookmarks_list li {
+        margin: 0px 0px 0px 0px;
+        padding: 0px 0px 0px 0px;
+        list-style: none;
+    }
+
+    ul.bookmarks_list, ul.manage-bookmarks_list li:not(:last-of-type) {
+        border-bottom: 1px solid #cccccc;
+    }
+
+.delete-button {
+    margin: 0px 0px 0px 0px;
+    padding: 5px 10px 7px 10px;
+    border: none;
+    cursor: pointer;
+    background: #df4444;
+    color: #fff;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    font-size: .9em;
+    float: left;
+}
+
+.delete-button:hover {
+    background: #df1a1a;
+    cursor: pointer;
+}
+
+.bookmark {
+    margin: 0px 0px 0px 0px;
+    padding: 10px 0px 10px 0px;
+    overflow: hidden;
+}
+
+    .bookmark .delete {
+        margin:  0px 0px 0px 0px;
+        padding:  8px 0px 0px 0px;
+        width: 80px;
+        position: relative;
+        float: left;
+    }
+
+    .bookmark .bookmark-data {
+        margin:  0px 0px 0px 0px;
+        padding:  0px 0px 0px 0px;
+        position: relative;
+        float: left;
+        overflow:  hidden;
+    }
+
+    .bookmark .bookmark-data .title {
+        margin: 0px 0px 0px 0px;
+        padding: 0px 0px 0px 0px;
+    }
+
+        .bookmark .bookmark-data .title a, a:visited {
+            text-decoration: none;
+            color: #3274d0;
+            font-size: 1.2em;
+            font-family: 'Lato', Helvetica, Arial, sans-serif;
+        }
+
+            .bookmark .bookmark-data .title a:hover {
+                color: #5492e8;
+            }
+
+    .bookmark .bookmark-data .meta {
+        margin: 5px 0px 0px 0px;
+        padding: 0px 0px 0px 0px;
+        color: #a7a6a6;
+    }
+
+
+
+
+.div-row {
+    margin: 0px 0px 0px 0px;
+    padding: 10px 0px 10px 0px;
+    overflow: hidden;
+
+}
+
+    .div-row .left-half {
+        margin: 0px 0px 0px 0px;
+        padding: 0px 0px 0px 0px;
+        width: 50%;
+        position: relative;
+        float: left;
+        min-height: 10px;
+    }
+
+    .div-row .right-half {
+        margin: 0px 0px 0px 0px;
+        padding: 0px 0px 0px 0px;
+        width: 50%;
+        position: relative;
+        float: left;
+        min-height: 10px;
+    }
+
+    .div-row .field-label {
+        margin: 0px 0px 0px 0px;
+        padding: 2px 0px 0px 0px;
+        width: 150px;
+        position: relative;
+        float: left;
+    }
+
+    .div-row .field-value {
+        margin: 0px 0px 0px 0px;
+        padding: 0px 0px 0px 0px;
+        position: relative;
+        float: left;
+        min-width: 300px;
+    }
+
+        .div-row .field-value .text {
+            margin:  3px 0px 0px 0px;
+        }
+
+    .div-row .field-status {
+        margin: 0px 0px 0px 0px;
+        padding: 0px 0px 0px 0px;
+        position: relative;
+        float: left;
+        min-width: 100px;
+    }
+
+        .div-row .field-value input[type="text"], input[type="password"] {
+            margin: 0px 5px 0px 2px;
+            padding: 0px 0px 0px 0px;
+            height: 25px;
+            width: 100%;
+            border: 1px solid rgba(0, 0, 0, .1);
+            font-size: 1.1em;
+            font-family: 'Lato', Helvetica, Arial, sans-serif;
+            color: #434343;
+        }
+
+.tag-container {
+    margin:  0px 0px 0px 0px;
+    padding:  0px 0px 0px 0px;
+}
+
+    .tag-container .tag {
+        margin:  0px 10px 10px 0px;
+        padding:  5px 5px 5px 5px;
+        background:  #bfdaff;
+        position: relative;
+        float: left;
+        border-radius: 5px;
+    }
+
+        .tag-container .tag .close {
+            margin:  2px 0px 0px 5px;
+            padding:  2px 4px 2px 4px;
+            position: relative;
+            float: right;
+            font-size: .6em;
+            border-radius: 4px;
+            color: #fff;
+        }
+
+        .tag-container .tag .close:hover {
+            cursor: pointer;
+            background: #9cc6ff;
+        }
+            

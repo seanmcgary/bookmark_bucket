@@ -10,8 +10,6 @@ session_start();
 error_reporting(E_ALL);
 ini_set('display_errors', '1');
 
-$library_path = 'lib';
-
 //---------------------------------------------------------------------------//
 // Set the basepath.
 //
@@ -19,11 +17,11 @@ $library_path = 'lib';
 //---------------------------------------------------------------------------//
 if(phpversion() < 5.3)
 {
-    define('BASEPATH', dirname(__FILE__).'/lib/');
+    define('BASEPATH', dirname(__FILE__).'/');
 }
 else
 {
-    define('BASEPATH', __DIR__.'/lib/');
+    define('BASEPATH', __DIR__.'/');
 }
 
 require_once('core/bootstrap.php');

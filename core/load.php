@@ -1,6 +1,6 @@
 <?php
 /**
- * loader.php
+ * load.php
  *
  * Loader class loads specified objects, databases, views, etc
  *
@@ -25,6 +25,12 @@ class core_load
      */
     public function view($view_name, $params = array(), $return = false)
     {
+
+        if($params == '')
+        {
+            $params = array();
+        }
+
         // start the buffer
         ob_start();
 
@@ -32,7 +38,7 @@ class core_load
         extract($params);
 
         // include the view file
-        include(BASEPATH.'views/'.$view_name.'.php');
+        include(LIBPATH.'views/'.$view_name.'.php');
 
         // if return, dont flush the buffer to the screen. Assign it to a variable and return
         if($return == true)

@@ -7,14 +7,20 @@
  * @author Sean McGary <sean@seanmcgary.com>
  */
 
+define('LIBPATH', BASEPATH.'lib/');
+
 // set the include paths to everything inside lib
 
 set_include_path(get_include_path() . ':'.BASEPATH.'core');
-set_include_path(get_include_path() . ':'.BASEPATH.'models');
-set_include_path(get_include_path() . ':'.BASEPATH.'controllers');
-set_include_path(get_include_path() . ':'.BASEPATH.'views');
-set_include_path(get_include_path() . ':'.BASEPATH.'config');
-set_include_path(get_include_path() . ':'.BASEPATH.'libraries');
+set_include_path(get_include_path() . ':'.LIBPATH.'models');
+set_include_path(get_include_path() . ':'.LIBPATH.'controllers');
+set_include_path(get_include_path() . ':'.LIBPATH.'views');
+set_include_path(get_include_path() . ':'.LIBPATH.'config');
+set_include_path(get_include_path() . ':'.LIBPATH.'libraries');
+set_include_path(get_include_path() . ':'.BASEPATH.'modules');
+set_include_path(get_include_path() . ':'.BASEPATH.'modules/simplegeo');
+
+require_once('Services/SimpleGeo.php');
 
 function __autoload($class_name)
 {
@@ -35,6 +41,19 @@ else
     define('BASEURL', $config['base_url'].$config['url_extension']);
 }
 
+if(isset($argv))
+{
+    //print_r($argv);
+    unset($argv[0]);
+    $_SERVER['PATH_INFO'] = $_SERVER['REQUEST_URI'] = ''.implode('/', $argv).'/';
+}
+
+// load the utility functions
+require_once('util.php');
+
+// load some common functions
+require_once('common.php');
+
 
 // get the URI segment
 $URI = $_SERVER['REQUEST_URI'];
@@ -50,6 +69,10 @@ $URI = str_replace('index.php', '', $URI);
 
 // remove leading and trailing slashes
 $URI = trim($URI, '/');
+//printr($URI);
+
+$URI = str_replace('?', '/', $URI);
+
 
 // if the length of the URI is 0, load the default controller
 // and default function
@@ -61,22 +84,16 @@ if(strlen($URI) == 0)
 // break up URI into segments
 $URI_SEG = explode('/', $URI);
 
-// if we're missing the deafult function, add it only if there arent any other parameters
-if(sizeof($URI_SEG) < 2)
-{
-    $URI_SEG[1] = $routes['function'];
-}
 
-// load the utility functions
-require_once('util.php');
+$controller_to_call = get_controller_and_function($URI_SEG, $routes);
+//printr($controller_to_call);
 
-// load some common functions
-require_once('common.php');
 
 // Instantiate some controller level classes.
 // These will be loaded to the core controller in the constructor
 $URI_INST = core_loadFactory::get_inst('core_uri', 'uri', $URI_SEG);
 $LOAD = core_loadFactory::get_inst('core_load', 'load');
+$INPUT = core_loadFactory::get_inst('core_input', 'input');
 
 /**
  * $URI structure
@@ -86,9 +103,11 @@ $LOAD = core_loadFactory::get_inst('core_load', 'load');
  * 3 => param2
  * n => param n
  */
+
+
 // prepend the controller name with the path
-$controller_name = 'lib_controllers_'.$URI_SEG[0];
-$function_name = $URI_SEG[1];
+$controller_name = $controller_to_call[0];
+$function_name = $controller_to_call[1];
 
 // dynamically load the controller
 //$controller_inst = new $controller_name();
