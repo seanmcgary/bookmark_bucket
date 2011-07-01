@@ -6,26 +6,29 @@ body {
     word-spacing: 0em;
     line-height: 1.2;
     color: #434343;
-    background:
-        url('images/background.png');
+    /*background:
+        url('images/background.png');*/
 }
 
 h1 {
     margin: 0px 0px 10px 0px;
     padding: 0px 0px 0px 0px;
-    font-size: 2em;
+    font-size: 1.7em;
+
 }
 
 h2 {
     margin: 0px 0px 10px 0px;
     padding: 0px 0px 0px 0px;
-    font-size: 1.5em;
+    font-size: 1.2em;
 }
 
 h3 {
     margin: 0px 0px 0px 0px;
-    padding: 0px 0px 0px 0px;
-    font-size: 1.2em;
+    padding: 0px 0px 5px 0px;
+    font-size: 1em;
+    width: 100%;
+    border-bottom:  1px solid #eeeeee;
 }
 
 span.failure {
@@ -57,7 +60,7 @@ input[type="submit"].submit-form {
     color: #fff;
     border-radius: 5px;
     -moz-border-radius: 5px;
-    font-size: .9em;
+    font-size: .7em;
 }
 
 input[type="submit"].submit-form-large {
@@ -94,7 +97,7 @@ input[type="submit"].submit-form:hover, input[type="submit"].submit-form-large:h
             margin: 6px 0px 0px 0px;
             padding: 0px 0px 0px 0px;
             width: 300px;
-            height: 75px;
+            height: 55px;
             position: relative;
             float: left;
             font-size: 3em;
@@ -159,21 +162,38 @@ input[type="submit"].submit-form:hover, input[type="submit"].submit-form-large:h
                 list-style: none;
             }
 
+
 .container {
-    margin: 10px auto 0px auto;
-    padding: 10px 10px 10px 10px;
+    margin: 0px auto 0px auto;
+    padding: 0px 10px 10px 10px;
     width: 960px;
-    border-radius: 10px;
-    -moz-border-radius: 10px;
+    overflow: hidden;
 }
+
+    .container .left-col {
+        margin:  0px 0px 0px 0px;
+        padding:  10px 0px 0px 0px;
+        width: 200px;
+        position: relative;
+        float: left;
+    }
+
+    .container .right-col {
+        margin:  0px 0px 0px 10px;
+        padding:  0px 0px 10px 0px;
+        width: 748px;
+        position: relative;
+        float: left;
+        border-right: 1px solid #eeeeee;
+        border-left: 1px solid #eeeeee;
+        border-bottom: 1px solid #eeeeee;
+    }
+
 
 .bookmark-container {
     margin: 0px 0px 20px 0px;
     padding: 10px 10px 10px 10px;
-    border: 1px solid #999999;
-    border-radius: 10px;
-    background: #fff;
-    -moz-border-radius: 10px;
+    border-bottom: 1px solid #eeeeee;
 }
 
     .bookmark-container .inputbox {
@@ -202,7 +222,7 @@ input[type="submit"].submit-form:hover, input[type="submit"].submit-form-large:h
             margin: 0px 0px 0px 2px;
             padding: 0px 0px 0px 0px;
             height: 25px;
-            width: 883px;
+            width: 673px;
             border: 1px solid rgba(0, 0, 0, .1);
             font-size: 1.1em;
             font-family: 'Lato', Helvetica, Arial, sans-serif;
@@ -212,34 +232,27 @@ input[type="submit"].submit-form:hover, input[type="submit"].submit-form-large:h
         }
 
     ul.bookmark-categories {
-        margin: 0px 0px 0px 0px;
+        margin: 5px 0px 0px 0px;
         padding: 0px 0px 0px 0px;
         list-style: none;
-        display: inline;
     }
 
         ul.bookmark-categories li {
             margin: 0px 0px 0px 0px;
-            padding: 5px 10px 5px 10px;
+            padding: 5px 0px 5px 10px;
             list-style: none;
-            display: inline;
+            border-left:  1px solid #fff;
         }
 
-            ul.bookmark-categories li:not(:last-of-type) {
-                margin-right: 20px;
-            }
-
             ul.bookmark-categories li:hover {
-                background: #3274d0;
-                color: #fff;
-                border-radius: 5px;
                 cursor: pointer;
+                border-left:  1px solid #3274d0;
+                background: rgba(238, 238, 238, .3);
+
             }
 
         ul.bookmark-categories li.selected {
-            background: #3274d0;
-            color: #fff;
-            border-radius: 5px;
+            border-left:  1px solid #3274d0;
         }
 
 .bookmark-category-container {
@@ -268,9 +281,6 @@ ul.bookmarks_list {
         overflow: hidden;
     }
 
-    ul.bookmarks_list, ul.manage-bookmarks_list li:not(:last-of-type) {
-        border-bottom: 1px solid #cccccc;
-    }
 
 .delete-button {
     margin: 0px 0px 0px 0px;
@@ -294,6 +304,7 @@ ul.bookmarks_list {
     margin: 0px 0px 0px 0px;
     padding: 10px 0px 10px 0px;
     overflow: hidden;
+    border-bottom:  1px solid #eeeeee;
 }
 
     .bookmark .delete {
@@ -320,7 +331,7 @@ ul.bookmarks_list {
         .bookmark .bookmark-data .title a, a:visited {
             text-decoration: none;
             color: #3274d0;
-            font-size: 1.2em;
+            font-size: 1em;
             font-family: 'Lato', Helvetica, Arial, sans-serif;
         }
 
@@ -335,7 +346,9 @@ ul.bookmarks_list {
     }
 
 
-
+.options {
+    display: none;
+}
 
 .div-row {
     margin: 0px 0px 0px 0px;
@@ -429,4 +442,4 @@ ul.bookmarks_list {
             cursor: pointer;
             background: #9cc6ff;
         }
-            
+     */

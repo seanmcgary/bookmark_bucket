@@ -47,11 +47,11 @@
                 </div>
             </div>
         </div>
-        <div class="navigation">
+        <!--<div class="navigation">
             <div class="navigation-container">
                 <ul id="nav-list">
                     
                 </ul>
             </div>
-        </div>  
+        </div>  -->
         <div class="container">

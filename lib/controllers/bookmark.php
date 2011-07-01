@@ -21,7 +21,7 @@ class lib_controllers_bookmark extends lib_controllers_baseController
 
         $bookmark = $this->input->post_array(array('url', 'privacy', 'title', 'tag'));
 
-        $bookmark['url'] = str_replace("http://", "", $bookmark['url']);
+        $bookmark['url'] = preg_replace("/http[s]:\/\//", "", $bookmark['url']);
 
         $bookmark['tags'] = json_decode($bookmark['tag'], true);
         unset($bookmark['tag']);
@@ -89,6 +89,8 @@ class lib_controllers_bookmark extends lib_controllers_baseController
     public function suggest_title()
     {
         $url = $this->input->post('url');
+
+        $url = preg_replace("/http[s]:\/\//", "", $url);
 
         $url = 'http://'.$url;
 

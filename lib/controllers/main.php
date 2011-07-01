@@ -34,7 +34,7 @@ class lib_controllers_main extends lib_controllers_baseController
 
             //printr($bookmarks);
 
-            $data['your_bookmarks'] = $this->load->view('presenters/main/bookmarks_list', array('bookmarks' => $bookmarks), true);
+            $data['your_bookmarks'] = $this->load->view('presenters/main/bookmarks_list', array('bookmarks' => array_reverse($bookmarks)), true);
 
             $bookmark_container = $this->load->view('presenters/main/bookmark_container', $data, true);
 
@@ -48,7 +48,7 @@ class lib_controllers_main extends lib_controllers_baseController
             $page_data['page'] = $this->load->view('presenters/main/main_default', array('bookmark_container' => $bookmark_container), true);
         }
 
-        $this->page->render('mainIndex_view', $page_data);
+        $this->page->render('mainIndex_view', $page_data, 'template/leftCol_bookmarks_view');
     }
 
     

@@ -65,7 +65,11 @@ $(document).ready(function(){
 
                     if(obj.status == 'true')
                     {
-                        $('.bookmarks_list[category="yours"]').append(obj.bookmark);
+                        if($('.bookmarks_list[category="yours"]').length > 0){
+                            $(obj.bookmark).insertBefore($('.bookmarks_list[category="yours"] li')[0]);
+                        } else {
+                            $('.bookmarks_list[category="yours"]').append(obj.bookmark);
+                        }
 
                         $('#tag-container .tag').remove();
 

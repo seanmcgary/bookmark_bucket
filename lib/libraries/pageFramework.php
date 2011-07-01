@@ -55,7 +55,7 @@ class lib_libraries_pageFramework
      *                                  eg: $data['header'] is for the header
      * @param string $other_col     The other view file to load
      */
-    public function render($leftCol, $leftCol_data, $rightCol = null, $rightCol_data = array())
+    public function render($rightCol, $rightCol_data, $leftCol = null, $leftCol_data = array())
     {
         $header_data = array();
         $header_data['javascript'] = $this->javascript;
@@ -66,14 +66,20 @@ class lib_libraries_pageFramework
         
         // load header
         $this->load->view('template/header_view', $header_data);
-        $this->load->view($leftCol, $leftCol_data);
-        
-        if($rightCol != null)
+
+        if($leftCol != null)
         {
 
-            $this->load->view($rightCol, $rightCol_data);
+            $this->load->view($leftCol, $leftCol_data);
         }
-        
+        else
+        {
+            $this->load->view('template/leftCol_view_empty', array());
+        }
+
+        $this->load->view($rightCol, $rightCol_data);
+
+
         $this->load->view('template/footer_view');
         
     }
