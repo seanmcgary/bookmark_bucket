@@ -66,6 +66,29 @@
                 <input type="password" id="confirm_pass" name="confirm_pass">
             </div>
         </div>
+        <?php
+        if($_SERVER['ENVIRONMENT'] == 'dev' || $_SERVER['ENVIRONMENT'] == 'beta')
+        {
+        ?>
+        <div class="div-row">
+            <div class="field-label">
+                Invite Code
+            </div>
+            <div class="field-value">
+                <input type="text" id="invite_code" name="invite_code" value="">
+            </div>
+        </div>
+        <div class="div-row">
+            <div class="field-label">
+               
+            </div>
+            <div class="field-value">
+                <a href="<?=site_url('register/request_invite')?>">Request an Invite Code</a>
+            </div>
+        </div>
+        <?php
+        }
+        ?>
         <div class="div-row">
             <div class="field-label">
                 <input type="submit" class="submit-form" value="Register">

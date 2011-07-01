@@ -10,6 +10,8 @@ class lib_controllers_register extends lib_controllers_baseController
     public function __construct()
     {
         parent::__construct();
+
+        $this->mail = core_loadFactory::get_inst('lib_libraries_mail', 'mail');
     }
 
     public function index()
@@ -80,6 +82,9 @@ class lib_controllers_register extends lib_controllers_baseController
             {
                 $user = $this->user_model->login_user($post['username'], $post['password']);
                 $_SESSION['loggedIn'] = $user;
+
+                $this->mail->send_mail($user['email'], 'Regsitration Successful', 'Registration Successful!');
+
                 if($ajax == 'true')
                 {
                     // do later

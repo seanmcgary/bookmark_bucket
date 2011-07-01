@@ -129,7 +129,7 @@ class lib_controllers_account extends lib_controllers_baseController
     {
         $bookmark_id = $this->input->post('bookmark_id');
 
-        printr($bookmark_id);
+        //printr($bookmark_id);
 
         $res = $this->user_model->delete_bookmark($bookmark_id, $_SESSION['loggedIn']['user_id']);
 

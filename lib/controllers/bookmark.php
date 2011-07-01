@@ -21,6 +21,8 @@ class lib_controllers_bookmark extends lib_controllers_baseController
 
         $bookmark = $this->input->post_array(array('url', 'privacy', 'title', 'tag'));
 
+        $bookmark['url'] = str_replace("http://", "", $bookmark['url']);
+
         $bookmark['tags'] = json_decode($bookmark['tag'], true);
         unset($bookmark['tag']);
 
@@ -119,9 +121,10 @@ class lib_controllers_bookmark extends lib_controllers_baseController
         $headers = curl_getinfo($ch);
 
         curl_close($ch);
-
+        //echo $headers['http_code'];
         if($headers['http_code'] != 0)
         {
+
             return true;
         }
         else

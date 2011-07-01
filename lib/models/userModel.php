@@ -18,6 +18,7 @@ class lib_models_userModel extends lib_models_baseModel
         $user_data['date_created'] = time();
         $user_data['bookmarks'] = array();
         $user_data['sync_key'] = $this->generate_sync_key();
+        $user_data['num_invites'] = 5;
 
         try
         {
@@ -132,7 +133,7 @@ class lib_models_userModel extends lib_models_baseModel
     {
         $user = $this->get_user_for_id($user_id);
 
-        printr($user);
+        //printr($user);
 
         if(in_array($bookmark_id, $user['bookmarks']))
         {
@@ -153,6 +154,8 @@ class lib_models_userModel extends lib_models_baseModel
                 unset($user['bookmarks'][$index]);
 
                 $user['bookmarks'] = array_values($user['bookmarks']);
+
+                $this->update_user($user);
 
                 return true;
             }

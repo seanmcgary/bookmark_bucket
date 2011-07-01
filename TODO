@@ -11,24 +11,15 @@ Launch Critical
     - Listen for bookmark changes (server/cloud)
         - Sync changes in the cloud to the local browser/device
 
-- Sort bookmarks
-    - By date
-    - by popularity (num clicks)
-    - by number of times bookmarked
-
 - Share on *social network*
     - Facebook
     - Twitter
     - Email
 
-- Email notifications
-    - On signup
-
 - Bookmark a bookmark
     - Add an already existing bookmark to your bookmarks
 
 - Manage Bookmarks
-    - Delete bookmarks
     - Change privacy setting (public/private)
 
 - "Beta Mode"
@@ -36,6 +27,11 @@ Launch Critical
 
 High Priority
 ---
+- Sort bookmarks
+    - By date
+    - by popularity (num clicks)
+    - by number of times bookmarked
+    
 - Suggested Pages
     - Suggest pages for registered users based on links clicked and links bookmarked
     - DEPENDS on tag implementation
@@ -81,3 +77,9 @@ Completed
     - new
 
 - Implement tags for bookmarks
+
+- Email notifications
+    - On signup
+
+- Manage Bookmarks
+    - Delete bookmarks

@@ -19,7 +19,7 @@ $(document).ready(function(){
     $('#url').live('blur', function(){
         if($(this).val().length > 0){
 
-            var url = $(this).val();
+            var url = $(this).val().replace('http://', '');
             
             Ext.Ajax.request({
                 url: suggest_link_title,

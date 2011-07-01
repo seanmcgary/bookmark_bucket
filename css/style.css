@@ -265,6 +265,7 @@ ul.bookmarks_list {
         margin: 0px 0px 0px 0px;
         padding: 0px 0px 0px 0px;
         list-style: none;
+        overflow: hidden;
     }
 
     ul.bookmarks_list, ul.manage-bookmarks_list li:not(:last-of-type) {
