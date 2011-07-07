@@ -315,6 +315,15 @@ ul.bookmarks_list {
         float: left;
     }
 
+    .bookmark .icon, .icon-loggedout {
+        margin:  0px 0px 0px 0px;
+        padding:  5px 0px 0px 0px;
+        width: 30px;
+        position: relative;
+        float: left;
+        cursor: pointer;
+    }
+
     .bookmark .bookmark-data {
         margin:  0px 0px 0px 0px;
         padding:  0px 0px 0px 0px;
@@ -343,7 +352,33 @@ ul.bookmarks_list {
         margin: 5px 0px 0px 0px;
         padding: 0px 0px 0px 0px;
         color: #a7a6a6;
+        font-size: .9em;
+        width: 100%;
     }
+
+    .bookmark .bookmark-data .tags {
+        margin: 10px 0px 0px 0px;
+        padding: 0px 0px 0px 0px;
+        color: #a7a6a6;
+        width: 100%;
+        overflow: hidden;
+    }
+
+        .bookmark .bookmark-data .tags a {
+            margin:  0px 5px 0px 0px;
+            padding:  3px 3px 3px 3px;
+            background:  #bfdaff;
+            color: #fff;
+            position: relative;
+            float: left;
+            border-radius: 5px;
+            font-size: .8em;
+            text-decoration: none;
+        }
+
+            .bookmark .bookmark-data .tags a:hover {
+                background: #e7f1ff;
+            }
 
 
 .options {

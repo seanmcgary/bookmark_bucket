@@ -20,7 +20,8 @@ $(document).ready(function(){
         if($(this).val().length > 0){
 
             var url = $(this).val().replace('http://', '');
-            
+            $('#bookmark-status').append('<img src="images/ajax-loader.gif">');
+
             Ext.Ajax.request({
                 url: suggest_link_title,
                 success: function(response, opts)
@@ -30,6 +31,8 @@ $(document).ready(function(){
                     if(obj.status == 'true')
                     {
                         $('#title').val(obj.title);
+                        $('#bookmark-status').html('');
+
                     }
                 },
                 failure: function(response, opts)
@@ -159,5 +162,50 @@ $(document).ready(function(){
 
         return false;
 
+    });
+
+    $('.icon img.bookmark-icon').mouseenter(function(){
+        $(this).attr('src', 'images/bookmark_1_icon&16_blue.png');
+    });
+
+    $('.icon img.bookmark-icon').mouseleave(function(){
+
+        if($(this).attr('src') != 'images/ajax-loader.gif'){
+            $(this).attr('src', 'images/bookmark_1_icon&16_gray.png');
+        }
+
+    });
+
+    $('.icon img.bookmark-icon').live('click', function(){
+        var bookmark_id = $(this).attr('bookmark_id');
+
+        $(this).attr('src', 'images/ajax-loader.gif');
+
+        var icon = $(this);
+
+        Ext.Ajax.request({
+            url: bookmark_existing,
+            success: function(response, opts){
+                var obj = Ext.decode(response.responseText);
+
+                if(obj.status == 'true'){
+                    //console.log(icon);
+                    icon.removeClass('bookmark-icon');
+                    icon.attr('src', 'images/bookmark_1_icon&16_blue.png');
+
+                    $('.bookmarks_list[category="yours"]').html('');
+                    $('.bookmarks_list[category="yours"]').append(obj.user_bookmarks);
+
+                } else {
+                    icon.attr('src', 'images/bookmark_1_icon&16_gray.png');
+                }
+            },
+            failure: function(response, opts){
+                
+            },
+            params: {bookmark_id: bookmark_id}
+        });
+
+        return false;
     });
 });

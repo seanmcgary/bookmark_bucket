@@ -21,7 +21,12 @@ class lib_controllers_bookmark extends lib_controllers_baseController
 
         $bookmark = $this->input->post_array(array('url', 'privacy', 'title', 'tag'));
 
-        $bookmark['url'] = preg_replace("/http[s]:\/\//", "", $bookmark['url']);
+
+        //$bookmark['url'] = preg_replace("/http(s)?:\/\//", "", $bookmark['url']);
+
+
+
+        //printr($bookmark['url']);
 
         $bookmark['tags'] = json_decode($bookmark['tag'], true);
         unset($bookmark['tag']);
@@ -36,7 +41,12 @@ class lib_controllers_bookmark extends lib_controllers_baseController
             $bookmark['title'] = $bookmark['url'];
         }
 
-        $is_valid = $this->is_valid_url('http://' . $bookmark['url']);
+        if(!preg_match("/http(s)?:\/\//", $bookmark['url']))
+        {
+            $bookmark['url'] = 'http://' . $bookmark['url'];
+        }
+
+        $is_valid = $this->is_valid_url($bookmark['url']);
         
         if($is_valid)
         {
@@ -133,8 +143,6 @@ class lib_controllers_bookmark extends lib_controllers_baseController
         {
             return false;
         }
-        
-
     }
 
     public function log_click()
@@ -144,8 +152,33 @@ class lib_controllers_bookmark extends lib_controllers_baseController
         $this->bookmark_model->increment_clicked_count($bookmark_id);
 
         $this->metrics_model->log_bookmark_click($bookmark_id);
+    }
 
+    public function bookmark_existing()
+    {
+        $bookmark_id = $this->input->post('bookmark_id');
 
+        $bookmark = $this->bookmark_model->get_bookmark_for_id($bookmark_id);
+
+        $this->bookmark_model->increment_bookmarked_count($bookmark_id);
+
+        $user = $this->user_model->get_user_for_id($_SESSION['loggedIn']['user_id']);
+
+        $user['bookmarks'][] = $bookmark_id;
+
+        $res = $this->user_model->update_user($user);
+
+        if($res != false)
+        {
+            $bookmarks = $this->user_model->get_user_bookmarks($_SESSION['loggedIn']['user_id']);
+            $user_bookmarks = $this->load->view('presenters/main/bookmarks_list', array('bookmarks' => array_reverse($bookmarks), 'user_bookmarks' => $user['bookmarks']), true);
+            //printr($user_bookmarks);
+            echo json_encode(array('status' => 'true', 'user_bookmarks' => $user_bookmarks));
+        }
+        else
+        {
+            echo json_encode(array('status' => 'false'));
+        }
     }
 
 }

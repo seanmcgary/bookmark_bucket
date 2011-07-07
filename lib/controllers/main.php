@@ -18,40 +18,40 @@ class lib_controllers_main extends lib_controllers_baseController
     {
         $data['page'] = '';
 
-        $all = $this->bookmark_model->get_public_bookmarks();
-        $data['all_bookmarks'] = $this->load->view('presenters/main/bookmarks_list', array('bookmarks' => $all), true);
-
-        $new = $this->bookmark_model->get_new_public_bookmarks();
-        $data['new_bookmarks'] = $this->load->view('presenters/main/bookmarks_list', array('bookmarks' => $new), true);
-
-        $popular = $this->bookmark_model->get_popular_bookmarks();
-        $data['popular_bookmarks'] = $this->load->view('presenters/main/bookmarks_list', array('bookmarks' => $popular), true);
-
+        $page_data['user_bookmarks'] = array();
 
         if(isset($_SESSION['loggedIn']))
         {
             $bookmarks = $this->user_model->get_user_bookmarks($_SESSION['loggedIn']['user_id']);
 
-            //printr($bookmarks);
+            $user = $this->user_model->get_user_for_id($_SESSION['loggedIn']['user_id']);
 
-            $data['your_bookmarks'] = $this->load->view('presenters/main/bookmarks_list', array('bookmarks' => array_reverse($bookmarks)), true);
+            $page_data['user_bookmarks'] = $user['bookmarks'];
 
-            $bookmark_container = $this->load->view('presenters/main/bookmark_container', $data, true);
-
-            $page_data['page'] = $this->load->view('presenters/main/main_logged_in', array('bookmark_container' => $bookmark_container), true);
+            $data['your_bookmarks'] = $this->load->view('presenters/main/bookmarks_list', array('bookmarks' => array_reverse($bookmarks), 'user_bookmarks' => $page_data['user_bookmarks']), true);
         }
-        else
+
+
+        $all = $this->bookmark_model->get_public_bookmarks();
+        $data['all_bookmarks'] = $this->load->view('presenters/main/bookmarks_list', array('bookmarks' => $all, 'user_bookmarks' => $page_data['user_bookmarks']), true);
+
+        $new = $this->bookmark_model->get_new_public_bookmarks();
+        $data['new_bookmarks'] = $this->load->view('presenters/main/bookmarks_list', array('bookmarks' => $new, 'user_bookmarks' => $page_data['user_bookmarks']), true);
+
+        $popular = $this->bookmark_model->get_popular_bookmarks();
+        $data['popular_bookmarks'] = $this->load->view('presenters/main/bookmarks_list', array('bookmarks' => $popular, 'user_bookmarks' => $page_data['user_bookmarks']), true);
+
+        $bookmark_container = $this->load->view('presenters/main/bookmark_container', $data, true);
+
+        $page = 'presenters/main/main_default';
+
+        if(isset($_SESSION['loggedIn']))
         {
-
-            $bookmark_container = $this->load->view('presenters/main/bookmark_container', $data, true);
-            
-            $page_data['page'] = $this->load->view('presenters/main/main_default', array('bookmark_container' => $bookmark_container), true);
+            $page = 'presenters/main/main_logged_in';
         }
+
+        $page_data['page'] = $this->load->view($page, array('bookmark_container' => $bookmark_container), true);
 
         $this->page->render('mainIndex_view', $page_data, 'template/leftCol_bookmarks_view');
     }
-
-    
-
-
 }

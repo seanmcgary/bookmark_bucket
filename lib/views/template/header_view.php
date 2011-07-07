@@ -25,13 +25,14 @@
             var suggest_link_title = '<?=site_url('bookmark/suggest_title')?>';
             var is_valid_url = '<?=site_url('bookmark/is_valid_url')?>';
             var log_click = '<?=site_url('bookmark/log_click')?>';
+            var bookmark_existing = '<?=site_url('bookmark/bookmark_existing')?>';
         </script>
     </head>
     <body>
         <div class="header">
             <div class="header-container">
                 <div class="logo">
-                    <a href="<?=site_url('')?>">Bookmarkr</a>
+                    <a href="<?=site_url('')?>">BookmarkBucket</a>
                 </div>
                 <div class="right">
                 <?php

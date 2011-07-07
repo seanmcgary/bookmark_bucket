@@ -1,6 +1,6 @@
 <div class="left-col">
     <div class="list">
-        <h3>Catefories</h3>
+        <h3>Categories</h3>
         <ul class="bookmark-categories" id="bookmark-categories">
             <?php
                 if(isset($_SESSION['loggedIn']))

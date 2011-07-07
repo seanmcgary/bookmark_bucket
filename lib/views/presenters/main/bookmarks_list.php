@@ -22,23 +22,44 @@ foreach($bookmarks as $bookmark)
             {
                 echo '<div class="delete"><div class="delete-button" bookmark_id="'.$bookmark['bookmark_id'].'">Delete</div></div>';
             }
+
+            $icon_class = 'icon-loggedout';
+
+            if(isset($_SESSION['loggedIn']))
+            {
+                $icon_class = 'icon';
+            }
         ?>
 
+        <div class="<?=$icon_class?>">
+        <?php
+            $image = '';
+            if(in_array($bookmark['bookmark_id'], $user_bookmarks))
+            {
+                echo '<img src="images/bookmark_1_icon&16_blue.png">';
+            }
+            else
+            {
+                echo '<img src="images/bookmark_1_icon&16_gray.png" class="bookmark-icon" bookmark_id="'.$bookmark['bookmark_id'].'">';
+            }
+        ?>
+        </div>
+        
         <div class="bookmark-data">
             <div class="title">
                 <a href="<?=$bookmark['url']?>" link-type="external" bookmark_id="<?=$bookmark['bookmark_id']?>"><?=utf8_decode($bookmark['title'])?></a>
             </div>
             <div class="meta">
             <?php
-                $tags = '';
+                echo "Bookmarked ".format_date($bookmark['date_created']);
+            ?>
+            </div>
+            <div class="tags">
+            <?php
                 foreach($bookmark['tags'] as $tag)
                 {
-                    $tags .= $tag.', ';
+                    echo '<a href="#">'.$tag.'</a>';
                 }
-
-                $tags = rtrim($tags, ', ');
-
-                echo $tags;
             ?>
             </div>
         </div>

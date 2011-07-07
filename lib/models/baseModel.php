@@ -16,7 +16,7 @@ class lib_models_baseModel extends core_model
     {
         parent::__construct();
 
-        $this->mongo = lib_libraries_libMongoDB::get_connection('mongodb://seanmcgary.com:27017', 'bookmarks');
+        $this->mongo = lib_libraries_libMongoDB::get_connection('mongodb://'.$_SERVER['DATABASE_URL'], $_SERVER['DATABASE']);
 
         $this->user_collection = $this->mongo->mongodb->{"users"};
         $this->bookmark_collection = $this->mongo->mongodb->{"bookmarks"};
