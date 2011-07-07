@@ -33,14 +33,17 @@ foreach($bookmarks as $bookmark)
 
         <div class="<?=$icon_class?>">
         <?php
-            $image = '';
-            if(in_array($bookmark['bookmark_id'], $user_bookmarks))
+            if(isset($account) && $account == false)
             {
-                echo '<img src="images/bookmark_1_icon&16_blue.png">';
-            }
-            else
-            {
-                echo '<img src="images/bookmark_1_icon&16_gray.png" class="bookmark-icon" bookmark_id="'.$bookmark['bookmark_id'].'">';
+                $image = '';
+                if(in_array($bookmark['bookmark_id'], $user_bookmarks))
+                {
+                    echo '<img src="images/bookmark_1_icon&16_blue.png">';
+                }
+                else
+                {
+                    echo '<img src="images/bookmark_1_icon&16_gray.png" class="bookmark-icon" bookmark_id="'.$bookmark['bookmark_id'].'">';
+                }
             }
         ?>
         </div>

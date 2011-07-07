@@ -5,6 +5,16 @@ Ext.onReady(function(){});
 
 $(document).ready(function(){
 
+    $(function(){
+        $('ul#account-categories li').each(function(item){
+            console.log($(this).attr('id'));
+            //console.log($('.bookmark-category-container ul'));
+            if($(this).attr('class') == 'selected'){
+                $('#bookmark-category-container').find('div[category="' + $(this).attr('id') + '"]').css('display', 'block');
+            }
+        });
+    });
+
     $('#edit-account').live('submit', function(){
         var form_id = $(this).attr('id');
         $('#edit-account-status').html('<span class="working">Updating...</span>');
@@ -60,6 +70,29 @@ $(document).ready(function(){
         });
 
         return false;
+    });
+
+    $('ul#account-categories li').live('click', function(){
+        if($(this).attr('class') != 'selected'){
+
+            $('#bookmark-category-container').find('.account_element').each(function(index){
+                //console.log($(this));
+                if($(this).css('display') == 'block'){
+                    $(this).css('display', 'none');
+                }
+            });
+
+            $('ul#account-categories li[class="selected"]').each(function(){
+                $(this).removeClass('selected');
+            });
+
+            $('#bookmark-category-container').find('div[category="' + $(this).attr('id') + '"]').css('display', 'block');
+
+            $(this).addClass('selected');
+        }
+
+        return false;
+
     });
 });
  

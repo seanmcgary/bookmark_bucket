@@ -31,6 +31,13 @@ h3 {
     border-bottom:  1px solid #eeeeee;
 }
 
+h4 {
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 5px 0px;
+    font-size: 1em;
+    width: 100%;
+}
+
 span.failure {
     color: #db0000;
 }
@@ -255,7 +262,7 @@ input[type="submit"].submit-form:hover, input[type="submit"].submit-form-large:h
             border-left:  1px solid #3274d0;
         }
 
-.bookmark-category-container {
+.bookmark-category-container, .account-category-container {
     margin: 0px 0px 0px 0px;
     padding: 0px 0px 0px 0px;
     overflow: hidden;
@@ -265,6 +272,13 @@ ul.manage-bookmarks_list {
     margin: 20px 0px 0px 10px;
     padding: 0px 0px 0px 0px;
     list-style: none;
+}
+
+.account_element {
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+    display: none;
+    overflow:  hidden;
 }
 
 ul.bookmarks_list {
@@ -280,6 +294,13 @@ ul.bookmarks_list {
         list-style: none;
         overflow: hidden;
     }
+
+.account_element {
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+    display: none;
+    overflow:  hidden;
+}
 
 
 .delete-button {
@@ -335,6 +356,7 @@ ul.bookmarks_list {
     .bookmark .bookmark-data .title {
         margin: 0px 0px 0px 0px;
         padding: 0px 0px 0px 0px;
+        font-size: 1.1em;
     }
 
         .bookmark .bookmark-data .title a, a:visited {

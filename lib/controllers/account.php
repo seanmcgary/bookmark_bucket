@@ -19,16 +19,18 @@ class lib_controllers_account extends lib_controllers_baseController
 
         $data['account_details'] = $this->user_model->get_user_for_id($_SESSION['loggedIn']['user_id']);
 
+        //printr($data['account_details']);
+
         $data['user_fields'] = array('username' => 'Username', 'fullname' => 'Full Name', 'email' => 'Email');
 
         $data['user_bookmarks'] = $this->user_model->get_user_bookmarks($_SESSION['loggedIn']['user_id']);
 
-        $data['bookmarks'] = $this->load->view('presenters/main/bookmarks_list', array('bookmarks' => $data['user_bookmarks'], 'account' => true), true);
+        $data['bookmarks'] = $this->load->view('presenters/main/bookmarks_list', array('bookmarks' => $data['user_bookmarks'], 'user_bookmarks' => $data['account_details']['bookmarks'], 'account' => true), true);
 
 
         $this->page->load_javascript(site_url('js/account.js'));
 
-        $this->page->render('accountIndex_view', $data);
+        $this->page->render('accountIndex_view', $data, 'template/leftCol_account_view');
 
     }
 

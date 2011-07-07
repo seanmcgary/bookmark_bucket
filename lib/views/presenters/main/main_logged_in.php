@@ -2,7 +2,7 @@
     <h2>New Bookmark</h2>
     <form name="new_bookmark" id="new_bookmark">
         <div class="inputbox">
-            <div class="http">http://</div><input type="text" id="url" name="url" placeholder="www.example.com">
+            <div class="http">Url</div><input type="text" id="url" name="url" placeholder="http://www.example.com">
         </div>
         <div class="inputbox">
             <div class="title">Title </div><input type="text" id="title" name="title">
