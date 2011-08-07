@@ -80,6 +80,7 @@ class lib_models_userModel extends lib_models_baseModel
         foreach($user['bookmarks'] as $bookmark)
         {
             $b = $this->bookmark_model->get_bookmark_for_id($bookmark);
+            $b['user_tags'] = $this->bookmark_model->get_user_tags_for_bookmark($user_id, $b['bookmark_id']);
             //printr($bookmark);
             $bookmarks[] = $b;
         }

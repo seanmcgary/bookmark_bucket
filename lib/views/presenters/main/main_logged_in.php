@@ -7,13 +7,17 @@
         <div class="inputbox">
             <div class="title">Title </div><input type="text" id="title" name="title">
         </div>
+
         <div id="options" class="options">
             <div class="div-row">
                 <div class="field-label">
-                    Privacy
+                    Private
                 </div>
                 <div class="field-value">
-                    Public <input type="radio" id="public" name="privacy" value="public" checked><br>Private <input type="radio" id="private" name="privacy" value="private">
+                    <input type="checkbox" id="public" name="privacy" value="public">
+                </div>
+                <div class="field-status">
+                    <span class="gray_text">Bookmarks marked as private will only be visible to you. Setting this to "off" will make the bookmark public.</span>
                 </div>
             </div>
             <div class="inputbox">

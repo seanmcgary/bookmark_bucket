@@ -21,12 +21,11 @@ class lib_controllers_bookmark extends lib_controllers_baseController
 
         $bookmark = $this->input->post_array(array('url', 'privacy', 'title', 'tag'));
 
+        if($bookmark['privacy'] != 'private')
+        {
+            $bookmark['privacy'] = 'public';
+        }
 
-        //$bookmark['url'] = preg_replace("/http(s)?:\/\//", "", $bookmark['url']);
-
-
-
-        //printr($bookmark['url']);
 
         $bookmark['tags'] = json_decode($bookmark['tag'], true);
         unset($bookmark['tag']);
@@ -74,7 +73,9 @@ class lib_controllers_bookmark extends lib_controllers_baseController
                 {
                     if($bookmark['privacy'] == 'public')
                     {
-                        $formatted_url = $this->load->view('presenters/main/bookmarks_list', array('bookmarks' => array($res)), true);
+                        $user = $this->user_model->get_user_for_id($_SESSION['loggedIn']['user_id']);
+                        $formatted_url = $this->load->view('presenters/main/bookmarks_list', array('bookmarks' => array($res), 'user_bookmarks' => $user['bookmarks']), true);
+
                         echo json_encode(array('status' => 'true', 'bookmark' => $formatted_url));
                     }
                     else

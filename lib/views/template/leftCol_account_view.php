@@ -4,6 +4,7 @@
         <ul class="bookmark-categories" id="account-categories">
             <li class="selected" id="settings">Settings</li>
             <li id="sync">Sync Token</li>
+            <li id="buckets">Manage Buckets</li>
             <li id="bookmarks">Bookmarks</li>
         </ul>
     </div>

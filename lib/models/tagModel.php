@@ -44,6 +44,29 @@ class lib_models_tagModel extends lib_models_baseModel
         }
     }
 
+    public function insert_tags_for_user_bookmark($tags, $user_id, $bookmark_id)
+    {
+        $user_bookmark = array();
+        $user_bookmark['user_id'] = $user_id;
+        $user_bookmark['tags'] = $tags;
+        $user_bookmark['bookmark_id'] = $bookmark_id;
+
+        try
+        {
+            $this->bookmark_tags->insert($user_bookmark);
+            return $user_bookmark;
+        }
+        catch (MongoCursorException $e)
+        {
+            return false;
+        }
+    }
+
+    public function update_tags_for_user_bookmark($tags, $user_id, $bookmark_id)
+    {
+
+    }
+
     public function update_tag($tag_data)
     {
         unset($tag_data['_id']);

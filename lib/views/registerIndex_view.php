@@ -69,7 +69,7 @@ $form_data = array('fullname' => '',
                 </div>
             </div>
             <?php
-            if($_SERVER['ENVIRONMENT'] == 'dev' || $_SERVER['ENVIRONMENT'] == 'beta')
+            if(array_key_exists('ENVIRONMENT', $_SERVER) && ($_SERVER['ENVIRONMENT'] == 'dev' || $_SERVER['ENVIRONMENT'] == 'beta'))
             {
             ?>
             <div class="div-row">

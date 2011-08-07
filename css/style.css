@@ -225,6 +225,14 @@ input[type="submit"].submit-form:hover, input[type="submit"].submit-form-large:h
             width: 50px;
         }
 
+        .bookmark-container .inputbox .description {
+            margin: 2px 0px 0px 0px;
+            padding: 0px 0px 0px 0px;
+            position: relative;
+            float: left;
+            width: 100px;
+        }
+
         .bookmark-container .inputbox input[type="text"] {
             margin: 0px 0px 0px 2px;
             padding: 0px 0px 0px 0px;
@@ -261,6 +269,7 @@ input[type="submit"].submit-form:hover, input[type="submit"].submit-form-large:h
         ul.bookmark-categories li.selected {
             border-left:  1px solid #3274d0;
         }
+
 
 .bookmark-category-container, .account-category-container {
     margin: 0px 0px 0px 0px;
@@ -398,13 +407,21 @@ ul.bookmarks_list {
             text-decoration: none;
         }
 
+        .bookmark .bookmark-data .tags a.user-tag {
+            background: #97e297;
+        }
+
             .bookmark .bookmark-data .tags a:hover {
                 background: #e7f1ff;
             }
 
+            .bookmark .bookmark-data .tags a.user-tag:hover {
+                background: #bef4be;
+            }
+
 
 .options {
-    display: none;
+    /*display: none;*/
 }
 
 .div-row {
@@ -457,8 +474,14 @@ ul.bookmarks_list {
         padding: 0px 0px 0px 0px;
         position: relative;
         float: left;
-        min-width: 100px;
+        width: 250px;
+        word-wrap: break-word;
     }
+
+        .div-row .field-status span.gray_text {
+            color: #666666;
+            font-size: .8em;
+        }
 
         .div-row .field-value input[type="text"], input[type="password"] {
             margin: 0px 5px 0px 2px;
@@ -499,4 +522,4 @@ ul.bookmarks_list {
             cursor: pointer;
             background: #9cc6ff;
         }
-     */
+     

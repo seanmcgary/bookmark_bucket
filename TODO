@@ -1,91 +1,63 @@
 TODO
 ===
 
-Launch Critical
----
-
-- Chrome browser extension
-    - Authenticate with appkey (see account page)
-    - Listen for bookmark changes (client browser)
-        - Sync those changes to the server
-    - Listen for bookmark changes (server/cloud)
-        - Sync changes in the cloud to the local browser/device
-
-- Share on *social network*
-    - Facebook
-    - Twitter
-    - Email
-
-- Bookmark a bookmark
-    - Add an already existing bookmark to your bookmarks
-
-- Manage Bookmarks
-    - Change privacy setting (public/private)
-
-- "Beta Mode"
-    - Invite only
-
-High Priority
----
-- Sort bookmarks
-    - By date
-    - by popularity (num clicks)
-    - by number of times bookmarked
-    
-- Suggested Pages
-    - Suggest pages for registered users based on links clicked and links bookmarked
-    - DEPENDS on tag implementation
-
-- Link statistics
-    - Times clicked
-    - Demographic (locations of people that clicked)
-    - Graph of click history
-
-- Find posts from people around you
-    - Based on tag(s)
-    - Based on tag(s) and location
-
-
-Medium Priority
----
-- RSS Feeds
-    - levels
-        - User
-        - "Everyone"
-        - By Tag
-    - Notes
-        - generate and cache each XML/RSS file in a mongo collection
-        - do this on the back end
-            - work queue
-
-- Share on *social network*
-    - Tumblr
-    - Reddit(?)
-
-
-Low priority
----
-
-
-Completed
+Features
 ===
-- Tabs on bookmars page
-    - me
-    - everyone
-    - my friends
-    - popular/hot
-    - new
 
-- Implement tags for bookmarks
+Web App
+---
+- Show bookmarks page (main page)
+    - Sorts:
+        - Number of click throughs
+        - Number of times bookmarked
+        - Alphabetically 
+    - Custom Views:
+        - Think reddit home page
+        - Views based on certain tags
+        - Standard/default views:
+            - All of yours (including/discluding private?)
+            - Most recent
+            - Hot/top
+- Import from browser (support Firefox and Chrome/Safari to start)
+- Add new bookmark
+- Manage buckets    
+    - Auto add to bucket based on tags
+    - Private buckets
+    - Manually edit buckets
+- Manage bookmarks
+    - Toggle public/private
+    - Edit title, source, description, tags
+- Manage account
+    - Devices synced 
+        - Device name
+        - Device type
+        - Auto-sync (on/off)
+    - Browsers synced
+        - Browser name
+        - Browser type (firefox, chrome, etc)
+    - Edit account details (username, password, name, etc)
+    - Sync type (replace, auto diff, user controlled)
+    - Preserve current bookmark structure, or create contained structure
+    - Watch only certain folders
 
-- Email notifications
-    - On signup
+Browser Extensions
+---
 
-- Manage Bookmarks
-    - Delete bookmarks
+- Chrome
+    - "Vanilla Sync"
+        - Sync only. Doesnt replace bookmark manager
+        - Basic options 
+            - Username
+            - Password
+            - Name of browser
+            - Toggle sync (auto/manual)
+            - Preserve current bookmark structure or create new contained structure (GLOBAL)
 
-IDEAS
-===
-- Organize bookmarks into "buckets"
-- Drag and drop organization
-- Turn existing bookmark folders into buckets
+
+Mobile Applications
+---
+- iPhone:
+    - Read Safari bookmark DB every so often
+    - Option to sync automatically or on demand
+
+

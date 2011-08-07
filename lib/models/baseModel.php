@@ -11,6 +11,7 @@ class lib_models_baseModel extends core_model
     public $click_collection;
     public $tag_collection;
     public $invite_collection;
+    public $bookmark_tags;
     
     public function __construct()
     {
@@ -24,6 +25,7 @@ class lib_models_baseModel extends core_model
         $this->click_collection = $this->mongo->mongodb->{"click_log"};
         $this->tag_collection = $this->mongo->mongodb->{"tags"};
         $this->invite_collection = $this->mongo->mongodb->{"invites"};
+        $this->bookmark_tags = $this->mongo->mongodb->{"bookmark_tags"};
     }
 
     public function get_item_for_id($collection, $id_field, $id)

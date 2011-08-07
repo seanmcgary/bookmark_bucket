@@ -12,6 +12,7 @@ class lib_controllers_main extends lib_controllers_baseController
         parent::__construct();
 
         $this->page->load_javascript(site_url('js/bookmarks.js'));
+        $this->page->load_javascript(site_url('js/tags.js'));
     }
 
     public function index()

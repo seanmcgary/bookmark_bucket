@@ -29,6 +29,7 @@ class lib_controllers_account extends lib_controllers_baseController
 
 
         $this->page->load_javascript(site_url('js/account.js'));
+        $this->page->load_javascript(site_url('js/tags.js'));
 
         $this->page->render('accountIndex_view', $data, 'template/leftCol_account_view');
 
@@ -141,7 +142,47 @@ class lib_controllers_account extends lib_controllers_baseController
         }
         else
         {
-            json_encode(array('status' => 'false'));
+            echo json_encode(array('status' => 'false'));
         }
+    }
+
+    public function new_bucket()
+    {
+        $post = $this->input->post_array(array('bucket_name', 'bucket_description', 'privacy', 'auto_fill', 'tag_list'));
+
+        if($post['privacy'] == null)
+        {
+            unset($post['privacy']);
+
+            $post['public'] = true;
+        }
+        else
+        {
+            unset($post['privacy']);
+
+            $post['public'] = false;
+        }
+
+        if($post['auto_fill'] == null)
+        {
+            $post['auto_fill'] = false;
+        }
+        else
+        {
+            $post['auto_fill'] = true;
+        }
+
+        if($post['tag_list'] != null)
+        {
+            $post['tags'] = $post['tag_list'];
+
+        }
+        else
+        {
+            unset($post['tag_list']);
+            $post['tag_list'] = array();
+        }
+
+        printr($post);
     }
 }

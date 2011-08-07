@@ -10,10 +10,9 @@ if(isset($account))
     $manage = $account;
 }
 
-
-
 foreach($bookmarks as $bookmark)
 {
+    //printr($bookmark);
 ?>
 <li id="<?=$bookmark['bookmark_id']?>">
     <div class="bookmark">
@@ -33,7 +32,8 @@ foreach($bookmarks as $bookmark)
 
         <div class="<?=$icon_class?>">
         <?php
-            if(isset($account) && $account == false)
+
+            if($manage == false)
             {
                 $image = '';
                 if(in_array($bookmark['bookmark_id'], $user_bookmarks))
@@ -61,7 +61,15 @@ foreach($bookmarks as $bookmark)
             <?php
                 foreach($bookmark['tags'] as $tag)
                 {
-                    echo '<a href="#">'.$tag.'</a>';
+                    if(array_key_exists('user_tags', $bookmark) && in_array($tag, $bookmark['user_tags']))
+                    {
+                        echo '<a href="#" class="user-tag">'.$tag.'</a>';
+                    }
+                    else
+                    {
+                        echo '<a href="#">'.$tag.'</a>';
+                    }
+
                 }
             ?>
             </div>

@@ -5,6 +5,8 @@ Ext.onReady(function(){});
 
 $(document).ready(function(){
 
+
+
     $(function(){
         $('ul#account-categories li').each(function(item){
             console.log($(this).attr('id'));
@@ -13,6 +15,11 @@ $(document).ready(function(){
                 $('#bookmark-category-container').find('div[category="' + $(this).attr('id') + '"]').css('display', 'block');
             }
         });
+    });
+
+    $('input[type="checkbox"]').checkbox({
+        cls: 'jquery-checkbox',  /* checkbox  */
+	    empty: 'js/jquery-checkbox/empty.png'  /* checkbox  */
     });
 
     $('#edit-account').live('submit', function(){
@@ -93,6 +100,47 @@ $(document).ready(function(){
 
         return false;
 
+    });
+
+    $('#auto_fill').live('change', function(){
+        if($(this).attr('checked') == 'checked'){
+            $('#bucket_options').slideToggle();
+        } else {
+            $('#bucket_options').slideToggle();
+        }
+    });
+
+    $('#new_bucket').live('submit', function(){
+        console.log('foobar');
+
+        if($('#bucket_name').val().length > 0){
+
+            var tag_list =  new Array();
+            $('#tag-container .tag').each(function(index){
+                console.log($(this).find('span').html());
+                tag_list.push($(this).find('span').html());
+            });
+
+            Ext.Ajax.request({
+                url: new_bucket,
+                form: 'new_bucket',
+                success: function(response, opts){
+                    var obj = Ext.decode(response.responseText);
+                },
+                failure: function(response, opts){
+
+                },
+                params: {tag_list: tag_list}
+            });
+        } else {
+            $('#new_bucket_status').html('<span class="failure">Please enter a name for your bucket</span>');
+        }
+
+        setTimeout(function(){
+            $('#new_bucket_status').html('');
+        }, 5000);
+
+        return false;
     });
 });
  

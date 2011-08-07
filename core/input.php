@@ -24,7 +24,15 @@ class core_input
 
         foreach($variables as $var)
         {
-            $post_vals[$var] = stripcslashes($_POST[$var]);
+            if(array_key_exists($var, $_POST))
+            {
+                $post_vals[$var] = stripcslashes($_POST[$var]);
+            }
+            else
+            {
+                $post_vals[$var] = null;
+            }
+
         }
 
         return $post_vals;

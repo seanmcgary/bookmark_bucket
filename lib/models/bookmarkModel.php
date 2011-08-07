@@ -16,7 +16,6 @@ class lib_models_bookmarkModel extends lib_models_baseModel
 
     public function insert_new_bookmark($bookmark_data, $user_id)
     {
-        $bookmark_data['url'] = 'http://'.$bookmark_data['url'];
         $exists = $this->bookmark_exists($bookmark_data['url']);
 
         $url_data = null;
@@ -29,9 +28,11 @@ class lib_models_bookmarkModel extends lib_models_baseModel
             $bookmark_data['times_bookmarked'] = 1;
             $bookmark_data['times_clicked'] = 0;
 
+
             try
             {
                 $this->bookmark_collection->insert($bookmark_data, true);
+                $exists = $bookmark_data;
             }
             catch(MongoCursorException $e)
             {
@@ -54,11 +55,14 @@ class lib_models_bookmarkModel extends lib_models_baseModel
             }
 
             //$this->increment_bookmarked_count($exists['bookmark_id']);
+
             $this->update_bookmark($exists);
             $bookmark_data = $exists;
         }
 
         $user = $this->user_model->get_user_for_id($user_id);
+        
+        $this->tag_model->insert_tags_for_user_bookmark($bookmark_data['tags'], $_SESSION['loggedIn']['user_id'], $exists['bookmark_id']);
 
         //printr($user);
 
@@ -145,6 +149,22 @@ class lib_models_bookmarkModel extends lib_models_baseModel
         }
     }
 
+    public function get_user_tags_for_bookmark($user_id, $bookmark_id)
+    {
+        $results = $this->bookmark_tags->find(array('bookmark_id' => $bookmark_id, 'user_id' => $user_id));
+
+        $results = $this->get_one($results);
+
+        if($results != null)
+        {
+            return $results['tags'];
+        }
+        else
+        {
+            return array();
+        }
+    }
+
     public function get_public_bookmarks()
     {
         $results = $this->bookmark_collection->find(array('privacy' => 'public'))->sort(array('date_created' => -1));
@@ -196,9 +216,24 @@ class lib_models_bookmarkModel extends lib_models_baseModel
 
     public function bookmark_exists($url)
     {
-        $results = $this->bookmark_collection->find(array('url' => $url, 'privacy' => 'public'));
+
+        $url = str_replace('http://', '', $url);
+        $url = str_replace('http://www.', '', $url);
+        $url = str_replace('https://', '', $url);
+        $url = str_replace('https://www.', '', $url);
+        $url = str_replace('www.', '', $url);
+
+        //printr($url);
+        
+        $regex_search = new MongoRegex("/[http(s):\/\/(www.)]".$url."/");
+
+        //printr($regex_search);
+
+        $results = $this->bookmark_collection->find(array('url' => array('$regex' => $regex_search, '$options' => 'i')));
 
         $results = $this->get_one($results);
+
+        //printr($results);
 
         if($results == null)
         {

@@ -3,6 +3,7 @@
         <script type="text/javascript">
             var edit_account = '<?=site_url('account/edit_account')?>';
             var delete_bookmark = '<?=site_url('account/delete_bookmark')?>';
+            var new_bucket = '<?=site_url('account/new_bucket')?>';
         </script>
         <div class="account-category-container" id="bookmark-category-container">
             <div class="account_element" category="settings">
@@ -64,6 +65,72 @@
                     </div>
                 </div>
             </div>
+            <div class="account_element" category="buckets">
+                <h2>Manage Buckets</h2>
+                <form name="new_bucket" id="new_bucket">
+                    <div class="div-row">
+                        <div class="field-label">
+                            Bucket Name
+                        </div>
+                        <div class="field-value">
+                            <input type="text" name="bucket_name" id="bucket_name" placeholder="Bucket of Awesome">
+                        </div>
+                    </div>
+                    <div class="div-row">
+                        <div class="field-label">
+                            Description
+                        </div>
+                        <div class="field-value">
+                            <input type="text" name="bucket_description" id="bucket_description">
+                        </div>
+                    </div>
+                    <div class="div-row">
+                        <div class="field-label">
+                            Private
+                        </div>
+                        <div class="field-value">
+                            <input type="checkbox" id="public" name="privacy" value="public">
+                        </div>
+                        <div class="field-status">
+                            <span class="gray_text">Bookmarks placed in private buckets are automatically marked as private.</span>
+                        </div>
+                    </div>
+                    <div class="div-row">
+                        <div class="field-label">
+                            Auto Fill
+                        </div>
+                        <div class="field-value">
+                            <input type="checkbox" id="auto_fill" name="auto_fill" value="on">
+                        </div>
+                        <div class="field-status">
+                            <span class="gray_text">When turned on, bookmarks with pre-defined tags will be automatically placed in the bucket</span>
+                        </div>
+                    </div>
+                    <div class="options" id="bucket_options">
+                        <div class="inputbox">
+                            <div class="title">Tags</div><input type="text" id="tags" placeholder="Comma or space separated list of tags">
+                        </div>
+                        <div class="div-row">
+                            <div class="tag-container" id="tag-container">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="div-row">
+                        <div class="field-label">
+                            <input type="submit" class="submit-form" value="Save">
+                        </div>
+                        <div class="field-value" id="new_bucket_status">
+
+                        </div>
+                    </div>
+                </form>
+                <h2>Your Buckets</h2>
+                <ul class="manage-bookmarks_list" id="buckets">
+                    <?=$buckets?>
+                </ul>
+
+            </div>
             <div class="account_element" category="bookmarks">
                 <h2>Manage Bookmarks</h2>
                 <ul class="manage-bookmarks_list" category="yours">
@@ -73,3 +140,4 @@
         </div>
     </div>
 </div>
+    
