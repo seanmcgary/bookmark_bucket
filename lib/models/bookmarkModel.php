@@ -90,6 +90,7 @@ class lib_models_bookmarkModel extends lib_models_baseModel
 
             if($res != false)
             {
+                $bookmark_data['user_tags'] = $this->get_user_tags_for_bookmark($user_id, $bookmark_data['bookmark_id']);
                 return $bookmark_data;
             }
             else

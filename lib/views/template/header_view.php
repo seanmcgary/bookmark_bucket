@@ -8,6 +8,35 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js" type="text/javascript"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/ext-core/3.1.0/ext-core-debug.js" type="text/javascript"></script>
         <script src="<?=site_url('js/jquery-checkbox/jquery.checkbox.min.js')?>" type="text/javascript"></script>
+        <script type="text/javascript">
+        <?php
+            $account = '';
+
+            if(array_key_exists('ANALYTICS', $_SERVER))
+            {
+                if($_SERVER['ANALYTICS'] == 'dev')
+                {
+                    $account = 'UA-24994790-2';
+                }
+
+                if($_SERVER['ANALYTICS'] == 'production')
+                {
+                    $account = 'UA-24994790-1';
+                }
+            }
+        ?>
+        <script type="text/javascript">
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', '<?=$account?>']);
+            _gaq.push(['_trackPageview']);
+
+            (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();
+
+        </script>
         <?php
             foreach($css as $styles)
             {

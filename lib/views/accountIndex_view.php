@@ -89,7 +89,7 @@
                             Private
                         </div>
                         <div class="field-value">
-                            <input type="checkbox" id="public" name="privacy" value="public">
+                            <input type="checkbox" toggle="true" id="public" name="privacy" value="public">
                         </div>
                         <div class="field-status">
                             <span class="gray_text">Bookmarks placed in private buckets are automatically marked as private.</span>
@@ -100,7 +100,7 @@
                             Auto Fill
                         </div>
                         <div class="field-value">
-                            <input type="checkbox" id="auto_fill" name="auto_fill" value="on">
+                            <input type="checkbox" toggle="true" id="auto_fill" name="auto_fill" value="on">
                         </div>
                         <div class="field-status">
                             <span class="gray_text">When turned on, bookmarks with pre-defined tags will be automatically placed in the bucket</span>
@@ -136,6 +136,34 @@
                 <ul class="manage-bookmarks_list" category="yours">
                     <?=$bookmarks?>
                 </ul>
+            </div>
+            <div class="account_element" category="import">
+                <h2>Import Bookmarks</h2>
+                <p>Import your bookmarks from your browser(s). Simply provide the exported HTML file to start the import process.</p>
+                <div class="div-row">
+                    <div class="field-label">
+                        <input type="file" id="bookmark_file" name="bookmark_file[]" multiple>
+                    </div>
+                    <div class="field-value">
+
+                    </div>
+                </div>
+                <div class="div-row">
+                    <table id="import-bookmarks-table" class="import-bookmarks-table">
+                        <tr>
+                            <th>Import</th>
+                            <th>Bookmark Title</th>
+                        </tr>
+                        <!--<tr>
+                            <td>
+                                <input type="checkbox">
+                            </td>
+                            <td>
+                                Bookmark Name
+                            </td>
+                        </tr>-->
+                    </table>
+                </div>
             </div>
         </div>
     </div>

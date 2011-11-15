@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js" type="text/javascript"></script>
+        <script type="text/javascript">
+            document.addEventListener('DOMContentLoaded', function(){
+
+                document.getElementById('files').addEventListener('change', function(event){
+                    var files = event.target.files;
+
+                    for(var i = 0; i < files.length; i++){
+                        console.log(files[i]);
+
+                        var file = files[i];
+
+                        if(file.type == 'text/html'){
+
+                            var reader = new FileReader();
+
+                            reader.readAsText(files[i]);
+
+                            reader.onload = function(event){
+                                $(event.target.result).find('DT > A').each(function(index){
+                                    var li = $('<li></li>');
+                                    li.append($(this));
+                                    $('#bookmarks').append(li);
+                                });
+                            }
+                        }
+                    }
+
+                }, false);
+            }, false);
+        </script>
+    </head>
+    <body>
+        <input type="file" id="files" name="files[]" multiple>
+        <ul id="bookmarks"></ul>
+    </body>
+</html>

@@ -58,6 +58,48 @@ span.working {
     float: left;
 }
 
+table.import-bookmarks-table {
+    margin:  0px 0px 0px 0px;
+    padding:  0px 0px 0px 0px;
+    border-collapse: collapse;
+    
+}
+    table.import-bookmarks-table tr th {
+        margin:  0px 0px 0px 0px;
+        padding:  5px 10px 5px 10px;
+        font-weight: normal;
+        background: #3274d0;
+        color: #fff;
+        text-align: left;
+        border:  1px solid #3274d0;
+    }
+
+    table.import-bookmarks-table tr:not(:first-of-type) {
+        margin:  0px 0px 0px 0px;
+        padding:  0px 0px 0px 0px;
+        border:  1px solid #cccccc;
+    }
+
+    table.import-bookmarks-table tr td {
+        margin:  0px 0px 0px 0px;
+        padding:  5px 10px 5px 10px;
+    }
+
+        table.import-bookmarks-table tr td a {
+            color: #3274d0;
+            text-decoration: none;
+        }
+
+        table.import-bookmarks-table tr td a:hover {
+            color: #5492e8;
+            text-decoration: none;
+        }
+
+    table.import-bookmarks-table tr td:nth-child(1){
+        text-align: center;
+    }
+
+
 input[type="submit"].submit-form {
     margin: 0px 0px 0px 0px;
     padding: 5px 10px 5px 10px;
@@ -522,4 +564,8 @@ ul.bookmarks_list {
             cursor: pointer;
             background: #9cc6ff;
         }
+
+.foo {
+    background: #0a113c;
+}
      

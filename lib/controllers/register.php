@@ -83,7 +83,9 @@ class lib_controllers_register extends lib_controllers_baseController
                 $user = $this->user_model->login_user($post['username'], $post['password']);
                 $_SESSION['loggedIn'] = $user;
 
-                $this->mail->send_mail($user['email'], 'Regsitration Successful', 'Registration Successful!');
+                $registration_message = 'Thank you for joining BookmarkBucket!';
+
+                $this->mail->send_mail($user['email'], 'Regsitration Successful', $registration_message);
 
                 if($ajax == 'true')
                 {

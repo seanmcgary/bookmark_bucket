@@ -17,7 +17,7 @@ class lib_libraries_mail
     
     public function __construct()
     {
-        $this->username = 'bookmarks@seanmcgary.com';
+        $this->username = 'no-reply@bookmarkbucket.com';
         $this->password = 'summertimerave';
 
         $this->from = $this->username;
@@ -34,10 +34,6 @@ class lib_libraries_mail
 
         $mail = $smtp->send($to, $headers, $message);
 
-        //if(PEAR::isError($mail))
-        //{
-        //
-        //}
     }
 
     public function construct_header($from, $to, $subject)

@@ -17,9 +17,13 @@ $(document).ready(function(){
         });
     });
 
-    $('input[type="checkbox"]').checkbox({
-        cls: 'jquery-checkbox',  /* checkbox  */
-	    empty: 'js/jquery-checkbox/empty.png'  /* checkbox  */
+    $('input[type="checkbox"]').each(function(item){
+        if($(this).attr('toggle') == 'true'){
+            $(this).checkbox({
+                cls: 'jquery-checkbox',  /* checkbox  */
+                empty: 'js/jquery-checkbox/empty.png'  /* checkbox  */
+            });
+        }
     });
 
     $('#edit-account').live('submit', function(){
@@ -107,6 +111,38 @@ $(document).ready(function(){
             $('#bucket_options').slideToggle();
         } else {
             $('#bucket_options').slideToggle();
+        }
+    });
+
+    $('#bookmark_file').live('change', function(event){
+        var files = event.target.files;
+
+        for(var i = 0; i < files.length; i++){
+            console.log(files[i]);
+
+            var file = files[i];
+
+            if(file.type == 'text/html'){
+
+                var reader = new FileReader();
+
+                reader.readAsText(files[i]);
+
+                reader.onload = function(event){
+                    $(event.target.result).find('DT > A').each(function(index){
+                        var row = $('<tr></tr>');
+                        var import_box = $('<td><input type="checkbox" class="import-toggle"></td>');
+                        var bookmark = $('<td></td>');
+                        bookmark.append($(this));
+                        var li = $('<li></li>');
+
+                        row.append(import_box);
+                        row.append(bookmark);
+
+                        $('#import-bookmarks-table').append(row);
+                    });
+                }
+            }
         }
     });
 

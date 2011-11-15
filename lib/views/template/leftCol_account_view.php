@@ -6,6 +6,7 @@
             <li id="sync">Sync Token</li>
             <li id="buckets">Manage Buckets</li>
             <li id="bookmarks">Bookmarks</li>
+            <li id="import">Import</li>
         </ul>
     </div>
 </div>
