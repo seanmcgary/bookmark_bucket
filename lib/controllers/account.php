@@ -27,6 +27,8 @@ class lib_controllers_account extends lib_controllers_baseController
 
         $data['bookmarks'] = $this->load->view('presenters/main/bookmarks_list', array('bookmarks' => $data['user_bookmarks'], 'user_bookmarks' => $data['account_details']['bookmarks'], 'account' => true), true);
 
+        //$data['buckets'] = $this->
+
 
         $this->page->load_javascript(site_url('js/account.js'));
         $this->page->load_javascript(site_url('js/tags.js'));

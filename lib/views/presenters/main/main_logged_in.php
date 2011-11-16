@@ -8,7 +8,7 @@
             <div class="title">Title </div><input type="text" id="title" name="title">
         </div>
 
-        <div id="options" class="options">
+        <div id="options" class="options show_options">
             <div class="div-row">
                 <div class="field-label">
                     Private

@@ -463,7 +463,11 @@ ul.bookmarks_list {
 
 
 .options {
-    /*display: none;*/
+    display: none;
+}
+
+.show_options {
+    display: block;
 }
 
 .div-row {

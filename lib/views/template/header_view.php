@@ -8,7 +8,6 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js" type="text/javascript"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/ext-core/3.1.0/ext-core-debug.js" type="text/javascript"></script>
         <script src="<?=site_url('js/jquery-checkbox/jquery.checkbox.min.js')?>" type="text/javascript"></script>
-        <script type="text/javascript">
         <?php
             $account = '';
 

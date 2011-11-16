@@ -3,9 +3,7 @@
  */
 Ext.onReady(function(){});
 
-$(document).ready(function(){
-
-
+$('document').ready(function(){
 
     $(function(){
         $('ul#account-categories li').each(function(item){
@@ -157,6 +155,8 @@ $(document).ready(function(){
                 tag_list.push($(this).find('span').html());
             });
 
+            console.log(tag_list);
+
             Ext.Ajax.request({
                 url: new_bucket,
                 form: 'new_bucket',
@@ -166,7 +166,7 @@ $(document).ready(function(){
                 failure: function(response, opts){
 
                 },
-                params: {tag_list: tag_list}
+                params: {tag_list: JSON.stringify(tag_list)}
             });
         } else {
             $('#new_bucket_status').html('<span class="failure">Please enter a name for your bucket</span>');

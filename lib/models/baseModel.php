@@ -12,6 +12,9 @@ class lib_models_baseModel extends core_model
     public $tag_collection;
     public $invite_collection;
     public $bookmark_tags;
+    public $bucket_collection;
+
+    public $last_error;
     
     public function __construct()
     {
@@ -26,6 +29,7 @@ class lib_models_baseModel extends core_model
         $this->tag_collection = $this->mongo->mongodb->{"tags"};
         $this->invite_collection = $this->mongo->mongodb->{"invites"};
         $this->bookmark_tags = $this->mongo->mongodb->{"bookmark_tags"};
+        $this->bucket_collection = $this->mongo->mongodb->{"buckets"};
     }
 
     public function get_item_for_id($collection, $id_field, $id)
@@ -98,6 +102,16 @@ class lib_models_baseModel extends core_model
         }
 
         return $results;
+    }
+
+    public function set_last_error($last_error)
+    {
+        $this->last_error = $last_error;
+    }
+
+    public function get_last_error()
+    {
+        return $this->last_error;
     }
 
 
