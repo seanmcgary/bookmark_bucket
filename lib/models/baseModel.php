@@ -78,7 +78,7 @@ class lib_models_baseModel extends core_model
     {
         $results = null;
 
-        if($mongo_results->count() >0)
+        if($mongo_results->count() > 0)
         {
             foreach($mongo_results as $res)
             {

@@ -10,8 +10,6 @@ if(isset($account))
     $manage = $account;
 }
 
-
-
 foreach($buckets as $bucket)
 {
 ?>
