@@ -11,6 +11,8 @@ class lib_models_bucketModel extends lib_models_baseModel
     public function __construct()
     {
         parent::__construct();
+
+        $this->bookmark_model = core_modelFactory::get_inst('lib_modes_bookmarkModel', 'bookmark_model');
     }
 
     /**
@@ -92,6 +94,34 @@ class lib_models_bucketModel extends lib_models_baseModel
         return $this->fetch_bookmarks($buckets);
     }
 
+    public function auto_add_bookmark_to_bucket($bookmark_id, $tags)
+    {
+        if(!empty($tags))
+        {
+            $tag_search = array();
+            foreach($tags as $tag)
+            {
+                $tag_search[] = array('tags' => $tag);
+            }
+
+            $query = array('auto_fill' => true, '$or' => $tag_search);
+
+            $buckets = $this->bucket_collection->find($query);
+
+            $buckets = $this->get_array($buckets);
+
+            foreach($buckets as $bucket)
+            {
+                if(!in_array($bookmark_id, $bucket['bookmarks']))
+                {
+                    $bucket['bookmarks'][] = $bookmark_id;
+
+                    $this->update_bucket($bucket);
+                }
+            }
+        }
+    }
+
     public function add_bookmark_to_bucket($bucket_id, $bookmark_id)
     {
         $bucket = $this->get_bucket_raw_for_id($bucket_id);
@@ -121,6 +151,16 @@ class lib_models_bucketModel extends lib_models_baseModel
         {
             $this->set_last_error($e);
             return false;
+        }
+    }
+
+    public function remove_bookmark_from_bucket_by_user($bookmark_id, $user_id)
+    {
+        $buckets = $this->get_all_user_buckets($user_id);
+
+        foreach($buckets as $bucket)
+        {
+            $this->remove_bookmark_from_bucket($bucket['bucket_id'], $bookmark_id);
         }
     }
 

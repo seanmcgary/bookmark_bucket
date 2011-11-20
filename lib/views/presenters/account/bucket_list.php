@@ -16,13 +16,13 @@ foreach($buckets as $bucket)
 <li id="<?=$bucket['bucket_id']?>">
     <div class="bookmark">
         <div class="delete">
-            <div class="delete-button" bookmark_id="<?=$bucket['bookmark_id']?>">
+            <div class="delete-button" bucket_id="<?=$bucket['bucket_id']?>">
                 Delete
             </div>
         </div>
         <div class="bookmark-data">
             <div class="title">
-                <?=$bucket['bucket_name']?>
+                <?=$bucket['bucket_name']?> (<?=count($bucket['bookmarks'])?>)
             </div>
             <div class="meta">
             <?php

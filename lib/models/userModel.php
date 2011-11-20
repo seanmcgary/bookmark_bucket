@@ -134,32 +134,28 @@ class lib_models_userModel extends lib_models_baseModel
     {
         $user = $this->get_user_for_id($user_id);
 
-        //printr($user);
-
         if(in_array($bookmark_id, $user['bookmarks']))
         {
-            $count = 0;
-            $index = null;
-            foreach($user['bookmarks'] as &$bookmark)
+
+            for($i = 0; $i < count($user['bookmarks']); $i++)
             {
-                if($bookmark == $bookmark_id)
+                if($user['bookmarks'][$i] == $bookmark_id);
                 {
-                    $index = $count;
+                    unset($user['bookmarks'][$i]);
+
+                    $user['bookmarks'] = array_values($user['bookmarks']);
+
+                    $this->update_user($user);
+
+                    break;
                 }
-
-                $count++;
             }
 
-            if($index != null)
-            {
-                unset($user['bookmarks'][$index]);
+            $this->bookmark_model->delete_user_bookmark_tags($bookmark_id, $user_id);
 
-                $user['bookmarks'] = array_values($user['bookmarks']);
+            $this->bucket_model->remove_bookmark_from_bucket_by_user($bookmark_id, $user_id);
 
-                $this->update_user($user);
-
-                return true;
-            }
+            return true;
 
         }
 

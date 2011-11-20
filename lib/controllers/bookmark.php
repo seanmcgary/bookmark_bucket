@@ -52,6 +52,7 @@ class lib_controllers_bookmark extends lib_controllers_baseController
 
             $bookmark['title'] = utf8_encode($bookmark['title']);
 
+
             $res = $this->bookmark_model->insert_new_bookmark($bookmark, $_SESSION['loggedIn']['user_id']);
 
             if(!empty($bookmark['tags']))

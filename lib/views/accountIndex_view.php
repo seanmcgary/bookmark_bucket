@@ -127,8 +127,7 @@
                 </form>
                 <h2>Your Buckets</h2>
                 <ul class="manage-bookmarks_list" id="buckets">
-                    <!--<?=$buckets?>-->
-                    <?php printr($buckets); ?>
+                    <?=$buckets?>
                 </ul>
 
             </div>
