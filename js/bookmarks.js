@@ -15,7 +15,11 @@ $(document).ready(function() {
         });
     });
 
-     $('input[type="checkbox"]').checkbox({
+    $('#toggle_new_bookmark').live('click', function(){
+        $('#new_bookmark').slideToggle();
+    });
+
+    $('input[type="checkbox"]').checkbox({
         cls: 'jquery-checkbox',  /* checkbox  */
 	    empty: 'js/jquery-checkbox/empty.png'  /* checkbox  */
     });
