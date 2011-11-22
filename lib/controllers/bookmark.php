@@ -77,7 +77,11 @@ class lib_controllers_bookmark extends lib_controllers_baseController
                         $user = $this->user_model->get_user_for_id($_SESSION['loggedIn']['user_id']);
                         $formatted_url = $this->load->view('presenters/main/bookmarks_list', array('bookmarks' => array($res), 'user_bookmarks' => $user['bookmarks']), true);
 
-                        echo json_encode(array('status' => 'true', 'bookmark' => $formatted_url));
+                        $main_controller = core_loadFactory::get_inst('lib_controllers_main', 'main');
+
+                        $other_bookmarks = $main_controller->get_bookmarks();
+
+                        echo json_encode(array('status' => 'true', 'bookmark' => $formatted_url, 'global_bookmarks' => $other_bookmarks['data']));
                     }
                     else
                     {

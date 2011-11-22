@@ -7,7 +7,7 @@
                 {
             ?>
                 <li class="selected" id="yours">Your's</li>
-                <li id="everyone">Everyone's</li>
+                <li id="all">Everyone's</li>
                 <li id="new">New</li>
                 <li id="popular">Popular</li>
             <?php
@@ -15,7 +15,7 @@
                 else
                 {
             ?>
-                <li id="everyone" class="selected">Everyone's</li>
+                <li id="all" class="selected">Everyone's</li>
                 <li id="new">New</li>
                 <li id="popular">Popular</li>
             <?php

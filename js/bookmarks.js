@@ -72,12 +72,18 @@ $(document).ready(function() {
 
                     if (obj.status == 'true')
                     {
-                        console.log()
                         if ($('.bookmarks_list[category="yours"] li').length > 0) {
                             $(obj.bookmark).insertBefore($('.bookmarks_list[category="yours"] li')[0]);
                         } else {
                             $('.bookmarks_list[category="yours"]').append(obj.bookmark);
                         }
+
+                        for(var i in obj.global_bookmarks){
+                            if(i != 'your_bookmarks'){
+                                $('.bookmarks_list[category="' + i.replace("_bookmarks", "") + '"]').html(obj.global_bookmarks[i]);
+                            }
+                        }
+
 
                         $('#tag-container .tag').remove();
 

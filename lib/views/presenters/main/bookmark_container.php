@@ -11,7 +11,7 @@
         <?php
         }
         ?>
-        <ul class="bookmarks_list" category="everyone">
+        <ul class="bookmarks_list" category="all">
             <?=$all_bookmarks?>
         </ul>
         <ul class="bookmarks_list" category="new">
