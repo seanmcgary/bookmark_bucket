@@ -1,6 +1,6 @@
 <div class="bookmark-container">
     <!--<h2>New Bookmark</h2>-->
-    <input type="button" class="button btn-large btn-green" id="toggle_new_bookmark" value="New Bookmark">
+    <input type="button" class="button btn-green" id="toggle_new_bookmark" value="New Bookmark">
     <form name="new_bookmark" id="new_bookmark" class="new_bookmark_form">
         <div class="inputbox">
             <div class="http">Url</div><input type="text" id="url" name="url" placeholder="http://www.example.com">

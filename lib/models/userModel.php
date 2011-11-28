@@ -19,6 +19,12 @@ class lib_models_userModel extends lib_models_baseModel
         $user_data['bookmarks'] = array();
         $user_data['sync_key'] = $this->generate_sync_key();
         $user_data['num_invites'] = 5;
+        $user_data['followers'] = array();
+        $user_data['views'] = 0;
+
+        $email_hash = md5(strtolower(trim($user_data['email'])));
+
+        $user_data['avatar'] = 'http://www.gravatar.com/avatar/'.$email_hash.'?d=mm';
 
         try
         {
@@ -32,6 +38,35 @@ class lib_models_userModel extends lib_models_baseModel
         }
     }
 
+    public function increment_user_view($user_id)
+    {
+        $user = $this->get_user_for_id($user_id);
+
+        $user['views'] += 1;
+
+        printr($user);
+
+        $this->update_user($user);
+    }
+
+    public function api_auth_user($username, $password)
+    {
+        $password = sha1($password);
+
+        $res = $this->user_collection->find(array('username' => $username, 'password' => $password));
+
+        $user = $this->get_one($res);
+
+        if($user != null)
+        {
+            unset($user['password']);
+        }
+
+        return $user;
+
+    }
+
+
     public function login_user($username, $password)
     {
         $password = sha1($password);
@@ -43,6 +78,20 @@ class lib_models_userModel extends lib_models_baseModel
         if($user != null)
         {
             unset($user['password']);
+        }
+
+        return $user;
+    }
+
+    public function get_detailed_user_for_username($username)
+    {
+        $user = $this->get_user_for_username($username);
+
+        if($user != null)
+        {
+            $user['bookmark_list'] = $user['bookmarks'];
+            $user['bookmarks'] = $this->get_bookmarks($user);
+            $user['buckets'] = $this->bucket_model->get_user_buckets_public($user['user_id']);
         }
 
         return $user;
@@ -75,12 +124,15 @@ class lib_models_userModel extends lib_models_baseModel
 
         //printr($user);
 
-        $bookmarks = array();
+        return $this->get_bookmarks($user);
+    }
 
+    public function get_bookmarks($user)
+    {
+        $bookmarks = array();
         foreach($user['bookmarks'] as $bookmark)
         {
-            $b = $this->bookmark_model->get_bookmark_for_id($bookmark);
-            $b['user_tags'] = $this->bookmark_model->get_user_tags_for_bookmark($user_id, $b['bookmark_id']);
+            $b = $this->bookmark_model->get_bookmark_for_id_with_user_tags($user['user_id'], $bookmark);
             //printr($bookmark);
             $bookmarks[] = $b;
         }

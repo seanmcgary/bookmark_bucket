@@ -38,11 +38,11 @@ foreach($bookmarks as $bookmark)
                 $image = '';
                 if(in_array($bookmark['bookmark_id'], $user_bookmarks))
                 {
-                    echo '<img src="images/bookmark_1_icon&16_blue.png">';
+                    echo '<img src="'.site_url('images/bookmark_1_icon&16_blue.png').'">';
                 }
                 else
                 {
-                    echo '<img src="images/bookmark_1_icon&16_gray.png" class="bookmark-icon" bookmark_id="'.$bookmark['bookmark_id'].'">';
+                    echo '<img src="'.site_url('images/bookmark_1_icon&16_gray.png').'" class="bookmark-icon" bookmark_id="'.$bookmark['bookmark_id'].'">';
                 }
             }
         ?>
@@ -50,7 +50,7 @@ foreach($bookmarks as $bookmark)
         
         <div class="bookmark-data">
             <div class="title">
-                <a href="<?=$bookmark['url']?>" link-type="external" bookmark_id="<?=$bookmark['bookmark_id']?>"><?=utf8_decode($bookmark['title'])?></a>
+                <a href="<?=$bookmark['url']?>" link-type="external" bookmark_id="<?=$bookmark['bookmark_id']?>"><?=utf8_decode($bookmark['title'])?></a> <span class="bookmark_url">(<?=$bookmark['url']?>)</span>
             </div>
             <div class="meta">
             <?php

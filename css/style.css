@@ -13,7 +13,7 @@ body {
 h1 {
     margin: 0px 0px 10px 0px;
     padding: 0px 0px 0px 0px;
-    font-size: 1.7em;
+    font-size: 1.6em;
 
 }
 
@@ -57,6 +57,135 @@ span.working {
 .float-left {
     float: left;
 }
+
+.user-profile {
+    margin:  0px 0px 0px 0px;
+    padding:  0px 0px 0px 0px;
+    overflow:  hidden;
+}
+
+    .user-profile .name {
+        margin:  0px 0px 0px 0px;
+        padding:  5px 5px 5px 5px;
+        background: #eeeeee;
+        overflow: hidden;
+        border: 1px solid #aaaaaa;
+    }
+
+        .user-profile .name .avatar {
+            margin:  0px 10px 0px 0px;
+            padding:  5px 5px 2px 5px;
+            position: relative;
+            float: left;
+            border:  1px solid #dddddd;
+            background: #fff;
+        }
+
+        .user-profile .name .username {
+            margin:  25px 10px 0px 0px;
+            padding:  0px 0px 0px 0px;
+            position: relative;
+            float: left;
+            font-size: 1.6em;
+        }
+
+        .user-profile .name .fullname {
+            margin:  30px 0px 0px 0px;
+            padding:  0px 0px 0px 0px;
+            position: relative;
+            float: left;
+            font-size: 1.3em;
+            color: #aaaaaa;
+        }
+
+        .user-profile .name .follow {
+            margin:  30px 0px 0px 0px;
+            padding:  0px 0px 0px 0px;
+            position: relative;
+            float: right;
+        }
+
+    .user-profile .profile {
+        margin:  10px 0px 0px 0px;
+        padding:  0px 0px 0px 10px;
+        overflow: hidden;
+    }
+
+        .user-profile .profile .profile-left {
+            margin:  0px 0px 0px 0px;
+            padding:  0px 0px 0px 0px;
+            position: relative;
+            float: left;
+            width: 356px;
+        }
+
+        .user-profile .profile .profile-right {
+            margin:  0px 0px 0px 0px;
+            padding:  0px 0px 0px 0px;
+            position: relative;
+            float: right;
+            width: 362px;
+
+        }
+
+            .user-profile .profile .profile-right .top {
+                margin:  -5px 0px 0px 0px;
+                padding:  0px 0px 0px 0px;
+                position: relative;
+                overflow:  hidden;
+            }
+
+                .user-profile .profile .profile-right .top .stat {
+                    margin:  0px 20px 0px 0px;
+                    padding:  0px 0px 0px 0px;
+                    position: relative;
+                    float: left;
+                }
+
+                    .user-profile .profile .profile-right .top .stat .number {
+                        margin:  0px 0px 0px 0px;
+                        padding:  0px 0px 0px 0px;
+                        font-size: 2.0em;
+                        position: relative;
+                    }
+
+                    .user-profile .profile .profile-right .top .stat .desc {
+                        margin:  0px 0px 0px 0px;
+                        padding:  0px 0px 0px 0px;
+                        position: relative;
+                        font-size: .7em;
+                        color: #888888;
+                    }
+
+            .user-profile .profile .profile-right .bottom {
+                margin:  5px 0px 0px 0px;
+                padding:  5px 0px 5px 0px;
+                position: relative;
+            }
+
+                .user-profile .profile .profile-right .bottom .text {
+                    margin:  0px 0px 3px 0px;
+                    padding:  0px 0px 0px 0px;
+                    font-size: .7em;
+                    position: relative;
+                }
+
+                .user-profile .profile .profile-right .bottom .following {
+                    margin:  0px 0px 3px 0px;
+                    padding:  0px 0px 0px 0px;
+                    position: relative;
+                    overflow: hidden;
+                }
+
+                    .user-profile .profile .profile-right .bottom .following .image {
+                        padding:  2px 2px 0px 2px;
+                        position: relative;
+                        float: left;
+                        margin-right: 5px;
+                        background:  #fff;
+                        border: 1px solid #dddddd;
+
+                    }
 
 table.import-bookmarks-table {
     margin:  0px 0px 0px 0px;
@@ -159,7 +288,18 @@ button.cupid-green:active {
     padding:  5px 5px 5px 5px;
     border: none;
     border-radius: 5px;
+}
 
+.btn-gray {
+    background:  #dddddd;
+    border:  1px solid #aaaaaa;
+    font-weight: bold;
+}
+
+.btn-gray:hover {
+    cursor: pointer;
+    color: #fff;
+    background:  #3274d0;
 }
 
 .btn-large {
@@ -167,20 +307,17 @@ button.cupid-green:active {
 }
 
 .btn-green {
+    background: #24a724;
     color: #fff;
-    background-color: #2e8f2e;
-    background-image: -webkit-gradient(linear, left top, left bottom, from(#28bb28), to(#24a724));
-    -webkit-box-shadow: inset 0 1px 0 0 #96ca6d;
-    box-shadow: inset 0 1px 0 0 #96ca6d;
-    text-align: center;
-    text-shadow: 0 -1px 0 #4c9021;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    font-weight: bold;
 }
 
 .btn-green:hover {
     /*background-image: -webkit-gradient(linear, left top, left bottom, from(#24a724), to(#2dc12d));*/
     cursor: pointer;
-    -webkit-box-shadow: inset 0 1px 0 0 #8dbf67;
-    background-image: -webkit-gradient(linear, left top, left bottom, from(#2f9c2f), to(#2e8f2e));
+    background: #2dc12d;
 }
 
 input[type="submit"].submit-form {
@@ -229,10 +366,10 @@ input[type="submit"].submit-form:hover, input[type="submit"].submit-form-large:h
             margin: 6px 0px 0px 0px;
             padding: 0px 0px 0px 0px;
             width: 300px;
-            height: 55px;
+            height: 35px;
             position: relative;
             float: left;
-            font-size: 3em;
+            font-size: 2em;
             color: #fff;
         }
 
@@ -257,14 +394,23 @@ input[type="submit"].submit-form:hover, input[type="submit"].submit-form-large:h
             color: #fff;
         }
 
-            .header .header-container .right a, a:visited {
-                text-decoration: none;
-                color: #bfdaff;
+            .header .header-container .right .user-data {
+                margin:  0px 0px 10px 0px;
+                padding:  0px 0px 0px 0px;
             }
-
-                .header .header-container .right a:hover {
-                    color: #9cc6ff;
+                .header .header-container .right .user-data a, a:visited {
+                    text-decoration: none;
+                    color: #bfdaff;
                 }
+
+                    .header .header-container .right .user-data a:hover {
+                        color: #9cc6ff;
+                    }
+
+            .header .header-container .right .bookmark_actions {
+                margin:  0px 0px 0px 0px;
+                padding:  0px 0px 0px 0px;
+            }
 
 
 .navigation {
@@ -393,6 +539,7 @@ input[type="submit"].submit-form:hover, input[type="submit"].submit-form-large:h
 
         ul.bookmark-categories li.selected {
             border-left:  1px solid #3274d0;
+            background: rgba(84, 146, 282, .1);
         }
 
 
@@ -493,6 +640,11 @@ ul.bookmarks_list {
         font-size: 1.1em;
     }
 
+        .bookmark .bookmark-data .title span.bookmark_url {
+            font-size: .8em;
+            color: #cccccc;
+        }
+
         .bookmark .bookmark-data .title a, a:visited {
             text-decoration: none;
             color: #3274d0;
@@ -553,11 +705,37 @@ ul.bookmarks_list {
     display: block;
 }
 
+.row-padding-10 {
+    padding:  10px 0px 10px 0px;
+}
+
+.div-row-mini {
+    margin: 0px 0px 5px 0px;
+    padding: 0px 0px 0px 0px;
+    overflow: hidden;
+}
+
+    .div-row-mini .field-label-small {
+        margin: 0px 10px 0px 0px;
+        padding: 0px 0px 0px 0px;
+        width: 90px;
+        position: relative;
+        float: left;
+        font-size: .8em;
+    }
+
+    .div-row-mini .field-value-small {
+        margin: 0px 0px 0px 0px;
+        padding: 0px 0px 0px 0px;
+        position: relative;
+        float: left;
+        font-size: .8em;
+    }
+
 .div-row {
     margin: 0px 0px 0px 0px;
     padding: 10px 0px 10px 0px;
     overflow: hidden;
-
 }
 
     .div-row .left-half {

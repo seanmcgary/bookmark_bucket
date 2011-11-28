@@ -22,6 +22,8 @@ class lib_models_bucketModel extends lib_models_baseModel
      *      - auto_fill
      *      - public
      *      - tags
+     *      - followers []
+     *      - views - 0
      * @return void
      */
     public function create_bucket($bucket_data)
@@ -29,6 +31,9 @@ class lib_models_bucketModel extends lib_models_baseModel
         $bucket_data['bucket_id'] = $this->generate_id('bucket_collection', 'bucket_id');
         $bucket_data['date_created'] = time();
         $bucket_data['bookmarks'] = array();
+        $bucket_data['views'] = 0;
+        $bucket_data['followers'] = 0;
+        $bucket_data['url'] = str_replace(" ", "_", preg_replace("/[!#$%^&*\\(\\)\\[\\]\\{\\}+=?><]/", "", strtolower($bucket_data['title'])));
 
         try
         {
@@ -41,6 +46,15 @@ class lib_models_bucketModel extends lib_models_baseModel
             $this->last_error = $e;
             return false;
         }
+    }
+
+    public function increment_bucket_view($bucket_id)
+    {
+        $bucket = $this->get_bucket_raw_for_id($bucket_id);
+
+        $bucket['views']++;
+
+        $this->update_bucket($bucket);
     }
 
     public function get_bucket_raw_for_id($bucket_id)
@@ -67,9 +81,9 @@ class lib_models_bucketModel extends lib_models_baseModel
         }
     }
 
-    public function get_all_user_buckets($user_id)
+    public function get_all_user_buckets($user_id, $sort = array('date_created' => -1))
     {
-        $res = $this->bucket_collection->find(array('user_id' => $user_id));
+        $res = $this->bucket_collection->find(array('user_id' => $user_id))->sort($sort);
 
         $buckets = $this->get_array($res);
 
@@ -207,7 +221,7 @@ class lib_models_bucketModel extends lib_models_baseModel
         $bookmarks = array();
         foreach($bucket['bookmarks'] as $bookmark)
         {
-            $bookmarks[] = $this->bookmark_model->get_bookmark_for_id($bookmark);
+            $bookmarks[] = $this->bookmark_model->get_bookmark_for_id_with_user_tags($bucket['user_id'], $bookmark);
         }
 
         $bucket['bookmarks'] = $bookmarks;

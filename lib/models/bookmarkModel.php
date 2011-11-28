@@ -165,6 +165,51 @@ class lib_models_bookmarkModel extends lib_models_baseModel
         }
     }
 
+    public function get_bookmark_for_id_with_user_tags($user_id, $bookmark_id)
+    {
+        $bookmark = $this->get_bookmark_for_id($bookmark_id);
+
+        $bookmark['user_tags'] = $this->get_user_tags_for_bookmark($user_id, $bookmark_id);
+
+        return $bookmark;
+    }
+
+    public function get_public_bookmarks_for_user($user_id)
+    {
+        $results = $this->bookmark_collection->find(array('privacy' => 'public', 'user_id' => $user_id))->sort(array('date_created' => -1));
+
+        $results = $this->get_array($results);
+
+        $bookmarks = array();
+
+        foreach($results as $bookmark)
+        {
+            $b = $this->bookmark_model->get_bookmark_for_id_with_user_tags($user_id, $bookmark);
+            //printr($bookmark);
+            $bookmarks[] = $b;
+        }
+
+        return $bookmarks;
+    }
+
+    public function get_all_bookmarks_for_user($user_id)
+    {
+        $results = $this->bookmark_collection->find(array('user_id' => $user_id))->sort(array('date_created' => -1));
+
+        $results = $this->get_array($results);
+
+        $bookmarks = array();
+
+        foreach($results as $bookmark)
+        {
+            $b = $this->bookmark_model->get_bookmark_for_id_with_user_tags($user_id, $bookmark);
+            //printr($bookmark);
+            $bookmarks[] = $b;
+        }
+
+        return $bookmarks;
+    }
+
     public function get_public_bookmarks()
     {
         $results = $this->bookmark_collection->find(array('privacy' => 'public'))->sort(array('date_created' => -1));

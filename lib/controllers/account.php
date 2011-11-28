@@ -15,7 +15,8 @@ class lib_controllers_account extends lib_controllers_baseController
         }
     }
 
-    public function index(){
+    public function index()
+    {
 
         $data['account_details'] = $this->user_model->get_user_for_id($_SESSION['loggedIn']['user_id']);
 
@@ -211,7 +212,12 @@ class lib_controllers_account extends lib_controllers_baseController
 
             if($res != false)
             {
-                echo json_encode(array('status' => 'true'));
+                $buckets = $this->bucket_model->get_all_user_buckets($_SESSION['loggedIn']['user_id']);;
+
+                $bucket_list = $this->load->view('presenters/account/bucket_list', array('buckets' => $buckets, 'account' => true), true);
+
+                echo json_encode(array('status' => 'true', 'buckets' => $bucket_list));
+
             }
             else
             {

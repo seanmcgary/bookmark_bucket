@@ -3,16 +3,43 @@
  */
 Ext.onReady(function(){});
 
+function show_default(){
+    $('ul#account-categories li').each(function(item){
+        //console.log($('.bookmark-category-container ul'));
+        if($(this).attr('class') == 'selected'){
+            var elem = $('#bookmark-category-container').find('div[category="' + $(this).attr('id') + '"]');
+            elem.css('display', 'block');
+        }
+
+    });
+}
+
 $('document').ready(function(){
+    var location = document.location.href.split("/#");
+
+
+    console.log(location);
+
 
     $(function(){
-        $('ul#account-categories li').each(function(item){
-            console.log($(this).attr('id'));
-            //console.log($('.bookmark-category-container ul'));
-            if($(this).attr('class') == 'selected'){
-                $('#bookmark-category-container').find('div[category="' + $(this).attr('id') + '"]').css('display', 'block');
+        if(location.length > 0 && location[1] != ''){
+            $('.account_element').each(function(){
+                $(this).css('display', 'none');
+                $(this).attr('class', $(this).attr('class').replace('selected', ''));
+            })
+
+            var selected = $('#bookmark-category-container').find('div[category="' + location[1] + '"]');
+
+            if(selected.length > 0){
+                selected.css('display', 'block');
+                selected.addClass('selected');
+            } else {
+                show_default();
             }
-        });
+        } else {
+            show_default();
+        }
+
     });
 
     $('input[type="checkbox"]').each(function(item){
@@ -162,6 +189,10 @@ $('document').ready(function(){
                 form: 'new_bucket',
                 success: function(response, opts){
                     var obj = Ext.decode(response.responseText);
+
+                    if(obj.status == 'true'){
+                        $('#bucket-list').html(obj.buckets);
+                    }
                 },
                 failure: function(response, opts){
 

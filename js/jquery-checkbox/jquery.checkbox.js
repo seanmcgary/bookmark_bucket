@@ -26,7 +26,7 @@
 		/* Default settings */
 		var settings = {
 			cls: 'jquery-checkbox',  /* checkbox  */
-			empty: 'js/jquery-checkbox/empty.png'  /* checkbox  */
+			//empty: '/js/jquery-checkbox/empty.png'  /* checkbox  */
 		};
 		
 		/* Processing settings */

@@ -15,7 +15,15 @@ class core_input
 
     public function post($post_var)
     {
-        return stripcslashes($_POST[$post_var]);
+        if(array_key_exists($post_var, $_POST))
+        {
+            return stripcslashes($_POST[$post_var]);
+        }
+        else
+        {
+            return null;
+        }
+
     }
 
     public function post_array($variables)

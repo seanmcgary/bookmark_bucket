@@ -7,7 +7,7 @@
         <link href="<?=site_url('js/jquery-checkbox/jquery.checkbox.css')?>" type="text/css" rel="stylesheet">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js" type="text/javascript"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/ext-core/3.1.0/ext-core-debug.js" type="text/javascript"></script>
-        <script src="<?=site_url('js/jquery-checkbox/jquery.checkbox.min.js')?>" type="text/javascript"></script>
+        <script src="<?=site_url('js/jquery-checkbox/jquery.checkbox.js')?>" type="text/javascript"></script>
         <?php
             $account = '';
 
@@ -65,11 +65,17 @@
                 <?php
                     if(isset($_SESSION['loggedIn']))
                     {
-                        echo 'Welcome '.$_SESSION['loggedIn']['fullname'].' | <a href="'.site_url('account').'">Account</a> | <a href="'.site_url('login/logout').'">Logout</a>';
+                        echo '<div class="user-data">';
+                        echo 'Welcome, '.$_SESSION['loggedIn']['username'].' | <a href="'.site_url('account').'">Account</a> | <a href="'.site_url('login/logout').'">Logout</a>';
+                        echo '</div>
+                             <div class="bookmark_actions">
+                                <input type="button" class="button btn-green" value="Add Bookmark">
+                                <input type="button" class="button btn-green" value="Add Bucket">
+                             </div>';
                     }
                     else
                     {
-                        echo '<a href="register" id="register">Register</a> | <a href="login" id="login">Login</a>';
+                        echo '<div class="user-data"><a href="register" id="register">Register</a> | <a href="login" id="login">Login</a></div>';
                     }
                 ?>
                 </div>

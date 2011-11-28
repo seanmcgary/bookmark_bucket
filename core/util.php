@@ -103,7 +103,6 @@ function directory_map($source_dir, $directory_depth = 0, $hidden = FALSE)
  */
 function get_controller_and_function(&$uri, $routes)
 {
-    //printr($uri);
 
     $ret_val = array();
 
