@@ -70,7 +70,7 @@ class lib_controllers_main extends lib_controllers_baseController
         $all = $this->bookmark_model->get_public_bookmarks();
         $data['all_bookmarks'] = $this->load->view('presenters/main/bookmarks_list', array('bookmarks' => $all, 'user_bookmarks' => $page_data['user_bookmarks']), true);
 
-        $new = $this->bookmark_model->get_new_public_bookmarks();
+        $new = $this->bookmark_model->get_recent_public_bookmarks();
         $data['new_bookmarks'] = $this->load->view('presenters/main/bookmarks_list', array('bookmarks' => $new, 'user_bookmarks' => $page_data['user_bookmarks']), true);
 
         $popular = $this->bookmark_model->get_popular_bookmarks();

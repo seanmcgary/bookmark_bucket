@@ -16,7 +16,6 @@ class lib_models_userModel extends lib_models_baseModel
         $user_data['password'] = sha1($user_data['password']);
         $user_data['user_id'] = $this->generate_id('user_collection', 'user_id');
         $user_data['date_created'] = time();
-        $user_data['bookmarks'] = array();
         $user_data['sync_key'] = $this->generate_sync_key();
         $user_data['num_invites'] = 5;
         $user_data['followers'] = array();
@@ -184,7 +183,9 @@ class lib_models_userModel extends lib_models_baseModel
 
     public function delete_bookmark($bookmark_id, $user_id)
     {
-        $user = $this->get_user_for_id($user_id);
+
+
+        /*$user = $this->get_user_for_id($user_id);
 
         if(in_array($bookmark_id, $user['bookmarks']))
         {
@@ -203,15 +204,31 @@ class lib_models_userModel extends lib_models_baseModel
                 }
             }
 
+            $this->bookmark_model->
+
             $this->bookmark_model->delete_user_bookmark_tags($bookmark_id, $user_id);
+
+
+
+            return true;
+
+        }*/
+
+        $bookmark = $this->bookmark_model->get_bookmark_for_id($bookmark_id);
+
+        if($bookmark != null)
+        {
+            $this->bookmark_model->delete_user_bookmark($bookmark_id, $user_id);
 
             $this->bucket_model->remove_bookmark_from_bucket_by_user($bookmark_id, $user_id);
 
             return true;
-
+        }
+        else
+        {
+            return false;
         }
 
-        return false;
     }
 
 

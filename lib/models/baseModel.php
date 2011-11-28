@@ -5,6 +5,9 @@
 class lib_models_baseModel extends core_model
 {
     public $mongo;
+
+    public $models_to_load;
+
     public $user_collection;
     public $bookmark_collection;
     public $stats_collection;
@@ -22,6 +25,23 @@ class lib_models_baseModel extends core_model
 
         $this->mongo = lib_libraries_libMongoDB::get_connection('mongodb://'.$_SERVER['DATABASE_URL'], $_SERVER['DATABASE']);
 
+        $this->models_to_load = array(
+                    array('collection_name' => 'user_collection', 'class_name' => 'users'),
+                    array('collection_name' => 'bookmark_collection', 'class_name' => 'bookmarks'),
+                    array('collection_name' => 'stats_collection', 'class_name' => 'bookmark_stats'),
+                    array('collection_name' => 'click_collection', 'class_name' => 'click_log'),
+                    array('collection_name' => 'tag_collection', 'class_name' => 'tags'),
+                    array('collection_name' => 'invite_collection', 'class_name' => 'invites'),
+                    array('collection_name' => 'bookmark_tags', 'class_name' => 'bookmark_tags'),
+                    array('collection_name' => 'bucket_collection', 'class_name' => 'buckets')
+            );
+
+        foreach($this->models_to_load as $model)
+        {
+            $this->{$model['collection_name']} = $this->mongo->mongodb->{$model['class_name']};
+        }
+
+        /*
         $this->user_collection = $this->mongo->mongodb->{"users"};
         $this->bookmark_collection = $this->mongo->mongodb->{"bookmarks"};
         $this->stats_collection = $this->mongo->mongodb->{"bookmark_stats"};
@@ -30,6 +50,15 @@ class lib_models_baseModel extends core_model
         $this->invite_collection = $this->mongo->mongodb->{"invites"};
         $this->bookmark_tags = $this->mongo->mongodb->{"bookmark_tags"};
         $this->bucket_collection = $this->mongo->mongodb->{"buckets"};
+        */
+    }
+
+    public function clear_all()
+    {
+        foreach($this->models_to_load as $model)
+        {
+            $this->{$model['collection_name']}->remove();
+        }
     }
 
     public function get_item_for_id($collection, $id_field, $id)

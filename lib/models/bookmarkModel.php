@@ -14,9 +14,15 @@ class lib_models_bookmarkModel extends lib_models_baseModel
 
     }
 
+    /**************************************************************************
+     *
+     * Global Bookmark utilities
+     *
+     *************************************************************************/
+
     public function insert_new_bookmark($bookmark_data, $user_id)
     {
-        $exists = $this->bookmark_exists($bookmark_data['url']);
+        $exists = $this->bookmark_exists_by_url($bookmark_data['url']);
         $user_tags = $bookmark_data['tags'];
 
         $url_data = null;
@@ -103,11 +109,58 @@ class lib_models_bookmarkModel extends lib_models_baseModel
         }
     }
 
+    public function bookmark_exists_by_url($url)
+    {
+
+        $url = str_replace('http://', '', $url);
+        $url = str_replace('http://www.', '', $url);
+        $url = str_replace('https://', '', $url);
+        $url = str_replace('https://www.', '', $url);
+        $url = str_replace('www.', '', $url);
+
+        //printr($url);
+
+        $regex_search = new MongoRegex("/[http(s):\/\/(www.)]".$url."/");
+
+        //printr($regex_search);
+
+        $results = $this->bookmark_collection->find(array('url' => array('$regex' => $regex_search, '$options' => 'i')));
+
+        $results = $this->get_one($results);
+
+        //printr($results);
+
+        if($results == null)
+        {
+            return false;
+        }
+        else
+        {
+            return $results;
+        }
+    }
+
     public function increment_bookmarked_count($id)
     {
         $bookmark = $this->get_bookmark_for_id($id);
 
         $bookmark['times_bookmarked'] += 1;
+
+        try
+        {
+            $this->bookmark_collection->update(array('bookmark_id' => $bookmark['bookmark_id']), $bookmark);
+        }
+        catch(MongoCursorException $e)
+        {
+            return false;
+        }
+    }
+
+    public function increment_clicked_count($id)
+    {
+        $bookmark = $this->get_bookmark_for_id($id);
+
+        $bookmark['times_clicked'] += 1;
 
         try
         {
@@ -133,20 +186,53 @@ class lib_models_bookmarkModel extends lib_models_baseModel
         }
     }
 
-    public function increment_clicked_count($id)
+    public function get_bookmark_for_id($bookmark_id)
     {
-        $bookmark = $this->get_bookmark_for_id($id);
+        $results = $this->bookmark_collection->find(array('bookmark_id' => $bookmark_id));
 
-        $bookmark['times_clicked'] += 1;
+        return $this->get_one($results);
+    }
 
-        try
-        {
-            $this->bookmark_collection->update(array('bookmark_id' => $bookmark['bookmark_id']), $bookmark);
-        }
-        catch(MongoCursorException $e)
-        {
-            return false;
-        }
+    /**************************************************************************
+     *
+     * User specific bookmark actions
+     *
+     *************************************************************************/
+    
+    public function get_public_bookmarks_for_user($user_id)
+    {
+        $results = $this->bookmark_collection->find(array('privacy' => 'public', 'user_id' => $user_id))->sort(array('date_created' => -1));
+
+        $results = $this->get_array($results);
+
+        return $this->get_tags_for_bookmarks($results, $user_id);
+    }
+
+    public function get_private_bookmarks_for_user($user_id)
+    {
+        $results = $this->bookmark_collection->find(array('privacy' => 'private', 'user_id' => $user_id))->sort(array('date_created' => -1));
+
+        $results = $this->get_array($results);
+
+        return $this->get_tags_for_bookmarks($results, $user_id);
+    }
+
+    public function get_all_bookmarks_for_user($user_id)
+    {
+        $results = $this->bookmark_collection->find(array('user_id' => $user_id))->sort(array('date_created' => -1));
+
+        $results = $this->get_array($results);
+
+        return $this->get_tags_for_bookmarks($results, $user_id);
+    }
+
+    public function get_bookmark_for_id_with_user_tags($user_id, $bookmark_id)
+    {
+        $bookmark = $this->get_bookmark_for_id($bookmark_id);
+
+        $bookmark['user_tags'] = $this->get_user_tags_for_bookmark($user_id, $bookmark_id);
+
+        return $bookmark;
     }
 
     public function get_user_tags_for_bookmark($user_id, $bookmark_id)
@@ -165,50 +251,30 @@ class lib_models_bookmarkModel extends lib_models_baseModel
         }
     }
 
-    public function get_bookmark_for_id_with_user_tags($user_id, $bookmark_id)
+    public function get_users_for_bookmark($bookmark_id)
     {
-        $bookmark = $this->get_bookmark_for_id($bookmark_id);
+        $results = $this->user_collection->find(array('bookmarks' => $bookmark_id));
 
-        $bookmark['user_tags'] = $this->get_user_tags_for_bookmark($user_id, $bookmark_id);
-
-        return $bookmark;
+        return $this->get_array($results);
     }
 
-    public function get_public_bookmarks_for_user($user_id)
+    public function delete_user_bookmark_tags($bookmark_id, $user_id)
     {
-        $results = $this->bookmark_collection->find(array('privacy' => 'public', 'user_id' => $user_id))->sort(array('date_created' => -1));
-
-        $results = $this->get_array($results);
-
-        $bookmarks = array();
-
-        foreach($results as $bookmark)
-        {
-            $b = $this->bookmark_model->get_bookmark_for_id_with_user_tags($user_id, $bookmark);
-            //printr($bookmark);
-            $bookmarks[] = $b;
-        }
-
-        return $bookmarks;
+        $this->bookmark_tags->remove(array('user_id' => $user_id, 'bookmark_id' => $bookmark_id));
     }
 
-    public function get_all_bookmarks_for_user($user_id)
+    public function delete_user_bookmark($bookmark_id, $user_id)
     {
-        $results = $this->bookmark_collection->find(array('user_id' => $user_id))->sort(array('date_created' => -1));
+        $this->bookmark_collection->remove(array('bookmark_id' => $bookmark_id, 'user_id' => $user_id));
 
-        $results = $this->get_array($results);
-
-        $bookmarks = array();
-
-        foreach($results as $bookmark)
-        {
-            $b = $this->bookmark_model->get_bookmark_for_id_with_user_tags($user_id, $bookmark);
-            //printr($bookmark);
-            $bookmarks[] = $b;
-        }
-
-        return $bookmarks;
+        $this->delete_user_bookmark_tags($bookmark_id, $user_id);
     }
+
+    /**************************************************************************
+     *
+     * Global bookmark operations
+     *
+     **************************************************************************/
 
     public function get_public_bookmarks()
     {
@@ -217,7 +283,7 @@ class lib_models_bookmarkModel extends lib_models_baseModel
         return $this->get_array($results);
     }
 
-    public function get_new_public_bookmarks()
+    public function get_recent_public_bookmarks()
     {
         $results = $this->bookmark_collection->find(array('privacy' => 'public'))->sort(array('date_created' => -1));
 
@@ -231,23 +297,15 @@ class lib_models_bookmarkModel extends lib_models_baseModel
         return $this->get_array($results);
     }
 
-    public function get_bookmark_for_id($bookmark_id)
-    {
-        $results = $this->bookmark_collection->find(array('bookmark_id' => $bookmark_id));
-
-        return $this->get_one($results);
-    }
-
+    /**
+     * Gets ALL bookmarks
+     * 
+     * @return array
+     */
     public function get_bookmarks()
     {
+        // TODO - Fix this so that we can "paginate" the result sets
         $results = $this->bookmark_collection->find();
-
-        return $this->get_array($results);
-    }
-
-    public function get_users_for_bookmark($bookmark_id)
-    {
-        $results = $this->user_collection->find(array('bookmarks' => $bookmark_id));
 
         return $this->get_array($results);
     }
@@ -259,44 +317,18 @@ class lib_models_bookmarkModel extends lib_models_baseModel
         return $this->get_one($results);
     }
 
-    public function delete_user_bookmark_tags($bookmark_id, $user_id)
+    public function get_tags_for_bookmarks($results, $user_id)
     {
-        $this->bookmark_tags->remove(array('user_id' => $user_id, 'bookmark_id' => $bookmark_id));
-    }
+        $bookmarks = array();
 
-    public function bookmark_exists($url)
-    {
-
-        $url = str_replace('http://', '', $url);
-        $url = str_replace('http://www.', '', $url);
-        $url = str_replace('https://', '', $url);
-        $url = str_replace('https://www.', '', $url);
-        $url = str_replace('www.', '', $url);
-
-        //printr($url);
-        
-        $regex_search = new MongoRegex("/[http(s):\/\/(www.)]".$url."/");
-
-        //printr($regex_search);
-
-        $results = $this->bookmark_collection->find(array('url' => array('$regex' => $regex_search, '$options' => 'i')));
-
-        $results = $this->get_one($results);
-
-        //printr($results);
-
-        if($results == null)
+        foreach($results as $bookmark)
         {
-            return false;
+            $b = $this->bookmark_model->get_bookmark_for_id_with_user_tags($user_id, $bookmark);
+            //printr($bookmark);
+            $bookmarks[] = $b;
         }
-        else
-        {
-            return $results;
-        }
+
+        return $bookmarks;
     }
-
-
-
-
 
 }

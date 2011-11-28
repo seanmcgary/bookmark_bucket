@@ -19,4 +19,9 @@ class lib_controllers_baseController extends core_controller
         $this->load_model('lib_models_tagModel', 'tag_model');
         $this->load_model('lib_models_bucketModel', 'bucket_model');
     }
+
+    public function clear_all()
+    {
+        $this->user_model->clear_all();
+    }
 }
