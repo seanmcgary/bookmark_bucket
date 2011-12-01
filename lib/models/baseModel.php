@@ -16,6 +16,9 @@ class lib_models_baseModel extends core_model
     public $invite_collection;
     public $bookmark_tags;
     public $bucket_collection;
+    public $bucket_bookmarks_collection;
+    public $user_bookmarks_collection;
+
 
     public $last_error;
     
@@ -33,24 +36,15 @@ class lib_models_baseModel extends core_model
                     array('collection_name' => 'tag_collection', 'class_name' => 'tags'),
                     array('collection_name' => 'invite_collection', 'class_name' => 'invites'),
                     array('collection_name' => 'bookmark_tags', 'class_name' => 'bookmark_tags'),
-                    array('collection_name' => 'bucket_collection', 'class_name' => 'buckets')
+                    array('collection_name' => 'bucket_collection', 'class_name' => 'buckets'),
+                    array('collection_name' => 'user_bookmarks_collection', 'class_name' => 'user_bookmarks'),
+                    array('collection_name' => 'bucket_bookmarks_collection', 'class_name' => 'bucket_bookmarks')
             );
 
         foreach($this->models_to_load as $model)
         {
             $this->{$model['collection_name']} = $this->mongo->mongodb->{$model['class_name']};
         }
-
-        /*
-        $this->user_collection = $this->mongo->mongodb->{"users"};
-        $this->bookmark_collection = $this->mongo->mongodb->{"bookmarks"};
-        $this->stats_collection = $this->mongo->mongodb->{"bookmark_stats"};
-        $this->click_collection = $this->mongo->mongodb->{"click_log"};
-        $this->tag_collection = $this->mongo->mongodb->{"tags"};
-        $this->invite_collection = $this->mongo->mongodb->{"invites"};
-        $this->bookmark_tags = $this->mongo->mongodb->{"bookmark_tags"};
-        $this->bucket_collection = $this->mongo->mongodb->{"buckets"};
-        */
     }
 
     public function clear_all()

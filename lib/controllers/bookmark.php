@@ -9,6 +9,8 @@ class lib_controllers_bookmark extends lib_controllers_baseController
     {
         parent::__construct();
 
+        $this->bookmark_helper = core_loadFactory::get_inst('lib_helpers_bookmarkHelper', 'bookmark_helper');
+
     }
 
     public function add_bookmark()
@@ -21,85 +23,8 @@ class lib_controllers_bookmark extends lib_controllers_baseController
 
         $bookmark = $this->input->post_array(array('url', 'privacy', 'title', 'tag'));
 
-        if($bookmark['privacy'] != 'private')
-        {
-            $bookmark['privacy'] = 'public';
-        }
+        $this->bookmark_helper->create_bookmark($bookmark);
 
-
-        $bookmark['tags'] = json_decode($bookmark['tag'], true);
-        unset($bookmark['tag']);
-
-        foreach($bookmark['tags'] as &$tag)
-        {
-            $tag = strtolower($tag);
-        }
-
-        if($bookmark['title'] == '')
-        {
-            $bookmark['title'] = $bookmark['url'];
-        }
-
-        if(!preg_match("/http(s)?:\/\//", $bookmark['url']))
-        {
-            $bookmark['url'] = 'http://' . $bookmark['url'];
-        }
-
-        $is_valid = $this->is_valid_url($bookmark['url']);
-        
-        if($is_valid)
-        {
-
-            $bookmark['title'] = utf8_encode($bookmark['title']);
-
-
-            $res = $this->bookmark_model->insert_new_bookmark($bookmark, $_SESSION['loggedIn']['user_id']);
-
-            if(!empty($bookmark['tags']))
-            {
-                foreach($bookmark['tags'] as $tag)
-                {
-                    $this->tag_model->create_new_tag($tag);
-                }
-
-            }
-
-            if($res != false)
-            {
-                if($res === true)
-                {
-                    echo json_encode(array('status' => 'ok', 'msg' => '<span class="success">You already bookmarked that URL</span>'));
-                }
-                else
-                {
-                    if($bookmark['privacy'] == 'public')
-                    {
-                        $user = $this->user_model->get_user_for_id($_SESSION['loggedIn']['user_id']);
-                        $formatted_url = $this->load->view('presenters/main/bookmarks_list', array('bookmarks' => array($res), 'user_bookmarks' => $user['bookmarks']), true);
-
-                        $main_controller = core_loadFactory::get_inst('lib_controllers_main', 'main');
-
-                        $other_bookmarks = $main_controller->get_bookmarks();
-
-                        echo json_encode(array('status' => 'true', 'bookmark' => $formatted_url, 'global_bookmarks' => $other_bookmarks['data']));
-                    }
-                    else
-                    {
-                        echo json_encode(array('status' => 'private'));
-                    }
-
-                }
-
-            }
-            else
-            {
-                echo json_encode(array('status' => 'false'));
-            }
-        }
-        else
-        {
-            echo json_encode(array('status' => 'false', 'msg' => '<span class="failure">Invalid URL</span>'));
-        }
     }
 
     public function suggest_title()
@@ -125,30 +50,6 @@ class lib_controllers_bookmark extends lib_controllers_baseController
         }
 
         echo json_encode(array('status' => 'true', 'title' => $title));
-    }
-
-    public function is_valid_url($url)
-    {
-
-        $ch = curl_init();
-
-        curl_setopt($ch, CURLOPT_URL, $url);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-
-        $result = curl_exec($ch);
-        $headers = curl_getinfo($ch);
-
-        curl_close($ch);
-        //echo $headers['http_code'];
-        if($headers['http_code'] != 0)
-        {
-
-            return true;
-        }
-        else
-        {
-            return false;
-        }
     }
 
     public function log_click()

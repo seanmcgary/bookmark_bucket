@@ -22,9 +22,9 @@ class lib_controllers_account extends lib_controllers_baseController
 
         $data['user_fields'] = array('username' => 'Username', 'fullname' => 'Full Name', 'email' => 'Email');
 
-        $data['user_bookmarks'] = $this->user_model->get_user_bookmarks($_SESSION['loggedIn']['user_id']);
+        $data['user_bookmarks'] = $this->bookmark_model->get_all_bookmarks_for_user($_SESSION['loggedIn']['user_id']);
 
-        $data['bookmarks'] = $this->load->view('presenters/main/bookmarks_list', array('bookmarks' => $data['user_bookmarks'], 'user_bookmarks' => $data['account_details']['bookmarks'], 'account' => true), true);
+        $data['bookmarks'] = $this->load->view('presenters/main/bookmarks_list', array('bookmarks' => $data['user_bookmarks'], 'user_bookmarks' => $data['user_bookmarks'], 'account' => true), true);
 
         $buckets = $this->bucket_model->get_all_user_buckets($_SESSION['loggedIn']['user_id']);;
 

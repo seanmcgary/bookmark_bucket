@@ -22,8 +22,6 @@ class lib_models_tagModel extends lib_models_baseModel
             $tag_data['post_count'] = 1;
             $tag_data['date_created'] = time();
 
-            //printr($tag_data);
-
             try
             {
                 $this->tag_collection->insert($tag_data);
@@ -44,7 +42,7 @@ class lib_models_tagModel extends lib_models_baseModel
         }
     }
 
-    public function insert_tags_for_user_bookmark($tags, $user_id, $bookmark_id)
+    /*public function insert_tags_for_user_bookmark($tags, $user_id, $bookmark_id)
     {
         $user_bookmark = array();
         $user_bookmark['user_id'] = $user_id;
@@ -60,7 +58,7 @@ class lib_models_tagModel extends lib_models_baseModel
         {
             return false;
         }
-    }
+    }*/
 
     public function update_tags_for_user_bookmark($tags, $user_id, $bookmark_id)
     {

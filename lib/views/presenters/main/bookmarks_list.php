@@ -9,10 +9,9 @@ if(isset($account))
 {
     $manage = $account;
 }
-
+//printr($user_bookmarks);
 foreach($bookmarks as $bookmark)
 {
-    //printr($bookmark);
 ?>
 <li id="<?=$bookmark['bookmark_id']?>">
     <div class="bookmark">
@@ -36,7 +35,7 @@ foreach($bookmarks as $bookmark)
             if($manage == false)
             {
                 $image = '';
-                if(in_array($bookmark['bookmark_id'], $user_bookmarks))
+                if(lib_helpers_bookmarkHelper::bookmark_in_list($bookmark['bookmark_id'], $user_bookmarks))
                 {
                     echo '<img src="'.site_url('images/bookmark_1_icon&16_blue.png').'">';
                 }

@@ -1,0 +1,842 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+@import "compass/reset";
+
+body {
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+    font-family: 'Lato', Helvetica, Arial, sans-serif;
+    font-style: normal;
+    word-spacing: 0em;
+    line-height: 1.2;
+    color: #434343;
+    /*background:
+        url('images/background.png');*/
+}
+
+h1 {
+    margin: 0px 0px 10px 0px;
+    padding: 0px 0px 0px 0px;
+    font-size: 1.6em;
+
+}
+
+h2 {
+    margin: 0px 0px 10px 0px;
+    padding: 0px 0px 0px 0px;
+    font-size: 1.2em;
+}
+
+h3 {
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 5px 0px;
+    font-size: 1em;
+    width: 100%;
+    border-bottom:  1px solid #eeeeee;
+}
+
+h4 {
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 5px 0px;
+    font-size: 1em;
+    width: 100%;
+}
+
+span.failure {
+    color: #db0000;
+}
+
+span.success {
+    color: #24a724;
+}
+
+span.working {
+    color: #ff7700;
+}
+
+.float-right {
+    float: right;
+}
+
+.float-left {
+    float: left;
+}
+
+.user-profile {
+    margin:  0px 0px 0px 0px;
+    padding:  0px 0px 0px 0px;
+    overflow:  hidden;
+
+    .name {
+        margin:  0px 0px 0px 0px;
+        padding:  5px 5px 5px 5px;
+        background: #eeeeee;
+        overflow: hidden;
+        border: 1px solid #aaaaaa;
+
+
+        .avatar {
+            margin:  0px 10px 0px 0px;
+            padding:  5px 5px 2px 5px;
+            position: relative;
+            float: left;
+            border:  1px solid #dddddd;
+            background: #fff;
+        }
+
+        .username {
+            margin:  25px 10px 0px 0px;
+            padding:  0px 0px 0px 0px;
+            position: relative;
+            float: left;
+            font-size: 1.6em;
+        }
+
+        .fullname {
+            margin:  30px 0px 0px 0px;
+            padding:  0px 0px 0px 0px;
+            position: relative;
+            float: left;
+            font-size: 1.3em;
+            color: #aaaaaa;
+        }
+
+        .follow {
+            margin:  30px 0px 0px 0px;
+            padding:  0px 0px 0px 0px;
+            position: relative;
+            float: right;
+        }
+
+    }
+
+    .profile {
+        margin:  10px 0px 0px 0px;
+        padding:  0px 0px 0px 10px;
+        overflow: hidden;
+
+
+        .profile-left {
+            margin:  0px 0px 0px 0px;
+            padding:  0px 0px 0px 0px;
+            position: relative;
+            float: left;
+            width: 356px;
+        }
+
+        .profile-right {
+            margin:  0px 0px 0px 0px;
+            padding:  0px 0px 0px 0px;
+            position: relative;
+            float: right;
+            width: 362px;
+
+
+
+            .top {
+                margin:  -5px 0px 0px 0px;
+                padding:  0px 0px 0px 0px;
+                position: relative;
+                overflow:  hidden;
+
+
+                .stat {
+                    margin:  0px 20px 0px 0px;
+                    padding:  0px 0px 0px 0px;
+                    position: relative;
+                    float: left;
+
+
+                    .number {
+                        margin:  0px 0px 0px 0px;
+                        padding:  0px 0px 0px 0px;
+                        font-size: 2.0em;
+                        position: relative;
+                    }
+
+                    .desc {
+                        margin:  0px 0px 0px 0px;
+                        padding:  0px 0px 0px 0px;
+                        position: relative;
+                        font-size: .7em;
+                        color: #888888;
+                    }
+
+                }
+            }
+
+            .bottom {
+                margin:  5px 0px 0px 0px;
+                padding:  5px 0px 5px 0px;
+                position: relative;
+
+
+                .text {
+                    margin:  0px 0px 3px 0px;
+                    padding:  0px 0px 0px 0px;
+                    font-size: .7em;
+                    position: relative;
+                }
+
+                .following {
+                    margin:  0px 0px 3px 0px;
+                    padding:  0px 0px 0px 0px;
+                    position: relative;
+                    overflow: hidden;
+
+
+                    .image {
+                        padding:  2px 2px 0px 2px;
+                        position: relative;
+                        float: left;
+                        margin-right: 5px;
+                        background:  #fff;
+                        border: 1px solid #dddddd;
+
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+table.import-bookmarks-table {
+    margin:  0px 0px 0px 0px;
+    padding:  0px 0px 0px 0px;
+    border-collapse: collapse;
+
+
+    tr th {
+        margin:  0px 0px 0px 0px;
+        padding:  5px 10px 5px 10px;
+        font-weight: normal;
+        background: #3274d0;
+        color: #fff;
+        text-align: left;
+        border:  1px solid #3274d0;
+    }
+
+    tr:not(:first-of-type) {
+        margin:  0px 0px 0px 0px;
+        padding:  0px 0px 0px 0px;
+        border:  1px solid #cccccc;
+    }
+
+    tr td {
+        margin:  0px 0px 0px 0px;
+        padding:  5px 10px 5px 10px;
+
+
+        a, a:visited {
+            color: #3274d0;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: #5492e8;
+            text-decoration: none;
+        }
+
+    }
+
+    tr td:nth-child(1){
+        text-align: center;
+    }
+}
+
+.new_bookmark_form {
+    margin-top: 10px;
+    display: none;
+}
+
+.button {
+    margin:  0px 0px 0px 0px;
+    padding:  5px 5px 5px 5px;
+    border: none;
+    border-radius: 5px;
+}
+
+.btn-gray {
+    background:  #dddddd;
+    border:  1px solid #aaaaaa;
+    font-weight: bold;
+}
+
+.btn-gray:hover {
+    cursor: pointer;
+    color: #fff;
+    background:  #3274d0;
+}
+
+.btn-large {
+    font-size: 1.2em;
+}
+
+.btn-green {
+    background: #24a724;
+    color: #fff;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    font-weight: bold;
+}
+
+.btn-green:hover {
+    /*background-image: -webkit-gradient(linear, left top, left bottom, from(#24a724), to(#2dc12d));*/
+    cursor: pointer;
+    background: #2dc12d;
+}
+
+input[type="submit"].submit-form {
+    margin: 0px 0px 0px 0px;
+    padding: 5px 10px 5px 10px;
+    border: none;
+    cursor: pointer;
+    background: #24a724;
+    color: #fff;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    font-size: .7em;
+}
+
+input[type="submit"].submit-form-large {
+    margin: 0px 0px 0px 0px;
+    padding: 15px 30px 15px 30px;
+    border: none;
+    cursor: pointer;
+    background: #24a724;
+    color: #fff;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    font-size: 1.2em;
+}
+
+input[type="submit"].submit-form:hover, input[type="submit"].submit-form-large:hover {
+    background: #2dc12d;
+}
+
+.header {
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+    height: 75px;
+    background: #3274d0;
+
+
+    .header-container {
+        margin: 0px auto 0px auto;
+        padding: 0px 0px 0px 0px;
+        width: 960px;
+        height: 75px;
+
+
+        .logo {
+            margin: 6px 0px 0px 0px;
+            padding: 0px 0px 0px 0px;
+            width: 300px;
+            height: 35px;
+            position: relative;
+            float: left;
+            font-size: 2em;
+            color: #fff;
+
+
+            a, a:visited {
+                text-decoration:  none;
+                color: #fff;
+            }
+
+            a:hover {
+                text-decoration: none;
+                color: #bfdaff;
+            }
+
+        }
+
+        .right {
+            margin: 0px 0px 0px 0px;
+            padding: 0px 0px 0px 0px;
+            width: 300px;
+            height: 75px;
+            position: relative;
+            float: right;
+            text-align: right;
+            color: #fff;
+
+
+            .user-data {
+                margin:  0px 0px 10px 0px;
+                padding:  0px 0px 0px 0px;
+
+                a, a:visited {
+                    text-decoration: none;
+                    color: #bfdaff;
+                }
+
+                a:hover {
+                    color: #9cc6ff;
+                }
+            }
+
+            .bookmark_actions {
+                margin:  0px 0px 0px 0px;
+                padding:  0px 0px 0px 0px;
+            }
+        }
+    }
+}
+
+
+.navigation {
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+    height: 50px;
+    border-top: 1px solid #999999;
+    border-bottom: 1px solid #999999;
+
+
+    .navigation-container {
+        margin: 0px auto 0px auto;
+        padding: 0px 0px 0px 0px;
+        height: 50px;
+        width: 960px;
+
+
+        ul {
+            margin: 0px 0px 0px 0px;
+            padding: 0px 0px 0px 0px;
+            list-style: none;
+
+
+            li {
+                margin: 0px 0px 0px 0px;
+                padding: 0px 0px 0px 0px;
+                list-style: none;
+            }
+
+        }
+    }
+}
+
+
+.container {
+    margin: 0px auto 0px auto;
+    padding: 0px 10px 10px 10px;
+    width: 960px;
+    overflow: hidden;
+
+
+    .left-col {
+        margin:  0px 0px 0px 0px;
+        padding:  10px 0px 0px 0px;
+        width: 200px;
+        position: relative;
+        float: left;
+    }
+
+    .right-col {
+        margin:  0px 0px 0px 10px;
+        padding:  0px 0px 10px 0px;
+        width: 748px;
+        position: relative;
+        float: left;
+        border-right: 1px solid #eeeeee;
+        border-left: 1px solid #eeeeee;
+        border-bottom: 1px solid #eeeeee;
+    }
+}
+
+
+.bookmark-container {
+    margin: 0px 0px 20px 0px;
+    padding: 10px 10px 10px 10px;
+    border-bottom: 1px solid #eeeeee;
+
+
+    .inputbox {
+        margin: 0px 0px 0px 0px;
+        padding: 0px 0px 0px 0px;
+        height: 50px;
+
+
+        .http {
+            margin: 2px 0px 0px 0px;
+            padding: 0px 0px 0px 0px;
+            position: relative;
+            width: 50px;
+            float: left;
+        }
+
+        .title {
+            margin: 2px 0px 0px 0px;
+            padding: 0px 0px 0px 0px;
+            position: relative;
+            float: left;
+            width: 50px;
+        }
+
+        .description {
+            margin: 2px 0px 0px 0px;
+            padding: 0px 0px 0px 0px;
+            position: relative;
+            float: left;
+            width: 100px;
+        }
+
+        input[type="text"] {
+            margin: 0px 0px 0px 2px;
+            padding: 0px 0px 0px 0px;
+            height: 25px;
+            width: 673px;
+            border: 1px solid rgba(0, 0, 0, .1);
+            font-size: 1.1em;
+            font-family: 'Lato', Helvetica, Arial, sans-serif;
+            color: #434343;
+            position: relative;
+            float: left;
+        }
+    }
+}
+
+ul.bookmark-categories {
+    margin: 5px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+    list-style: none;
+
+
+    li {
+        margin: 0px 0px 0px 0px;
+        padding: 5px 0px 5px 10px;
+        list-style: none;
+        border-left:  1px solid #fff;
+    }
+
+    li:hover {
+        cursor: pointer;
+        border-left:  1px solid #3274d0;
+        background: rgba(238, 238, 238, .3);
+
+    }
+
+    li.selected {
+        border-left:  1px solid #3274d0;
+        background: rgba(84, 146, 252, .1);
+    }
+}
+
+.bookmark-category-container, .account-category-container {
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+    overflow: hidden;
+}
+
+ul.manage-bookmarks_list {
+    margin: 20px 0px 0px 10px;
+    padding: 0px 0px 0px 0px;
+    list-style: none;
+
+    li {
+        margin: 0px 0px 0px 0px;
+        padding: 0px 0px 0px 0px;
+        list-style: none;
+        overflow: hidden;
+    }
+}
+
+.account_element {
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+    display: none;
+    overflow:  hidden;
+}
+
+ul.bookmarks_list {
+    margin: 20px 0px 0px 10px;
+    padding: 0px 0px 0px 0px;
+    list-style: none;
+    display: none;
+
+
+    li {
+        margin: 0px 0px 0px 0px;
+        padding: 0px 0px 0px 0px;
+        list-style: none;
+        overflow: hidden;
+    }
+}
+
+.account_element {
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+    display: none;
+    overflow:  hidden;
+}
+
+
+.delete-button {
+    margin: 0px 0px 0px 0px;
+    padding: 5px 10px 7px 10px;
+    border: none;
+    cursor: pointer;
+    background: #df4444;
+    color: #fff;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    font-size: .9em;
+    float: left;
+}
+
+.delete-button:hover {
+    background: #df1a1a;
+    cursor: pointer;
+}
+
+.bookmark {
+    margin: 0px 0px 0px 0px;
+    padding: 10px 0px 10px 0px;
+    overflow: hidden;
+    border-bottom:  1px solid #eeeeee;
+
+
+    .delete {
+        margin:  0px 0px 0px 0px;
+        padding:  8px 0px 0px 0px;
+        width: 80px;
+        position: relative;
+        float: left;
+    }
+
+    .icon, .icon-loggedout {
+        margin:  0px 0px 0px 0px;
+        padding:  5px 0px 0px 0px;
+        width: 30px;
+        position: relative;
+        float: left;
+        cursor: pointer;
+    }
+
+    .bookmark-data {
+        margin:  0px 0px 0px 0px;
+        padding:  0px 0px 0px 0px;
+        position: relative;
+        float: left;
+        overflow:  hidden;
+    }
+
+    .title {
+        margin: 0px 0px 0px 0px;
+        padding: 0px 0px 0px 0px;
+        font-size: 1.1em;
+
+
+        span.bookmark_url {
+            font-size: .8em;
+            color: #cccccc;
+        }
+
+        a, a:visited {
+            text-decoration: none;
+            color: #3274d0;
+            font-size: 1em;
+            font-family: 'Lato', Helvetica, Arial, sans-serif;
+        }
+
+        .bookmark .bookmark-data .title a:hover {
+            color: #5492e8;
+        }
+    }
+
+    .meta {
+        margin: 5px 0px 0px 0px;
+        padding: 0px 0px 0px 0px;
+        color: #a7a6a6;
+        font-size: .9em;
+        width: 100%;
+    }
+
+    .tags {
+        margin: 10px 0px 0px 0px;
+        padding: 0px 0px 0px 0px;
+        color: #a7a6a6;
+        width: 100%;
+        overflow: hidden;
+
+
+        a {
+            margin:  0px 5px 0px 0px;
+            padding:  3px 3px 3px 3px;
+            background:  #bfdaff;
+            color: #fff;
+            position: relative;
+            float: left;
+            border-radius: 5px;
+            font-size: .8em;
+            text-decoration: none;
+        }
+
+        a.user-tag {
+            background: #97e297;
+        }
+
+        a:hover {
+            background: #e7f1ff;
+        }
+
+        a.user-tag:hover {
+            background: #bef4be;
+        }
+    }
+}
+
+
+.options {
+    display: none;
+}
+
+.show_options {
+    display: block;
+}
+
+.row-padding-10 {
+    padding:  10px 0px 10px 0px;
+}
+
+.div-row-mini {
+    margin: 0px 0px 5px 0px;
+    padding: 0px 0px 0px 0px;
+    overflow: hidden;
+
+
+    .field-label-small {
+        margin: 0px 10px 0px 0px;
+        padding: 0px 0px 0px 0px;
+        width: 90px;
+        position: relative;
+        float: left;
+        font-size: .8em;
+    }
+
+    .field-value-small {
+        margin: 0px 0px 0px 0px;
+        padding: 0px 0px 0px 0px;
+        position: relative;
+        float: left;
+        font-size: .8em;
+    }
+}
+
+.div-row {
+    margin: 0px 0px 0px 0px;
+    padding: 10px 0px 10px 0px;
+    overflow: hidden;
+
+
+    .left-half {
+        margin: 0px 0px 0px 0px;
+        padding: 0px 0px 0px 0px;
+        width: 50%;
+        position: relative;
+        float: left;
+        min-height: 10px;
+    }
+
+    .right-half {
+        margin: 0px 0px 0px 0px;
+        padding: 0px 0px 0px 0px;
+        width: 50%;
+        position: relative;
+        float: left;
+        min-height: 10px;
+    }
+
+    .field-label {
+        margin: 0px 0px 0px 0px;
+        padding: 2px 0px 0px 0px;
+        width: 150px;
+        position: relative;
+        float: left;
+    }
+
+    .field-value {
+        margin: 0px 0px 0px 0px;
+        padding: 0px 0px 0px 0px;
+        position: relative;
+        float: left;
+        min-width: 300px;
+
+        input[type="text"], input[type="password"] {
+            margin: 0px 5px 0px 2px;
+            padding: 0px 0px 0px 0px;
+            height: 25px;
+            width: 100%;
+            border: 1px solid rgba(0, 0, 0, .1);
+            font-size: 1.1em;
+            font-family: 'Lato', Helvetica, Arial, sans-serif;
+            color: #434343;
+        }
+
+        .text {
+            margin:  3px 0px 0px 0px;
+        }
+    }
+
+    .field-status {
+        margin: 0px 0px 0px 0px;
+        padding: 0px 0px 0px 0px;
+        position: relative;
+        float: left;
+        width: 250px;
+        word-wrap: break-word;
+
+
+        span.gray_text {
+            color: #666666;
+            font-size: .8em;
+        }
+
+        input[type="text"], input[type="password"] {
+            margin: 0px 5px 0px 2px;
+            padding: 0px 0px 0px 0px;
+            height: 25px;
+            width: 100%;
+            border: 1px solid rgba(0, 0, 0, .1);
+            font-size: 1.1em;
+            font-family: 'Lato', Helvetica, Arial, sans-serif;
+            color: #434343;
+        }
+    }
+}
+
+.tag-container {
+    margin:  0px 0px 0px 0px;
+    padding:  0px 0px 0px 0px;
+
+
+    .tag {
+        margin:  0px 10px 10px 0px;
+        padding:  5px 5px 5px 5px;
+        background:  #bfdaff;
+        position: relative;
+        float: left;
+        border-radius: 5px;
+
+
+        .close {
+            margin:  2px 0px 0px 5px;
+            padding:  2px 4px 2px 4px;
+            position: relative;
+            float: right;
+            font-size: .6em;
+            border-radius: 4px;
+            color: #fff;
+        }
+
+        .close:hover {
+            cursor: pointer;
+            background: #9cc6ff;
+        }
+    }
+}

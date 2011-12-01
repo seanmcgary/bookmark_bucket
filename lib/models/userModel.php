@@ -96,11 +96,19 @@ class lib_models_userModel extends lib_models_baseModel
         return $user;
     }
 
-    public function get_user_for_id($user_id)
+    public function get_user_for_id($user_id, $with_bookmarks = false)
     {
         $results = $this->user_collection->find(array('user_id' => $user_id));
 
-        return $this->get_one($results);
+        if($with_bookmarks == true)
+        {
+            $user['bookmarks'] = $this->bookmark_model->get_all_bookmarks_for_user($user_id);
+        }
+        else
+        {
+            return $this->get_one($results);
+        }
+
     }
 
     public function get_user_for_username($username)
@@ -115,28 +123,6 @@ class lib_models_userModel extends lib_models_baseModel
         $results = $this->user_collection->find(array('email' => $email));
 
         return $this->get_one($results);
-    }
-
-    public function get_user_bookmarks($user_id)
-    {
-        $user = $this->get_user_for_id($user_id);
-
-        //printr($user);
-
-        return $this->get_bookmarks($user);
-    }
-
-    public function get_bookmarks($user)
-    {
-        $bookmarks = array();
-        foreach($user['bookmarks'] as $bookmark)
-        {
-            $b = $this->bookmark_model->get_bookmark_for_id_with_user_tags($user['user_id'], $bookmark);
-            //printr($bookmark);
-            $bookmarks[] = $b;
-        }
-
-        return $bookmarks;
     }
 
     public function update_user($user_data)

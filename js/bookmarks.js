@@ -76,11 +76,14 @@ $(document).ready(function() {
 
                     if (obj.status == 'true')
                     {
-                        if ($('.bookmarks_list[category="yours"] li').length > 0) {
+                        /*if ($('.bookmarks_list[category="yours"] li').length > 0) {
                             $(obj.bookmark).insertBefore($('.bookmarks_list[category="yours"] li')[0]);
                         } else {
                             $('.bookmarks_list[category="yours"]').append(obj.bookmark);
-                        }
+                        }*/
+
+                        console.log(obj.user_bookmarks);
+                        $('.bookmarks_list[category="yours"]').html(obj.user_bookmarks);
 
                         for(var i in obj.global_bookmarks){
                             if(i != 'your_bookmarks'){
