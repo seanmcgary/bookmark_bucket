@@ -67,20 +67,31 @@ class lib_controllers_bookmark extends lib_controllers_baseController
 
         $bookmark = $this->bookmark_model->get_bookmark_for_id($bookmark_id);
 
-        $this->bookmark_model->increment_bookmarked_count($bookmark_id);
-
-        $user = $this->user_model->get_user_for_id($_SESSION['loggedIn']['user_id']);
-
-        $user['bookmarks'][] = $bookmark_id;
-
-        $res = $this->user_model->update_user($user);
-
-        if($res != false)
+        if($bookmark != null)
         {
-            $bookmarks = $this->user_model->get_user_bookmarks($_SESSION['loggedIn']['user_id']);
-            $user_bookmarks = $this->load->view('presenters/main/bookmarks_list', array('bookmarks' => array_reverse($bookmarks), 'user_bookmarks' => $user['bookmarks']), true);
-            //printr($user_bookmarks);
-            echo json_encode(array('status' => 'true', 'user_bookmarks' => $user_bookmarks));
+            $this->bookmark_model->increment_bookmarked_count($bookmark_id);
+
+            $user_bookmark = array(
+                'user_id' => $_SESSION['loggedIn']['user_id'],
+                'user_tags' => $bookmark['tags'],
+                'privacy' => 'public',
+                'date_bookmarked' => time(),
+                'bookmark_id' => $bookmark_id
+            );
+
+            $res = $this->bookmark_model->add_user_bookmark($user_bookmark);
+
+            if($res == true)
+            {
+
+                $user_bookmarks = $this->bookmark_helper->get_user_bookmarks();
+
+                echo json_encode(array('status' => 'true', 'user_bookmarks' => $user_bookmarks['data']['your_bookmarks']));
+            }
+            else
+            {
+                echo json_encode(array('status' => 'false'));
+            }
         }
         else
         {

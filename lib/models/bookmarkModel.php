@@ -282,22 +282,6 @@ class lib_models_bookmarkModel extends lib_models_baseModel
 
     }
 
-    /*public function get_user_tags_for_bookmark($user_id, $bookmark_id)
-    {
-        $results = $this->bookmark_tags->find(array('bookmark_id' => $bookmark_id, 'user_id' => $user_id));
-
-        $results = $this->get_one($results);
-
-        if($results != null)
-        {
-            return $results['tags'];
-        }
-        else
-        {
-            return array();
-        }
-    }*/
-
     public function get_users_for_bookmark($bookmark_id)
     {
         $results = $this->user_collection->find(array('bookmarks' => $bookmark_id));
@@ -312,7 +296,7 @@ class lib_models_bookmarkModel extends lib_models_baseModel
 
     public function delete_user_bookmark($bookmark_id, $user_id)
     {
-        $this->bookmark_collection->remove(array('bookmark_id' => $bookmark_id, 'user_id' => $user_id));
+        $this->user_bookmarks_collection->remove(array('bookmark_id' => $bookmark_id, 'user_id' => $user_id));
 
         $this->delete_user_bookmark_tags($bookmark_id, $user_id);
     }
