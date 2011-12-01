@@ -212,9 +212,7 @@ class lib_controllers_account extends lib_controllers_baseController
 
             if($res != false)
             {
-                $buckets = $this->bucket_model->get_all_user_buckets($_SESSION['loggedIn']['user_id']);;
-
-                $bucket_list = $this->load->view('presenters/account/bucket_list', array('buckets' => $buckets, 'account' => true), true);
+                $bucket_list = $this->bucket_helper->get_bucket_list();
 
                 echo json_encode(array('status' => 'true', 'buckets' => $bucket_list));
 

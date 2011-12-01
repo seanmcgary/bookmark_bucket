@@ -33,7 +33,7 @@ class lib_models_bucketModel extends lib_models_baseModel
         $bucket_data['bookmarks'] = array();
         $bucket_data['views'] = 0;
         $bucket_data['followers'] = 0;
-        $bucket_data['url'] = str_replace(" ", "_", preg_replace("/[!#$%^&*\\(\\)\\[\\]\\{\\}+=?><]/", "", strtolower($bucket_data['title'])));
+        $bucket_data['url'] = str_replace(" ", "_", preg_replace("/[!#$%^&*\\(\\)\\[\\]\\{\\}+=?><]/", "", strtolower($bucket_data['bucket_name'])));
 
         try
         {

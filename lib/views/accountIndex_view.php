@@ -126,7 +126,7 @@
                     </div>
                 </form>
                 <h2>Your Buckets</h2>
-                <ul class="manage-bookmarks_list" id="buckets">
+                <ul class="manage-bookmarks_list" id="bucket-list">
                     <?=$buckets?>
                 </ul>
 

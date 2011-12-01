@@ -191,6 +191,7 @@ $('document').ready(function(){
                     var obj = Ext.decode(response.responseText);
 
                     if(obj.status == 'true'){
+                        console.log(obj.buckets);
                         $('#bucket-list').html(obj.buckets);
                     }
                 },
