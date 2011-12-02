@@ -86,7 +86,7 @@ $('document').ready(function(){
         return false;
     });
 
-    $('.delete-button').live('click', function(){
+    $('.delete-button[button-type="delete-bookmark"]').live('click', function(){
         var id = $(this).attr('bookmark_id');
 
         Ext.Ajax.request({
@@ -107,6 +107,28 @@ $('document').ready(function(){
 
         return false;
     });
+
+    $('.delete-button[button-type="delete-bucket"]').live('click', function(){
+            var id = $(this).attr('bucket_id');
+
+            Ext.Ajax.request({
+                url: delete_bucket,
+                success: function(response, opts){
+                    var obj = Ext.decode(response.responseText);
+
+                    if(obj.status == 'true'){
+                        $('ul#bucket-list li#' + id).remove();
+                    }
+
+                },
+                failure: function(response, opts){
+
+                },
+                params: {bucket_id: id}
+            });
+
+            return false;
+        });
 
     $('ul#account-categories li').live('click', function(){
         if($(this).attr('class') != 'selected'){

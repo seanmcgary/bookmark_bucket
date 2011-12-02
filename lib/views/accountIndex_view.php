@@ -3,6 +3,7 @@
         <script type="text/javascript">
             var edit_account = '<?=site_url('account/edit_account')?>';
             var delete_bookmark = '<?=site_url('account/delete_bookmark')?>';
+            var delete_bucket = '<?=site_url('account/delete_bucket')?>';
             var new_bucket = '<?=site_url('account/new_bucket')?>';
         </script>
         <div class="account-category-container" id="bookmark-category-container">

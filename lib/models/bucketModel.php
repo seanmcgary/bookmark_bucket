@@ -48,6 +48,32 @@ class lib_models_bucketModel extends lib_models_baseModel
         }
     }
 
+    public function delete_bucket($bucket_id)
+    {
+        try
+        {
+            $this->bucket_collection->remove(array('bucket_id' => $bucket_id));
+            return true;
+        }
+        catch(MongoCursorException $e)
+        {
+            return false;
+        }
+    }
+
+    public function delete_bucket_bookmarks($bucket_id)
+    {
+        try
+        {
+            $this->bucket_bookmarks_collection->remove(array('bucket_id' => $bucket_id));
+            return true;
+        }
+        catch(MongoCursorException $e)
+        {
+            return false;
+        }
+    }
+
     public function increment_bucket_view($bucket_id)
     {
         $bucket = $this->get_bucket_raw_for_id($bucket_id);
@@ -221,7 +247,7 @@ class lib_models_bucketModel extends lib_models_baseModel
         $bookmarks = array();
         foreach($bucket['bookmarks'] as $bookmark)
         {
-            $bookmarks[] = $this->bookmark_model->get_bookmark_for_id_with_user_tags($bucket['user_id'], $bookmark);
+            $bookmarks[] = $this->bookmark_model->get_bookmark_for_id_for_user($bookmark, $bucket['user_id']);
         }
 
         $bucket['bookmarks'] = $bookmarks;

@@ -16,7 +16,7 @@ foreach($buckets as $bucket)
 <li id="<?=$bucket['bucket_id']?>">
     <div class="bookmark">
         <div class="delete">
-            <div class="delete-button" bucket_id="<?=$bucket['bucket_id']?>">
+            <div class="delete-button" button-type="delete-bucket" bucket_id="<?=$bucket['bucket_id']?>">
                 Delete
             </div>
         </div>

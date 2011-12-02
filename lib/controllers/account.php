@@ -130,6 +130,20 @@ class lib_controllers_account extends lib_controllers_baseController
 
     }
 
+    public function delete_bucket()
+    {
+        $bucket_id = $this->input->post('bucket_id');
+
+        if($this->bucket_model->delete_bucket($bucket_id) == true)
+        {
+            echo json_encode(array('status' => 'true'));
+        }
+        else
+        {
+            echo json_encode(array('status' => 'false'));
+        }
+    }
+
     public function delete_bookmark()
     {
         $bookmark_id = $this->input->post('bookmark_id');

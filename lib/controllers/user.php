@@ -48,12 +48,12 @@ class lib_controllers_user extends lib_controllers_baseController
             $page_data = array();
             
             // show the users page
-            $data['all_bookmarks'] = $this->load->view('presenters/main/bookmarks_list', array('bookmarks' => $user['bookmarks'], 'user_bookmarks' => $user['bookmark_list']), true);
+            $data['all_bookmarks'] = $this->load->view('presenters/main/bookmarks_list', array('bookmarks' => $user['bookmarks'], 'user_bookmarks' => $user['bookmarks']), true);
             $data['buckets'] = array();
 
             foreach($user['buckets'] as $bucket)
             {
-                $data['buckets'][] = array('bucket_id' => $bucket['bucket_id'], 'bucket' => $this->load->view('presenters/main/bookmarks_list', array('bookmarks' => $bucket['bookmarks'], 'user_bookmarks' => $user['bookmark_list']), true));
+                $data['buckets'][] = array('bucket_id' => $bucket['bucket_id'], 'bucket' => $this->load->view('presenters/main/bookmarks_list', array('bookmarks' => $bucket['bookmarks'], 'user_bookmarks' => $user['bookmarks']), true));
             }
 
             //printr($user['buckets']);

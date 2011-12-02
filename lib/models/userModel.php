@@ -88,8 +88,7 @@ class lib_models_userModel extends lib_models_baseModel
 
         if($user != null)
         {
-            $user['bookmark_list'] = $user['bookmarks'];
-            $user['bookmarks'] = $this->get_bookmarks($user);
+            $user['bookmarks'] = $this->bookmark_model->get_public_bookmarks_for_user($user['user_id']);
             $user['buckets'] = $this->bucket_model->get_user_buckets_public($user['user_id']);
         }
 
