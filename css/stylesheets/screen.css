@@ -533,7 +533,7 @@ input[type="submit"].submit-form:hover, input[type="submit"].submit-form-large:h
   padding: 0px 0px 0px 0px;
   position: relative;
   float: left;
-  width: 50px;
+  width: 60px;
 }
 /* line 481, ../sass/screen.scss */
 .bookmark-container .inputbox .description {
@@ -548,7 +548,7 @@ input[type="submit"].submit-form:hover, input[type="submit"].submit-form-large:h
   margin: 0px 0px 0px 2px;
   padding: 0px 0px 0px 0px;
   height: 25px;
-  width: 673px;
+  width: 663px;
   border: 1px solid rgba(0, 0, 0, 0.1);
   font-size: 1.1em;
   font-family: 'Lato', Helvetica, Arial, sans-serif;
@@ -690,25 +690,26 @@ ul.bookmarks_list li {
 .bookmark .title {
   margin: 0px 0px 0px 0px;
   padding: 0px 0px 0px 0px;
-  font-size: 1.1em;
+  font-size: 1em;
+  word-wrap: break-word;
 }
-/* line 635, ../sass/screen.scss */
+/* line 636, ../sass/screen.scss */
 .bookmark .title span.bookmark_url {
   font-size: .8em;
   color: #cccccc;
 }
-/* line 640, ../sass/screen.scss */
+/* line 641, ../sass/screen.scss */
 .bookmark .title a, .bookmark .title a:visited {
   text-decoration: none;
   color: #3274d0;
   font-size: 1em;
   font-family: 'Lato', Helvetica, Arial, sans-serif;
 }
-/* line 647, ../sass/screen.scss */
+/* line 648, ../sass/screen.scss */
 .bookmark .title .bookmark .bookmark-data .title a:hover {
   color: #5492e8;
 }
-/* line 652, ../sass/screen.scss */
+/* line 653, ../sass/screen.scss */
 .bookmark .meta {
   margin: 5px 0px 0px 0px;
   padding: 0px 0px 0px 0px;
@@ -716,7 +717,7 @@ ul.bookmarks_list li {
   font-size: .9em;
   width: 100%;
 }
-/* line 660, ../sass/screen.scss */
+/* line 661, ../sass/screen.scss */
 .bookmark .tags {
   margin: 10px 0px 0px 0px;
   padding: 0px 0px 0px 0px;
@@ -724,7 +725,7 @@ ul.bookmarks_list li {
   width: 100%;
   overflow: hidden;
 }
-/* line 668, ../sass/screen.scss */
+/* line 669, ../sass/screen.scss */
 .bookmark .tags a {
   margin: 0px 5px 0px 0px;
   padding: 3px 3px 3px 3px;
@@ -736,41 +737,41 @@ ul.bookmarks_list li {
   font-size: .8em;
   text-decoration: none;
 }
-/* line 680, ../sass/screen.scss */
+/* line 681, ../sass/screen.scss */
 .bookmark .tags a.user-tag {
   background: #97e297;
 }
-/* line 684, ../sass/screen.scss */
+/* line 685, ../sass/screen.scss */
 .bookmark .tags a:hover {
   background: #e7f1ff;
 }
-/* line 688, ../sass/screen.scss */
+/* line 689, ../sass/screen.scss */
 .bookmark .tags a.user-tag:hover {
   background: #bef4be;
 }
 
-/* line 695, ../sass/screen.scss */
+/* line 696, ../sass/screen.scss */
 .options {
   display: none;
 }
 
-/* line 699, ../sass/screen.scss */
+/* line 700, ../sass/screen.scss */
 .show_options {
   display: block;
 }
 
-/* line 703, ../sass/screen.scss */
+/* line 704, ../sass/screen.scss */
 .row-padding-10 {
   padding: 10px 0px 10px 0px;
 }
 
-/* line 707, ../sass/screen.scss */
+/* line 708, ../sass/screen.scss */
 .div-row-mini {
   margin: 0px 0px 5px 0px;
   padding: 0px 0px 0px 0px;
   overflow: hidden;
 }
-/* line 713, ../sass/screen.scss */
+/* line 714, ../sass/screen.scss */
 .div-row-mini .field-label-small {
   margin: 0px 10px 0px 0px;
   padding: 0px 0px 0px 0px;
@@ -779,7 +780,7 @@ ul.bookmarks_list li {
   float: left;
   font-size: .8em;
 }
-/* line 722, ../sass/screen.scss */
+/* line 723, ../sass/screen.scss */
 .div-row-mini .field-value-small {
   margin: 0px 0px 0px 0px;
   padding: 0px 0px 0px 0px;
@@ -788,13 +789,13 @@ ul.bookmarks_list li {
   font-size: .8em;
 }
 
-/* line 731, ../sass/screen.scss */
+/* line 732, ../sass/screen.scss */
 .div-row {
   margin: 0px 0px 0px 0px;
   padding: 10px 0px 10px 0px;
   overflow: hidden;
 }
-/* line 737, ../sass/screen.scss */
+/* line 738, ../sass/screen.scss */
 .div-row .left-half {
   margin: 0px 0px 0px 0px;
   padding: 0px 0px 0px 0px;
@@ -803,7 +804,7 @@ ul.bookmarks_list li {
   float: left;
   min-height: 10px;
 }
-/* line 746, ../sass/screen.scss */
+/* line 747, ../sass/screen.scss */
 .div-row .right-half {
   margin: 0px 0px 0px 0px;
   padding: 0px 0px 0px 0px;
@@ -812,7 +813,7 @@ ul.bookmarks_list li {
   float: left;
   min-height: 10px;
 }
-/* line 755, ../sass/screen.scss */
+/* line 756, ../sass/screen.scss */
 .div-row .field-label {
   margin: 0px 0px 0px 0px;
   padding: 2px 0px 0px 0px;
@@ -820,7 +821,7 @@ ul.bookmarks_list li {
   position: relative;
   float: left;
 }
-/* line 763, ../sass/screen.scss */
+/* line 764, ../sass/screen.scss */
 .div-row .field-value {
   margin: 0px 0px 0px 0px;
   padding: 0px 0px 0px 0px;
@@ -828,7 +829,7 @@ ul.bookmarks_list li {
   float: left;
   min-width: 300px;
 }
-/* line 770, ../sass/screen.scss */
+/* line 771, ../sass/screen.scss */
 .div-row .field-value input[type="text"], .div-row .field-value input[type="password"] {
   margin: 0px 5px 0px 2px;
   padding: 0px 0px 0px 0px;
@@ -839,11 +840,11 @@ ul.bookmarks_list li {
   font-family: 'Lato', Helvetica, Arial, sans-serif;
   color: #434343;
 }
-/* line 781, ../sass/screen.scss */
+/* line 782, ../sass/screen.scss */
 .div-row .field-value .text {
   margin: 3px 0px 0px 0px;
 }
-/* line 786, ../sass/screen.scss */
+/* line 787, ../sass/screen.scss */
 .div-row .field-status {
   margin: 0px 0px 0px 0px;
   padding: 0px 0px 0px 0px;
@@ -852,12 +853,12 @@ ul.bookmarks_list li {
   width: 250px;
   word-wrap: break-word;
 }
-/* line 795, ../sass/screen.scss */
+/* line 796, ../sass/screen.scss */
 .div-row .field-status span.gray_text {
   color: #666666;
   font-size: .8em;
 }
-/* line 800, ../sass/screen.scss */
+/* line 801, ../sass/screen.scss */
 .div-row .field-status input[type="text"], .div-row .field-status input[type="password"] {
   margin: 0px 5px 0px 2px;
   padding: 0px 0px 0px 0px;
@@ -869,12 +870,12 @@ ul.bookmarks_list li {
   color: #434343;
 }
 
-/* line 813, ../sass/screen.scss */
+/* line 814, ../sass/screen.scss */
 .tag-container {
   margin: 0px 0px 0px 0px;
   padding: 0px 0px 0px 0px;
 }
-/* line 818, ../sass/screen.scss */
+/* line 819, ../sass/screen.scss */
 .tag-container .tag {
   margin: 0px 10px 10px 0px;
   padding: 5px 5px 5px 5px;
@@ -883,7 +884,7 @@ ul.bookmarks_list li {
   float: left;
   border-radius: 5px;
 }
-/* line 827, ../sass/screen.scss */
+/* line 828, ../sass/screen.scss */
 .tag-container .tag .close {
   margin: 2px 0px 0px 5px;
   padding: 2px 4px 2px 4px;
@@ -893,7 +894,7 @@ ul.bookmarks_list li {
   border-radius: 4px;
   color: #fff;
 }
-/* line 837, ../sass/screen.scss */
+/* line 838, ../sass/screen.scss */
 .tag-container .tag .close:hover {
   cursor: pointer;
   background: #9cc6ff;

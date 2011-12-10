@@ -8,13 +8,13 @@ $(document).ready(function(){
             event.preventDefault();
 
             if($(this).val().length > 1){
-                $('#tag-container').append($('<div class="tag"><span class="tag-content">' + $(this).val() + '</span><div class="close">X</div></div>'));
+                $('#tag-container').append($('<div class="tag bookmark-tag"><span class="tag-content">' + $(this).val() + '</span><div class="close">X</div></div>'));
                 $(this).val('');
             }
         }
     });
 
-    $('.tag .close').live('click', function(){
+    $('.bookmark-tag .close').live('click', function(){
 
         $(this).parent().remove();
 

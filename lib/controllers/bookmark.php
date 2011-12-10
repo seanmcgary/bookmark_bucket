@@ -21,8 +21,7 @@ class lib_controllers_bookmark extends lib_controllers_baseController
             exit();
         }
 
-        $bookmark = $this->input->post_array(array('url', 'privacy', 'title', 'tag'));
-
+        $bookmark = $this->input->post_array(array('url', 'privacy', 'title', 'tag', 'buckets'));
         $this->bookmark_helper->create_bookmark($bookmark);
 
     }

@@ -15,6 +15,8 @@ $(document).ready(function() {
         });
     });
 
+    var bucket_dropdown = new DropDown_Select($('#bucket_select'), $('#selected_buckets'));
+
     $('#toggle_new_bookmark').live('click', function(){
         $('#new_bookmark').slideToggle();
     });
@@ -112,7 +114,7 @@ $(document).ready(function() {
                 {
 
                 },
-                params: {tag: JSON.stringify(tag_list)}
+                params: {tag: JSON.stringify(tag_list), buckets: JSON.stringify(bucket_dropdown.get_buckets())}
             });
         }
         else

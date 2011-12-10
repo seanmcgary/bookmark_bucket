@@ -162,6 +162,14 @@ class lib_models_bucketModel extends lib_models_baseModel
         }
     }
 
+    public function add_bookmark_to_buckets($bookmark_id, $buckets)
+    {
+        foreach($buckets as $bucket)
+        {
+            $this->add_bookmark_to_bucket($bucket, $bookmark_id);
+        }
+    }
+
     public function add_bookmark_to_bucket($bucket_id, $bookmark_id)
     {
         $bucket = $this->get_bucket_raw_for_id($bucket_id);

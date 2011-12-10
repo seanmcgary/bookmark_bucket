@@ -25,7 +25,9 @@ class lib_models_bookmarkModel extends lib_models_baseModel
         // check to see if the bookmark exists already based on URL
         $exists = $this->bookmark_exists_by_url($bookmark_data['url']);
         $user_tags = $bookmark_data['tags'];
-
+        $buckets = $bookmark_data['buckets'];
+        unset($bookmark_data['buckets']);
+        
         $user_bookmark = array(
             'user_id' => $user_id,
             'user_tags' => $user_tags,
@@ -80,8 +82,10 @@ class lib_models_bookmarkModel extends lib_models_baseModel
 
         if($this->add_user_bookmark($user_bookmark) == true)
         {
-            // add the bookmark to the bucket
+            // auto-add the bookmark to the bucket
             $this->bucket_model->auto_add_bookmark_to_bucket($bookmark_data['bookmark_id'], $user_tags);
+
+            $this->bucket_model->add_bookmark_to_buckets($bookmark_data['bookmark_id'], $buckets);
 
             $bookmark_stat = array();
 

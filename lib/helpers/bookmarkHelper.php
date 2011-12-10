@@ -23,6 +23,8 @@ class lib_helpers_bookmarkHelper extends lib_helpers_baseHelper
 
 
         $bookmark['tags'] = json_decode($bookmark['tag'], true);
+        $bookmark['buckets'] = json_decode($bookmark['buckets']);
+
         unset($bookmark['tag']);
 
         foreach($bookmark['tags'] as &$tag)

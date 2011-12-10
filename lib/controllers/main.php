@@ -27,14 +27,19 @@ class lib_controllers_main extends lib_controllers_baseController
         
         $bookmark_container = $this->load->view('presenters/main/bookmark_container', $data, true);
 
-        $page = 'presenters/main/main_default';
-
         if(isset($_SESSION['loggedIn']))
         {
-            $page = 'presenters/main/main_logged_in';
-        }
+            $user_buckets = $this->bucket_model->get_all_user_buckets($_SESSION['loggedIn']['user_id']);
 
-        $page_data['page'] = $this->load->view($page, array('bookmark_container' => $bookmark_container), true);
+            $bucket_dropdown_select = $this->load->view('presenters/bucket_dropdown_select', array('buckets' => $user_buckets), true);
+
+            $new_bookmark_form = $this->load->view('presenters/new_bookmark_form', array('bucket_dropdown_select' => $bucket_dropdown_select), true);
+            $page_data['page'] = $this->load->view('presenters/main/main_logged_in', array('new_bookmark_form' => $new_bookmark_form, 'bookmark_container' => $bookmark_container), true);
+        }
+        else
+        {
+            $page_data['page'] = $this->load->view('presenters/main/main_default', array('bookmark_container' => $bookmark_container), true);
+        }
 
         $this->page->render('mainIndex_view', $page_data, 'template/leftCol_bookmarks_view');
     }

@@ -475,7 +475,7 @@ input[type="submit"].submit-form:hover, input[type="submit"].submit-form-large:h
             padding: 0px 0px 0px 0px;
             position: relative;
             float: left;
-            width: 50px;
+            width: 60px;
         }
 
         .description {
@@ -490,7 +490,7 @@ input[type="submit"].submit-form:hover, input[type="submit"].submit-form-large:h
             margin: 0px 0px 0px 2px;
             padding: 0px 0px 0px 0px;
             height: 25px;
-            width: 673px;
+            width: 663px;
             border: 1px solid rgba(0, 0, 0, .1);
             font-size: 1.1em;
             font-family: 'Lato', Helvetica, Arial, sans-serif;
@@ -629,7 +629,8 @@ ul.bookmarks_list {
     .title {
         margin: 0px 0px 0px 0px;
         padding: 0px 0px 0px 0px;
-        font-size: 1.1em;
+        font-size: 1em;
+        word-wrap: break-word;
 
 
         span.bookmark_url {
