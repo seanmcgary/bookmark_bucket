@@ -32,7 +32,8 @@ class lib_models_bookmarkModel extends lib_models_baseModel
             'user_id' => $user_id,
             'user_tags' => $user_tags,
             'privacy' => $bookmark_data['privacy'],
-            'date_bookmarked' => time()
+            'date_bookmarked' => time(),
+            'title' => $bookmark_data['title']
         );
 
         $url_data = null;
@@ -275,7 +276,8 @@ class lib_models_bookmarkModel extends lib_models_baseModel
         {
             $bookmark = $this->get_bookmark_for_id($res['bookmark_id']);
 
-            array_merge($res, $bookmark);
+            $bookmark['user_data'] = $res;
+            //array_merge($res, $bookmark);
 
             return $bookmark;
         }

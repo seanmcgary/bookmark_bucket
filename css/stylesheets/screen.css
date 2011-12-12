@@ -690,11 +690,11 @@ ul.bookmarks_list li {
 .bookmark .title {
   margin: 0px 0px 0px 0px;
   padding: 0px 0px 0px 0px;
-  font-size: 1em;
+  font-size: 1.1em;
   word-wrap: break-word;
 }
 /* line 636, ../sass/screen.scss */
-.bookmark .title span.bookmark_url {
+.bookmark .title .bookmark_url {
   font-size: .8em;
   color: #cccccc;
 }

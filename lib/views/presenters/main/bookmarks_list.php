@@ -9,9 +9,18 @@ if(isset($account))
 {
     $manage = $account;
 }
-//printr($user_bookmarks);
+
 foreach($bookmarks as $bookmark)
 {
+    $title = $bookmark['title'];
+    $date_bookmarked = $bookmark['date_created'];
+
+    if(array_key_exists('user_data', $bookmark))
+    {
+        $title = $bookmark['user_data']['title'];
+        $date_bookmarked = $bookmark['user_data']['date_bookmarked'];
+
+    }
 ?>
 <li id="<?=$bookmark['bookmark_id']?>">
     <div class="bookmark">
@@ -49,11 +58,11 @@ foreach($bookmarks as $bookmark)
         
         <div class="bookmark-data">
             <div class="title">
-                <a href="<?=$bookmark['url']?>" link-type="external" bookmark_id="<?=$bookmark['bookmark_id']?>"><?=utf8_decode($bookmark['title'])?></a> <span class="bookmark_url">(<?=$bookmark['url']?>)</span>
+                <a href="<?=$bookmark['url']?>" link-type="external" bookmark_id="<?=$bookmark['bookmark_id']?>"><?=utf8_decode($title)?></a> <div class="bookmark_url">(<?=$bookmark['url']?>)</div>
             </div>
             <div class="meta">
             <?php
-                echo "Bookmarked ".format_date($bookmark['date_created']);
+                echo "Bookmarked ".format_date($date_bookmarked);
             ?>
             </div>
             <div class="tags">

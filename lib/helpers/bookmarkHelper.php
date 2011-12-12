@@ -149,6 +149,8 @@ class lib_helpers_bookmarkHelper extends lib_helpers_baseHelper
         {
             $bookmarks = $this->bookmark_model->get_public_bookmarks_for_user($_SESSION['loggedIn']['user_id']);
 
+            //printr($bookmarks);
+
             $user = $this->user_model->get_user_for_id($_SESSION['loggedIn']['user_id'], true);
 
             $page_data['user_bookmarks'] = $bookmarks;
