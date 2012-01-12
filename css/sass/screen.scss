@@ -67,50 +67,20 @@ span.working {
     float: left;
 }
 
-/*.modal {
-    margin: 0px 0px 0px 0px;
-    padding: 0px 0px 0px 0px;
-    background: #fff;
-    display: none;
-}*/
-#simplemodal-overlay {
-    background: #000;
-}
-
-.modal-overlay {
-    margin: 0px 0px 0px 0px;
-    padding: 0px 0px 0px 0px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background: rgba(0, 0, 0, .4);
-    z-index: 99;
-    display: none;
-}
-
 .modal {
     margin: 0px 0px 0px 0px;
-    padding: 10px 10px 10px 10px;
-    background: #fff;
-    width: 400px;
-    position: absolute;
-    z-index: 100;
-    top: 30%;
+	padding: 10px 10px 10px 10px;
+	display: none;
+	background: #fff;
+	overflow: hidden;
+	border: 1px solid #fff;
+	border-radius: 2px;
+}
+
+.simplemodal-container {
+    padding: 10px;
+    background: #434343;
     border-radius: 10px;
-    border: 5px solid #434343;
-    display: none;
-
-    .drop-delay {
-        margin: 0px 0px 0px 0px;
-        padding: 0px 0px 0px 0px;
-
-        input[type="number"] {
-            margin: 0px 0px 0px 0px;
-            padding: 0px 0px 0px 0px;
-            broder: 1px solid #ccccc;
-        }
-
-    }
 }
 
 .user-profile {
@@ -295,11 +265,6 @@ table.import-bookmarks-table {
     tr td:nth-child(1){
         text-align: center;
     }
-}
-
-.new_bookmark_form {
-    margin-top: 10px;
-    display: none;
 }
 
 input[type="text"], input[type="password"] {
@@ -539,8 +504,6 @@ input[type="text"], input[type="password"] {
 .bookmark-container {
     margin: 0px 0px 20px 0px;
     padding: 10px 10px 10px 10px;
-    border-bottom: 1px solid #eeeeee;
-
 
     .inputbox {
         margin: 0px 0px 0px 0px;
@@ -585,6 +548,10 @@ input[type="text"], input[type="password"] {
             float: left;
         }
     }
+}
+
+.bookmark-container:not(:first-of-type){
+    border-bottom: 1px solid #eeeeee;
 }
 
 ul.bookmark-categories {

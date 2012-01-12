@@ -1,6 +1,17 @@
 /**
  * @author Sean McGary <sean@seanmcgary.com>
  */
+
+function show_modal(elem){
+    elem.modal({
+        opacity: 100,
+        overlayCss: {
+            background: 'rgba(0, 0, 0, .6)'
+        }
+    });
+}
+
+
 Ext.onReady(function() {});
 
 $(document).ready(function() {
@@ -16,6 +27,10 @@ $(document).ready(function() {
     });
 
     var bucket_dropdown = new DropDown_Select($('#bucket_select'), $('#selected_buckets'));
+
+    $('#create_new_bookmark').live('click', function(){
+        show_modal($('#new_bookmark_modal'));
+    });
 
     $('#toggle_new_bookmark').live('click', function(){
         $('#new_bookmark').slideToggle();
@@ -85,6 +100,9 @@ $(document).ready(function() {
                         }*/
 
                         console.log(obj.user_bookmarks);
+
+                        $.modal.close();
+
                         $('.bookmarks_list[category="yours"]').html(obj.user_bookmarks);
 
                         for(var i in obj.global_bookmarks){
