@@ -81,7 +81,7 @@ class lib_controllers_register extends lib_controllers_baseController
             if($res === true)
             {
                 $user = $this->user_model->login_user($post['username'], $post['password']);
-                $_SESSION['loggedIn'] = $user;
+                $this->session->create_session($user);
 
                 $registration_message = 'Thank you for joining BookmarkBucket!';
 

@@ -15,7 +15,7 @@ class lib_controllers_bookmark extends lib_controllers_baseController
 
     public function add_bookmark()
     {
-        if(!isset($_SESSION['loggedIn']))
+        if($this->session->session_exists() == false)
         {
             echo json_encode(array('status' => 'false', 'msg' => 'Must be logged in'));
             exit();
@@ -71,7 +71,7 @@ class lib_controllers_bookmark extends lib_controllers_baseController
             $this->bookmark_model->increment_bookmarked_count($bookmark_id);
 
             $user_bookmark = array(
-                'user_id' => $_SESSION['loggedIn']['user_id'],
+                'user_id' => $this->session->get_session_attr('user_id'),
                 'user_tags' => $bookmark['tags'],
                 'privacy' => 'public',
                 'date_bookmarked' => time(),

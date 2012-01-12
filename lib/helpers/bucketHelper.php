@@ -15,7 +15,7 @@ class lib_helpers_bucketHelper extends lib_helpers_baseHelper
 
     public function get_bucket_list()
     {
-        $buckets = $this->bucket_model->get_all_user_buckets($_SESSION['loggedIn']['user_id']);;
+        $buckets = $this->bucket_model->get_all_user_buckets($this->session->get_session_attr('user_id'));;
 
         $bucket_list = $this->load->view('presenters/account/bucket_list', array('buckets' => $buckets, 'account' => true), true);
 

@@ -31,7 +31,7 @@ class lib_controllers_user extends lib_controllers_baseController
     {
         $user = $this->user_model->get_detailed_user_for_username($username);
 
-        if($_SESSION['loggedIn']['user_id'] != $user['user_id'])
+        if($this->session->get_session_attr('user_id') != $user['user_id'])
         {
             $this->user_model->increment_user_view($user['user_id']);
         }

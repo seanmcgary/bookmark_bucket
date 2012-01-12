@@ -53,7 +53,7 @@ class lib_helpers_bookmarkHelper extends lib_helpers_baseHelper
             $bookmark['title'] = utf8_encode($bookmark['title']);
 
             // insert the bookmark for the user
-            $res = $this->bookmark_model->insert_new_bookmark($bookmark, $_SESSION['loggedIn']['user_id']);
+            $res = $this->bookmark_model->insert_new_bookmark($bookmark, $this->session->get_session_attr('user_id'));
 
 
             if(!empty($bookmark['tags']))
@@ -75,7 +75,7 @@ class lib_helpers_bookmarkHelper extends lib_helpers_baseHelper
                 {
                     if($bookmark['privacy'] == 'public')
                     {
-                        $user = $this->user_model->get_user_for_id($_SESSION['loggedIn']['user_id'], true);
+                        $user = $this->user_model->get_user_for_id($this->session->get_session_attr('user_id'), true);
                         $user_bookmarks = $this->get_user_bookmarks();
 
                         //$main_controller = core_loadFactory::get_inst('lib_controllers_main', 'main');
@@ -147,11 +147,11 @@ class lib_helpers_bookmarkHelper extends lib_helpers_baseHelper
 
         if(isset($_SESSION['loggedIn']))
         {
-            $bookmarks = $this->bookmark_model->get_public_bookmarks_for_user($_SESSION['loggedIn']['user_id']);
+            $bookmarks = $this->bookmark_model->get_public_bookmarks_for_user($this->session->get_session_attr('user_id'));
 
             //printr($bookmarks);
 
-            $user = $this->user_model->get_user_for_id($_SESSION['loggedIn']['user_id'], true);
+            $user = $this->user_model->get_user_for_id($this->session->get_session_attr('user_id'), true);
 
             $page_data['user_bookmarks'] = $bookmarks;
 

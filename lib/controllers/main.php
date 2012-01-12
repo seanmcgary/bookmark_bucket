@@ -27,9 +27,9 @@ class lib_controllers_main extends lib_controllers_baseController
         
         $bookmark_container = $this->load->view('presenters/main/bookmark_container', $data, true);
 
-        if(isset($_SESSION['loggedIn']))
+        if($this->session->session_exists())
         {
-            $user_buckets = $this->bucket_model->get_all_user_buckets($_SESSION['loggedIn']['user_id']);
+            $user_buckets = $this->bucket_model->get_all_user_buckets($this->session->get_session_attr('user_id'));
 
             $bucket_dropdown_select = $this->load->view('presenters/bucket_dropdown_select', array('buckets' => $user_buckets), true);
 

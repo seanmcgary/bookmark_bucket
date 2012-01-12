@@ -19,12 +19,9 @@ class lib_controllers_login extends lib_controllers_baseController
 
     }
 
-    
-
     public function logout()
     {
-        unset($_SESSION['loggedIn']);
-        session_destroy();
+        $this->session->destroy_session($this->session->get_session_id());
 
         redirect(site_url(''));
     }
@@ -41,7 +38,7 @@ class lib_controllers_login extends lib_controllers_baseController
 
             unset($res['password']);
 
-            $_SESSION['loggedIn'] = $res;
+            $this->session->create_session($res);
 
             if($ajax == 'true')
             {

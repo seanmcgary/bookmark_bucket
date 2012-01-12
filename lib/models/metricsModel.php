@@ -21,9 +21,9 @@ class lib_models_metricsModel extends lib_models_baseModel
     {
         $data = array();
         $data['bookmark_id'] = $id;
-        if(isset($_SESSION['loggedIn']))
+        if($this->session->session_exists())
         {
-            $data['user_id'] = $_SESSION['loggedIn']['user_id'];
+            $data['user_id'] = $this->session->get_session_attr('user_id');
         }
         else
         {

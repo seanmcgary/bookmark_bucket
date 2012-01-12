@@ -19,6 +19,8 @@ class lib_models_baseModel extends core_model
     public $bucket_bookmarks_collection;
     public $user_bookmarks_collection;
 
+    public $session;
+
 
     public $last_error;
     
@@ -27,6 +29,8 @@ class lib_models_baseModel extends core_model
         parent::__construct();
 
         $this->mongo = lib_libraries_libMongoDB::get_connection('mongodb://'.$_SERVER['DATABASE_URL'], $_SERVER['DATABASE']);
+
+        $this->session = core_loadFactory::get_inst('lib_libraries_session', 'session');
 
         $this->models_to_load = array(
                     array('collection_name' => 'user_collection', 'class_name' => 'users'),

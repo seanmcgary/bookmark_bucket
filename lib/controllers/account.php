@@ -9,7 +9,7 @@ class lib_controllers_account extends lib_controllers_baseController
     {
         parent::__construct();
 
-        if(!isset($_SESSION['loggedIn']))
+        if($this->session->session_exists() == false)
         {
             redirect(site_url('login'));
         }
@@ -18,15 +18,15 @@ class lib_controllers_account extends lib_controllers_baseController
     public function index()
     {
 
-        $data['account_details'] = $this->user_model->get_user_for_id($_SESSION['loggedIn']['user_id']);
+        $data['account_details'] = $this->user_model->get_user_for_id($this->session->get_session_attr('user_id'));
 
         $data['user_fields'] = array('username' => 'Username', 'fullname' => 'Full Name', 'email' => 'Email');
 
-        $data['user_bookmarks'] = $this->bookmark_model->get_all_bookmarks_for_user($_SESSION['loggedIn']['user_id']);
+        $data['user_bookmarks'] = $this->bookmark_model->get_all_bookmarks_for_user($this->session->get_session_attr('user_id'));
 
         $data['bookmarks'] = $this->load->view('presenters/main/bookmarks_list', array('bookmarks' => $data['user_bookmarks'], 'user_bookmarks' => $data['user_bookmarks'], 'account' => true), true);
 
-        $buckets = $this->bucket_model->get_all_user_buckets($_SESSION['loggedIn']['user_id']);;
+        $buckets = $this->bucket_model->get_all_user_buckets($this->session->get_session_attr('user_id'));
 
         $data['buckets'] = $this->load->view('presenters/account/bucket_list', array('buckets' => $buckets, 'account' => true), true);
 
@@ -41,7 +41,7 @@ class lib_controllers_account extends lib_controllers_baseController
     {
         $post = $this->input->post_array(array('username', 'email', 'fullname', 'password', 'confirm_pass'));
 
-        $user = $this->user_model->get_user_for_id($_SESSION['loggedIn']['user_id']);
+        $user = $this->user_model->get_user_for_id($this->session->get_session_attr('user_id'));
 
         if($post['username'] != $user['username'] || $post['fullname'] != $user['fullname'] || $post['email'] != $user['email'] || $post['password'] != '')
         {
@@ -106,7 +106,8 @@ class lib_controllers_account extends lib_controllers_baseController
 
                 if($res === true)
                 {
-                    $_SESSION['loggedIn'] = $this->user_model->get_user_for_id($_SESSION['loggedIn']['user_id']);
+                    $this->session->update_session_data($this->user_model->get_user_for_id($this->session->get_session_attr('user_id')));
+
                     echo json_encode(array('status' => 'true', 'msg' => '<span class="success">Account Updated</span>'));
                 }
                 else
@@ -148,7 +149,7 @@ class lib_controllers_account extends lib_controllers_baseController
     {
         $bookmark_id = $this->input->post('bookmark_id');
 
-        $res = $this->user_model->delete_bookmark($bookmark_id, $_SESSION['loggedIn']['user_id']);
+        $res = $this->user_model->delete_bookmark($bookmark_id, $this->session->get_session_attr('user_id'));
 
         if($res == true)
         {
@@ -220,7 +221,7 @@ class lib_controllers_account extends lib_controllers_baseController
                 $post['tag_list'] = array();
             }
 
-            $post['user_id'] = $_SESSION['loggedIn']['user_id'];
+            $post['user_id'] = $this->session->get_session_attr('user_id');
             unset($post['tag_list']);
             $res = $this->bucket_model->create_bucket($post);
 
