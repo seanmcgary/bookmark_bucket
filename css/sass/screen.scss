@@ -65,6 +65,52 @@ span.working {
     float: left;
 }
 
+/*.modal {
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+    background: #fff;
+    display: none;
+}*/
+#simplemodal-overlay {
+    background: #000;
+}
+
+.modal-overlay {
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, .4);
+    z-index: 99;
+    display: none;
+}
+
+.modal {
+    margin: 0px 0px 0px 0px;
+    padding: 10px 10px 10px 10px;
+    background: #fff;
+    width: 400px;
+    position: absolute;
+    z-index: 100;
+    top: 30%;
+    border-radius: 10px;
+    border: 5px solid #434343;
+    display: none;
+
+    .drop-delay {
+        margin: 0px 0px 0px 0px;
+        padding: 0px 0px 0px 0px;
+
+        input[type="number"] {
+            margin: 0px 0px 0px 0px;
+            padding: 0px 0px 0px 0px;
+            broder: 1px solid #ccccc;
+        }
+
+    }
+}
+
 .user-profile {
     margin:  0px 0px 0px 0px;
     padding:  0px 0px 0px 0px;
@@ -254,76 +300,41 @@ table.import-bookmarks-table {
     display: none;
 }
 
-.button {
-    margin:  0px 0px 0px 0px;
-    padding:  5px 5px 5px 5px;
-    border: none;
-    border-radius: 5px;
+input[type="text"], input[type="password"] {
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+    border: 1px solid #cdcdcd;
+    height: 25px;
+    font-size: 1.1em;
 }
 
-.btn-gray {
-    background:  #dddddd;
-    border:  1px solid #aaaaaa;
-    font-weight: bold;
-}
-
-.btn-gray:hover {
-    cursor: pointer;
-    color: #fff;
-    background:  #3274d0;
-}
-
-.btn-large {
-    font-size: 1.2em;
-}
-
-.btn-green {
-    background: #24a724;
-    color: #fff;
-    border-radius: 5px;
-    -moz-border-radius: 5px;
-    font-weight: bold;
-}
-
-.btn-green:hover {
-    /*background-image: -webkit-gradient(linear, left top, left bottom, from(#24a724), to(#2dc12d));*/
-    cursor: pointer;
-    background: #2dc12d;
-}
-
-input[type="submit"].submit-form {
+input[type="submit"], input[type="button"] {
     margin: 0px 0px 0px 0px;
     padding: 5px 10px 5px 10px;
-    border: none;
-    cursor: pointer;
-    background: #24a724;
-    color: #fff;
-    border-radius: 5px;
-    -moz-border-radius: 5px;
-    font-size: .7em;
+    border-radius: 3px;
 }
 
-input[type="submit"].submit-form-large {
-    margin: 0px 0px 0px 0px;
-    padding: 15px 30px 15px 30px;
-    border: none;
-    cursor: pointer;
-    background: #24a724;
-    color: #fff;
-    border-radius: 5px;
-    -moz-border-radius: 5px;
-    font-size: 1.2em;
+.button-green {
+    color: #0da40d;
+    color: #ffffff;
+    border: 1px solid green;
+
+    background: #29ba29;
+    box-shadow: inset 2px 2px 2px rgba(255, 255, 255, .3);
+
 }
 
-input[type="submit"].submit-form:hover, input[type="submit"].submit-form-large:hover {
-    background: #2dc12d;
+.button-green:hover {
+    cursor: pointer;
+    background: #0da40d;
+    box-shadow: inset -2px -2px 2px rgba(120, 87, 76, .2);
 }
 
 .header {
     margin: 0px 0px 0px 0px;
     padding: 0px 0px 0px 0px;
     height: 75px;
-    background: #3274d0;
+    //background: #3274d0;
 
 
     .header-container {
@@ -334,14 +345,28 @@ input[type="submit"].submit-form:hover, input[type="submit"].submit-form-large:h
 
 
         .logo {
+            /*margin: 0px 0px 20px -20px;
+            padding:10px 10px 10px 20px;
+            position:relative;
+            color:#fff;
+            background:#f43059;
+            font-size:1.5em;
+            float:left;
+            clear:both;
+            text-shadow:0 -1px #d0284b, 0 1px #f96080;
+            -moz-box-shadow:2px 2px 0 rgba(0,0,0,0.1);
+            -webkit-box-shadow:2px 2px 0 rgba(0,0,0,0.1);
+            -o-box-shadow:2px 2px 0 rgba(0,0,0,0.1);
+            box-shadow:2px 2px 0 rgba(0,0,0,0.1);*/
+
             margin: 6px 0px 0px 0px;
-            padding: 0px 0px 0px 0px;
+            padding: 10px 0px 10px 0px;
             width: 300px;
-            height: 35px;
             position: relative;
             float: left;
             font-size: 2em;
             color: #fff;
+            background: #3274d0;
 
 
             a, a:visited {
@@ -383,7 +408,9 @@ input[type="submit"].submit-form:hover, input[type="submit"].submit-form-large:h
 
             .bookmark_actions {
                 margin:  0px 0px 0px 0px;
-                padding:  0px 0px 0px 0px;
+                padding:  5px 0px 5px 0px;
+                background: #fff;
+                overflow: hidden;
             }
         }
     }

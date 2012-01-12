@@ -2,11 +2,13 @@
 <html>
     <head>
         <link href="http://fonts.googleapis.com/css?family=Lato:100,100italic,300,300italic,400,400italic,700,700italic,900,900italic" rel="stylesheet" type="text/css" >
+        <!--<link href="<?=site_url('js/simplemodal/css/basic.css')?>" rel="stylesheet" type="text/css">-->
         <link href="<?=site_url('css/stylesheets/screen.css')?>" rel="stylesheet" type="text/css">
         <link href="<?=site_url('js/tag-it/css/jquery.tagit.css')?>" type="text/css" rel="stylesheet">
         <link href="<?=site_url('js/jquery-checkbox/jquery.checkbox.css')?>" type="text/css" rel="stylesheet">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js" type="text/javascript"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/ext-core/3.1.0/ext-core-debug.js" type="text/javascript"></script>
+        <script src="<?=site_url('js/simplemodal/js/jquery.simplemodal.js')?>" type="text/javascript"></script>
         <script src="<?=site_url('js/jquery-checkbox/jquery.checkbox.js')?>" type="text/javascript"></script>
         <script src="<?=site_url('js/dropdown_select.js')?>" type="text/javascript"></script>
         <?php
@@ -70,8 +72,8 @@
                         echo 'Welcome, '.$_SESSION['loggedIn']['username'].' | <a href="'.site_url('account').'">Account</a> | <a href="'.site_url('login/logout').'">Logout</a>';
                         echo '</div>
                              <div class="bookmark_actions">
-                                <input type="button" class="button btn-green" value="Add Bookmark">
-                                <input type="button" class="button btn-green" value="Add Bucket">
+                                <input type="button" class="button-green" value="Add Bookmark">
+                                <input type="button" class="button-green" value="Add Bucket">
                              </div>';
                     }
                     else

@@ -136,13 +136,61 @@ span.working {
   float: left;
 }
 
-/* line 68, ../sass/screen.scss */
+/*.modal {
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+    background: #fff;
+    display: none;
+}*/
+/* line 74, ../sass/screen.scss */
+#simplemodal-overlay {
+  background: #000;
+}
+
+/* line 78, ../sass/screen.scss */
+.modal-overlay {
+  margin: 0px 0px 0px 0px;
+  padding: 0px 0px 0px 0px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 99;
+  display: none;
+}
+
+/* line 89, ../sass/screen.scss */
+.modal {
+  margin: 0px 0px 0px 0px;
+  padding: 10px 10px 10px 10px;
+  background: #fff;
+  width: 400px;
+  position: absolute;
+  z-index: 100;
+  top: 30%;
+  border-radius: 10px;
+  border: 5px solid #434343;
+  display: none;
+}
+/* line 101, ../sass/screen.scss */
+.modal .drop-delay {
+  margin: 0px 0px 0px 0px;
+  padding: 0px 0px 0px 0px;
+}
+/* line 105, ../sass/screen.scss */
+.modal .drop-delay input[type="number"] {
+  margin: 0px 0px 0px 0px;
+  padding: 0px 0px 0px 0px;
+  broder: 1px solid #ccccc;
+}
+
+/* line 114, ../sass/screen.scss */
 .user-profile {
   margin: 0px 0px 0px 0px;
   padding: 0px 0px 0px 0px;
   overflow: hidden;
 }
-/* line 73, ../sass/screen.scss */
+/* line 119, ../sass/screen.scss */
 .user-profile .name {
   margin: 0px 0px 0px 0px;
   padding: 5px 5px 5px 5px;
@@ -150,7 +198,7 @@ span.working {
   overflow: hidden;
   border: 1px solid #aaaaaa;
 }
-/* line 81, ../sass/screen.scss */
+/* line 127, ../sass/screen.scss */
 .user-profile .name .avatar {
   margin: 0px 10px 0px 0px;
   padding: 5px 5px 2px 5px;
@@ -159,7 +207,7 @@ span.working {
   border: 1px solid #dddddd;
   background: #fff;
 }
-/* line 90, ../sass/screen.scss */
+/* line 136, ../sass/screen.scss */
 .user-profile .name .username {
   margin: 25px 10px 0px 0px;
   padding: 0px 0px 0px 0px;
@@ -167,7 +215,7 @@ span.working {
   float: left;
   font-size: 1.6em;
 }
-/* line 98, ../sass/screen.scss */
+/* line 144, ../sass/screen.scss */
 .user-profile .name .fullname {
   margin: 30px 0px 0px 0px;
   padding: 0px 0px 0px 0px;
@@ -176,20 +224,20 @@ span.working {
   font-size: 1.3em;
   color: #aaaaaa;
 }
-/* line 107, ../sass/screen.scss */
+/* line 153, ../sass/screen.scss */
 .user-profile .name .follow {
   margin: 30px 0px 0px 0px;
   padding: 0px 0px 0px 0px;
   position: relative;
   float: right;
 }
-/* line 116, ../sass/screen.scss */
+/* line 162, ../sass/screen.scss */
 .user-profile .profile {
   margin: 10px 0px 0px 0px;
   padding: 0px 0px 0px 10px;
   overflow: hidden;
 }
-/* line 122, ../sass/screen.scss */
+/* line 168, ../sass/screen.scss */
 .user-profile .profile .profile-left {
   margin: 0px 0px 0px 0px;
   padding: 0px 0px 0px 0px;
@@ -197,7 +245,7 @@ span.working {
   float: left;
   width: 356px;
 }
-/* line 130, ../sass/screen.scss */
+/* line 176, ../sass/screen.scss */
 .user-profile .profile .profile-right {
   margin: 0px 0px 0px 0px;
   padding: 0px 0px 0px 0px;
@@ -205,28 +253,28 @@ span.working {
   float: right;
   width: 362px;
 }
-/* line 139, ../sass/screen.scss */
+/* line 185, ../sass/screen.scss */
 .user-profile .profile .profile-right .top {
   margin: -5px 0px 0px 0px;
   padding: 0px 0px 0px 0px;
   position: relative;
   overflow: hidden;
 }
-/* line 146, ../sass/screen.scss */
+/* line 192, ../sass/screen.scss */
 .user-profile .profile .profile-right .top .stat {
   margin: 0px 20px 0px 0px;
   padding: 0px 0px 0px 0px;
   position: relative;
   float: left;
 }
-/* line 153, ../sass/screen.scss */
+/* line 199, ../sass/screen.scss */
 .user-profile .profile .profile-right .top .stat .number {
   margin: 0px 0px 0px 0px;
   padding: 0px 0px 0px 0px;
   font-size: 2.0em;
   position: relative;
 }
-/* line 160, ../sass/screen.scss */
+/* line 206, ../sass/screen.scss */
 .user-profile .profile .profile-right .top .stat .desc {
   margin: 0px 0px 0px 0px;
   padding: 0px 0px 0px 0px;
@@ -234,27 +282,27 @@ span.working {
   font-size: .7em;
   color: #888888;
 }
-/* line 171, ../sass/screen.scss */
+/* line 217, ../sass/screen.scss */
 .user-profile .profile .profile-right .bottom {
   margin: 5px 0px 0px 0px;
   padding: 5px 0px 5px 0px;
   position: relative;
 }
-/* line 177, ../sass/screen.scss */
+/* line 223, ../sass/screen.scss */
 .user-profile .profile .profile-right .bottom .text {
   margin: 0px 0px 3px 0px;
   padding: 0px 0px 0px 0px;
   font-size: .7em;
   position: relative;
 }
-/* line 184, ../sass/screen.scss */
+/* line 230, ../sass/screen.scss */
 .user-profile .profile .profile-right .bottom .following {
   margin: 0px 0px 3px 0px;
   padding: 0px 0px 0px 0px;
   position: relative;
   overflow: hidden;
 }
-/* line 191, ../sass/screen.scss */
+/* line 237, ../sass/screen.scss */
 .user-profile .profile .profile-right .bottom .following .image {
   padding: 2px 2px 0px 2px;
   position: relative;
@@ -264,13 +312,13 @@ span.working {
   border: 1px solid #dddddd;
 }
 
-/* line 208, ../sass/screen.scss */
+/* line 254, ../sass/screen.scss */
 table.import-bookmarks-table {
   margin: 0px 0px 0px 0px;
   padding: 0px 0px 0px 0px;
   border-collapse: collapse;
 }
-/* line 214, ../sass/screen.scss */
+/* line 260, ../sass/screen.scss */
 table.import-bookmarks-table tr th {
   margin: 0px 0px 0px 0px;
   padding: 5px 10px 5px 10px;
@@ -280,148 +328,118 @@ table.import-bookmarks-table tr th {
   text-align: left;
   border: 1px solid #3274d0;
 }
-/* line 224, ../sass/screen.scss */
+/* line 270, ../sass/screen.scss */
 table.import-bookmarks-table tr:not(:first-of-type) {
   margin: 0px 0px 0px 0px;
   padding: 0px 0px 0px 0px;
   border: 1px solid #cccccc;
 }
-/* line 230, ../sass/screen.scss */
+/* line 276, ../sass/screen.scss */
 table.import-bookmarks-table tr td {
   margin: 0px 0px 0px 0px;
   padding: 5px 10px 5px 10px;
 }
-/* line 235, ../sass/screen.scss */
+/* line 281, ../sass/screen.scss */
 table.import-bookmarks-table tr td a, table.import-bookmarks-table tr td a:visited {
   color: #3274d0;
   text-decoration: none;
 }
-/* line 240, ../sass/screen.scss */
+/* line 286, ../sass/screen.scss */
 table.import-bookmarks-table tr td a:hover {
   color: #5492e8;
   text-decoration: none;
 }
-/* line 247, ../sass/screen.scss */
+/* line 293, ../sass/screen.scss */
 table.import-bookmarks-table tr td:nth-child(1) {
   text-align: center;
 }
 
-/* line 252, ../sass/screen.scss */
+/* line 298, ../sass/screen.scss */
 .new_bookmark_form {
   margin-top: 10px;
   display: none;
 }
 
-/* line 257, ../sass/screen.scss */
-.button {
+/* line 303, ../sass/screen.scss */
+input[type="text"], input[type="password"] {
   margin: 0px 0px 0px 0px;
-  padding: 5px 5px 5px 5px;
-  border: none;
-  border-radius: 5px;
+  padding: 0px 0px 0px 0px;
+  border: 1px solid #cdcdcd;
+  height: 25px;
+  font-size: 1.1em;
 }
 
-/* line 264, ../sass/screen.scss */
-.btn-gray {
-  background: #dddddd;
-  border: 1px solid #aaaaaa;
-  font-weight: bold;
-}
-
-/* line 270, ../sass/screen.scss */
-.btn-gray:hover {
-  cursor: pointer;
-  color: #fff;
-  background: #3274d0;
-}
-
-/* line 276, ../sass/screen.scss */
-.btn-large {
-  font-size: 1.2em;
-}
-
-/* line 280, ../sass/screen.scss */
-.btn-green {
-  background: #24a724;
-  color: #fff;
-  border-radius: 5px;
-  -moz-border-radius: 5px;
-  font-weight: bold;
-}
-
-/* line 288, ../sass/screen.scss */
-.btn-green:hover {
-  /*background-image: -webkit-gradient(linear, left top, left bottom, from(#24a724), to(#2dc12d));*/
-  cursor: pointer;
-  background: #2dc12d;
-}
-
-/* line 294, ../sass/screen.scss */
-input[type="submit"].submit-form {
+/* line 311, ../sass/screen.scss */
+input[type="submit"], input[type="button"] {
   margin: 0px 0px 0px 0px;
   padding: 5px 10px 5px 10px;
-  border: none;
+  border-radius: 3px;
+}
+
+/* line 317, ../sass/screen.scss */
+.button-green {
+  color: #0da40d;
+  color: #ffffff;
+  border: 1px solid green;
+  background: #29ba29;
+  box-shadow: inset 2px 2px 2px rgba(255, 255, 255, 0.3);
+}
+
+/* line 327, ../sass/screen.scss */
+.button-green:hover {
   cursor: pointer;
-  background: #24a724;
-  color: #fff;
-  border-radius: 5px;
-  -moz-border-radius: 5px;
-  font-size: .7em;
+  background: #0da40d;
+  box-shadow: inset -2px -2px 2px rgba(120, 87, 76, 0.2);
 }
 
-/* line 306, ../sass/screen.scss */
-input[type="submit"].submit-form-large {
-  margin: 0px 0px 0px 0px;
-  padding: 15px 30px 15px 30px;
-  border: none;
-  cursor: pointer;
-  background: #24a724;
-  color: #fff;
-  border-radius: 5px;
-  -moz-border-radius: 5px;
-  font-size: 1.2em;
-}
-
-/* line 318, ../sass/screen.scss */
-input[type="submit"].submit-form:hover, input[type="submit"].submit-form-large:hover {
-  background: #2dc12d;
-}
-
-/* line 322, ../sass/screen.scss */
+/* line 333, ../sass/screen.scss */
 .header {
   margin: 0px 0px 0px 0px;
   padding: 0px 0px 0px 0px;
   height: 75px;
-  background: #3274d0;
 }
-/* line 329, ../sass/screen.scss */
+/* line 340, ../sass/screen.scss */
 .header .header-container {
   margin: 0px auto 0px auto;
   padding: 0px 0px 0px 0px;
   width: 960px;
   height: 75px;
 }
-/* line 336, ../sass/screen.scss */
+/* line 347, ../sass/screen.scss */
 .header .header-container .logo {
+  /*margin: 0px 0px 20px -20px;
+  padding:10px 10px 10px 20px;
+  position:relative;
+  color:#fff;
+  background:#f43059;
+  font-size:1.5em;
+  float:left;
+  clear:both;
+  text-shadow:0 -1px #d0284b, 0 1px #f96080;
+  -moz-box-shadow:2px 2px 0 rgba(0,0,0,0.1);
+  -webkit-box-shadow:2px 2px 0 rgba(0,0,0,0.1);
+  -o-box-shadow:2px 2px 0 rgba(0,0,0,0.1);
+  box-shadow:2px 2px 0 rgba(0,0,0,0.1);*/
   margin: 6px 0px 0px 0px;
-  padding: 0px 0px 0px 0px;
+  padding: 10px 0px 10px 0px;
   width: 300px;
-  height: 35px;
   position: relative;
   float: left;
   font-size: 2em;
   color: #fff;
+  background: #3274d0;
 }
-/* line 347, ../sass/screen.scss */
+/* line 372, ../sass/screen.scss */
 .header .header-container .logo a, .header .header-container .logo a:visited {
   text-decoration: none;
   color: #fff;
 }
-/* line 352, ../sass/screen.scss */
+/* line 377, ../sass/screen.scss */
 .header .header-container .logo a:hover {
   text-decoration: none;
   color: #bfdaff;
 }
-/* line 359, ../sass/screen.scss */
+/* line 384, ../sass/screen.scss */
 .header .header-container .right {
   margin: 0px 0px 0px 0px;
   padding: 0px 0px 0px 0px;
@@ -432,27 +450,29 @@ input[type="submit"].submit-form:hover, input[type="submit"].submit-form-large:h
   text-align: right;
   color: #fff;
 }
-/* line 370, ../sass/screen.scss */
+/* line 395, ../sass/screen.scss */
 .header .header-container .right .user-data {
   margin: 0px 0px 10px 0px;
   padding: 0px 0px 0px 0px;
 }
-/* line 374, ../sass/screen.scss */
+/* line 399, ../sass/screen.scss */
 .header .header-container .right .user-data a, .header .header-container .right .user-data a:visited {
   text-decoration: none;
   color: #bfdaff;
 }
-/* line 379, ../sass/screen.scss */
+/* line 404, ../sass/screen.scss */
 .header .header-container .right .user-data a:hover {
   color: #9cc6ff;
 }
-/* line 384, ../sass/screen.scss */
+/* line 409, ../sass/screen.scss */
 .header .header-container .right .bookmark_actions {
   margin: 0px 0px 0px 0px;
-  padding: 0px 0px 0px 0px;
+  padding: 5px 0px 5px 0px;
+  background: #fff;
+  overflow: hidden;
 }
 
-/* line 393, ../sass/screen.scss */
+/* line 420, ../sass/screen.scss */
 .navigation {
   margin: 0px 0px 0px 0px;
   padding: 0px 0px 0px 0px;
@@ -460,34 +480,34 @@ input[type="submit"].submit-form:hover, input[type="submit"].submit-form-large:h
   border-top: 1px solid #999999;
   border-bottom: 1px solid #999999;
 }
-/* line 401, ../sass/screen.scss */
+/* line 428, ../sass/screen.scss */
 .navigation .navigation-container {
   margin: 0px auto 0px auto;
   padding: 0px 0px 0px 0px;
   height: 50px;
   width: 960px;
 }
-/* line 408, ../sass/screen.scss */
+/* line 435, ../sass/screen.scss */
 .navigation .navigation-container ul {
   margin: 0px 0px 0px 0px;
   padding: 0px 0px 0px 0px;
   list-style: none;
 }
-/* line 414, ../sass/screen.scss */
+/* line 441, ../sass/screen.scss */
 .navigation .navigation-container ul li {
   margin: 0px 0px 0px 0px;
   padding: 0px 0px 0px 0px;
   list-style: none;
 }
 
-/* line 425, ../sass/screen.scss */
+/* line 452, ../sass/screen.scss */
 .container {
   margin: 0px auto 0px auto;
   padding: 0px 10px 10px 10px;
   width: 960px;
   overflow: hidden;
 }
-/* line 432, ../sass/screen.scss */
+/* line 459, ../sass/screen.scss */
 .container .left-col {
   margin: 0px 0px 0px 0px;
   padding: 10px 0px 0px 0px;
@@ -495,7 +515,7 @@ input[type="submit"].submit-form:hover, input[type="submit"].submit-form-large:h
   position: relative;
   float: left;
 }
-/* line 440, ../sass/screen.scss */
+/* line 467, ../sass/screen.scss */
 .container .right-col {
   margin: 0px 0px 0px 10px;
   padding: 0px 0px 10px 0px;
@@ -507,19 +527,19 @@ input[type="submit"].submit-form:hover, input[type="submit"].submit-form-large:h
   border-bottom: 1px solid #eeeeee;
 }
 
-/* line 453, ../sass/screen.scss */
+/* line 480, ../sass/screen.scss */
 .bookmark-container {
   margin: 0px 0px 20px 0px;
   padding: 10px 10px 10px 10px;
   border-bottom: 1px solid #eeeeee;
 }
-/* line 459, ../sass/screen.scss */
+/* line 486, ../sass/screen.scss */
 .bookmark-container .inputbox {
   margin: 0px 0px 0px 0px;
   padding: 0px 0px 0px 0px;
   height: 50px;
 }
-/* line 465, ../sass/screen.scss */
+/* line 492, ../sass/screen.scss */
 .bookmark-container .inputbox .http {
   margin: 2px 0px 0px 0px;
   padding: 0px 0px 0px 0px;
@@ -527,7 +547,7 @@ input[type="submit"].submit-form:hover, input[type="submit"].submit-form-large:h
   width: 50px;
   float: left;
 }
-/* line 473, ../sass/screen.scss */
+/* line 500, ../sass/screen.scss */
 .bookmark-container .inputbox .title {
   margin: 2px 0px 0px 0px;
   padding: 0px 0px 0px 0px;
@@ -535,7 +555,7 @@ input[type="submit"].submit-form:hover, input[type="submit"].submit-form-large:h
   float: left;
   width: 60px;
 }
-/* line 481, ../sass/screen.scss */
+/* line 508, ../sass/screen.scss */
 .bookmark-container .inputbox .description {
   margin: 2px 0px 0px 0px;
   padding: 0px 0px 0px 0px;
@@ -543,7 +563,7 @@ input[type="submit"].submit-form:hover, input[type="submit"].submit-form-large:h
   float: left;
   width: 100px;
 }
-/* line 489, ../sass/screen.scss */
+/* line 516, ../sass/screen.scss */
 .bookmark-container .inputbox input[type="text"] {
   margin: 0px 0px 0px 2px;
   padding: 0px 0px 0px 0px;
@@ -557,45 +577,45 @@ input[type="submit"].submit-form:hover, input[type="submit"].submit-form-large:h
   float: left;
 }
 
-/* line 504, ../sass/screen.scss */
+/* line 531, ../sass/screen.scss */
 ul.bookmark-categories {
   margin: 5px 0px 0px 0px;
   padding: 0px 0px 0px 0px;
   list-style: none;
 }
-/* line 510, ../sass/screen.scss */
+/* line 537, ../sass/screen.scss */
 ul.bookmark-categories li {
   margin: 0px 0px 0px 0px;
   padding: 5px 0px 5px 10px;
   list-style: none;
   border-left: 1px solid #fff;
 }
-/* line 517, ../sass/screen.scss */
+/* line 544, ../sass/screen.scss */
 ul.bookmark-categories li:hover {
   cursor: pointer;
   border-left: 1px solid #3274d0;
   background: rgba(238, 238, 238, 0.3);
 }
-/* line 524, ../sass/screen.scss */
+/* line 551, ../sass/screen.scss */
 ul.bookmark-categories li.selected {
   border-left: 1px solid #3274d0;
   background: rgba(84, 146, 252, 0.1);
 }
 
-/* line 530, ../sass/screen.scss */
+/* line 557, ../sass/screen.scss */
 .bookmark-category-container, .account-category-container {
   margin: 0px 0px 0px 0px;
   padding: 0px 0px 0px 0px;
   overflow: hidden;
 }
 
-/* line 536, ../sass/screen.scss */
+/* line 563, ../sass/screen.scss */
 ul.manage-bookmarks_list {
   margin: 20px 0px 0px 10px;
   padding: 0px 0px 0px 0px;
   list-style: none;
 }
-/* line 541, ../sass/screen.scss */
+/* line 568, ../sass/screen.scss */
 ul.manage-bookmarks_list li {
   margin: 0px 0px 0px 0px;
   padding: 0px 0px 0px 0px;
@@ -603,7 +623,7 @@ ul.manage-bookmarks_list li {
   overflow: hidden;
 }
 
-/* line 549, ../sass/screen.scss */
+/* line 576, ../sass/screen.scss */
 .account_element {
   margin: 0px 0px 0px 0px;
   padding: 0px 0px 0px 0px;
@@ -611,14 +631,14 @@ ul.manage-bookmarks_list li {
   overflow: hidden;
 }
 
-/* line 556, ../sass/screen.scss */
+/* line 583, ../sass/screen.scss */
 ul.bookmarks_list {
   margin: 20px 0px 0px 10px;
   padding: 0px 0px 0px 0px;
   list-style: none;
   display: none;
 }
-/* line 563, ../sass/screen.scss */
+/* line 590, ../sass/screen.scss */
 ul.bookmarks_list li {
   margin: 0px 0px 0px 0px;
   padding: 0px 0px 0px 0px;
@@ -626,7 +646,7 @@ ul.bookmarks_list li {
   overflow: hidden;
 }
 
-/* line 571, ../sass/screen.scss */
+/* line 598, ../sass/screen.scss */
 .account_element {
   margin: 0px 0px 0px 0px;
   padding: 0px 0px 0px 0px;
@@ -634,7 +654,7 @@ ul.bookmarks_list li {
   overflow: hidden;
 }
 
-/* line 579, ../sass/screen.scss */
+/* line 606, ../sass/screen.scss */
 .delete-button {
   margin: 0px 0px 0px 0px;
   padding: 5px 10px 7px 10px;
@@ -648,20 +668,20 @@ ul.bookmarks_list li {
   float: left;
 }
 
-/* line 592, ../sass/screen.scss */
+/* line 619, ../sass/screen.scss */
 .delete-button:hover {
   background: #df1a1a;
   cursor: pointer;
 }
 
-/* line 597, ../sass/screen.scss */
+/* line 624, ../sass/screen.scss */
 .bookmark {
   margin: 0px 0px 0px 0px;
   padding: 10px 0px 10px 0px;
   overflow: hidden;
   border-bottom: 1px solid #eeeeee;
 }
-/* line 604, ../sass/screen.scss */
+/* line 631, ../sass/screen.scss */
 .bookmark .delete {
   margin: 0px 0px 0px 0px;
   padding: 8px 0px 0px 0px;
@@ -669,7 +689,7 @@ ul.bookmarks_list li {
   position: relative;
   float: left;
 }
-/* line 612, ../sass/screen.scss */
+/* line 639, ../sass/screen.scss */
 .bookmark .icon, .bookmark .icon-loggedout {
   margin: 0px 0px 0px 0px;
   padding: 5px 0px 0px 0px;
@@ -678,7 +698,7 @@ ul.bookmarks_list li {
   float: left;
   cursor: pointer;
 }
-/* line 621, ../sass/screen.scss */
+/* line 648, ../sass/screen.scss */
 .bookmark .bookmark-data {
   margin: 0px 0px 0px 0px;
   padding: 0px 0px 0px 0px;
@@ -686,30 +706,30 @@ ul.bookmarks_list li {
   float: left;
   overflow: hidden;
 }
-/* line 629, ../sass/screen.scss */
+/* line 656, ../sass/screen.scss */
 .bookmark .title {
   margin: 0px 0px 0px 0px;
   padding: 0px 0px 0px 0px;
   font-size: 1.1em;
   word-wrap: break-word;
 }
-/* line 636, ../sass/screen.scss */
+/* line 663, ../sass/screen.scss */
 .bookmark .title .bookmark_url {
   font-size: .8em;
   color: #cccccc;
 }
-/* line 641, ../sass/screen.scss */
+/* line 668, ../sass/screen.scss */
 .bookmark .title a, .bookmark .title a:visited {
   text-decoration: none;
   color: #3274d0;
   font-size: 1em;
   font-family: 'Lato', Helvetica, Arial, sans-serif;
 }
-/* line 648, ../sass/screen.scss */
+/* line 675, ../sass/screen.scss */
 .bookmark .title .bookmark .bookmark-data .title a:hover {
   color: #5492e8;
 }
-/* line 653, ../sass/screen.scss */
+/* line 680, ../sass/screen.scss */
 .bookmark .meta {
   margin: 5px 0px 0px 0px;
   padding: 0px 0px 0px 0px;
@@ -717,7 +737,7 @@ ul.bookmarks_list li {
   font-size: .9em;
   width: 100%;
 }
-/* line 661, ../sass/screen.scss */
+/* line 688, ../sass/screen.scss */
 .bookmark .tags {
   margin: 10px 0px 0px 0px;
   padding: 0px 0px 0px 0px;
@@ -725,7 +745,7 @@ ul.bookmarks_list li {
   width: 100%;
   overflow: hidden;
 }
-/* line 669, ../sass/screen.scss */
+/* line 696, ../sass/screen.scss */
 .bookmark .tags a {
   margin: 0px 5px 0px 0px;
   padding: 3px 3px 3px 3px;
@@ -737,41 +757,41 @@ ul.bookmarks_list li {
   font-size: .8em;
   text-decoration: none;
 }
-/* line 681, ../sass/screen.scss */
+/* line 708, ../sass/screen.scss */
 .bookmark .tags a.user-tag {
   background: #97e297;
 }
-/* line 685, ../sass/screen.scss */
+/* line 712, ../sass/screen.scss */
 .bookmark .tags a:hover {
   background: #e7f1ff;
 }
-/* line 689, ../sass/screen.scss */
+/* line 716, ../sass/screen.scss */
 .bookmark .tags a.user-tag:hover {
   background: #bef4be;
 }
 
-/* line 696, ../sass/screen.scss */
+/* line 723, ../sass/screen.scss */
 .options {
   display: none;
 }
 
-/* line 700, ../sass/screen.scss */
+/* line 727, ../sass/screen.scss */
 .show_options {
   display: block;
 }
 
-/* line 704, ../sass/screen.scss */
+/* line 731, ../sass/screen.scss */
 .row-padding-10 {
   padding: 10px 0px 10px 0px;
 }
 
-/* line 708, ../sass/screen.scss */
+/* line 735, ../sass/screen.scss */
 .div-row-mini {
   margin: 0px 0px 5px 0px;
   padding: 0px 0px 0px 0px;
   overflow: hidden;
 }
-/* line 714, ../sass/screen.scss */
+/* line 741, ../sass/screen.scss */
 .div-row-mini .field-label-small {
   margin: 0px 10px 0px 0px;
   padding: 0px 0px 0px 0px;
@@ -780,7 +800,7 @@ ul.bookmarks_list li {
   float: left;
   font-size: .8em;
 }
-/* line 723, ../sass/screen.scss */
+/* line 750, ../sass/screen.scss */
 .div-row-mini .field-value-small {
   margin: 0px 0px 0px 0px;
   padding: 0px 0px 0px 0px;
@@ -789,13 +809,13 @@ ul.bookmarks_list li {
   font-size: .8em;
 }
 
-/* line 732, ../sass/screen.scss */
+/* line 759, ../sass/screen.scss */
 .div-row {
   margin: 0px 0px 0px 0px;
   padding: 10px 0px 10px 0px;
   overflow: hidden;
 }
-/* line 738, ../sass/screen.scss */
+/* line 765, ../sass/screen.scss */
 .div-row .left-half {
   margin: 0px 0px 0px 0px;
   padding: 0px 0px 0px 0px;
@@ -804,7 +824,7 @@ ul.bookmarks_list li {
   float: left;
   min-height: 10px;
 }
-/* line 747, ../sass/screen.scss */
+/* line 774, ../sass/screen.scss */
 .div-row .right-half {
   margin: 0px 0px 0px 0px;
   padding: 0px 0px 0px 0px;
@@ -813,7 +833,7 @@ ul.bookmarks_list li {
   float: left;
   min-height: 10px;
 }
-/* line 756, ../sass/screen.scss */
+/* line 783, ../sass/screen.scss */
 .div-row .field-label {
   margin: 0px 0px 0px 0px;
   padding: 2px 0px 0px 0px;
@@ -821,7 +841,7 @@ ul.bookmarks_list li {
   position: relative;
   float: left;
 }
-/* line 764, ../sass/screen.scss */
+/* line 791, ../sass/screen.scss */
 .div-row .field-value {
   margin: 0px 0px 0px 0px;
   padding: 0px 0px 0px 0px;
@@ -829,7 +849,7 @@ ul.bookmarks_list li {
   float: left;
   min-width: 300px;
 }
-/* line 771, ../sass/screen.scss */
+/* line 798, ../sass/screen.scss */
 .div-row .field-value input[type="text"], .div-row .field-value input[type="password"] {
   margin: 0px 5px 0px 2px;
   padding: 0px 0px 0px 0px;
@@ -840,11 +860,11 @@ ul.bookmarks_list li {
   font-family: 'Lato', Helvetica, Arial, sans-serif;
   color: #434343;
 }
-/* line 782, ../sass/screen.scss */
+/* line 809, ../sass/screen.scss */
 .div-row .field-value .text {
   margin: 3px 0px 0px 0px;
 }
-/* line 787, ../sass/screen.scss */
+/* line 814, ../sass/screen.scss */
 .div-row .field-status {
   margin: 0px 0px 0px 0px;
   padding: 0px 0px 0px 0px;
@@ -853,12 +873,12 @@ ul.bookmarks_list li {
   width: 250px;
   word-wrap: break-word;
 }
-/* line 796, ../sass/screen.scss */
+/* line 823, ../sass/screen.scss */
 .div-row .field-status span.gray_text {
   color: #666666;
   font-size: .8em;
 }
-/* line 801, ../sass/screen.scss */
+/* line 828, ../sass/screen.scss */
 .div-row .field-status input[type="text"], .div-row .field-status input[type="password"] {
   margin: 0px 5px 0px 2px;
   padding: 0px 0px 0px 0px;
@@ -870,12 +890,12 @@ ul.bookmarks_list li {
   color: #434343;
 }
 
-/* line 814, ../sass/screen.scss */
+/* line 841, ../sass/screen.scss */
 .tag-container {
   margin: 0px 0px 0px 0px;
   padding: 0px 0px 0px 0px;
 }
-/* line 819, ../sass/screen.scss */
+/* line 846, ../sass/screen.scss */
 .tag-container .tag {
   margin: 0px 10px 10px 0px;
   padding: 5px 5px 5px 5px;
@@ -884,7 +904,7 @@ ul.bookmarks_list li {
   float: left;
   border-radius: 5px;
 }
-/* line 828, ../sass/screen.scss */
+/* line 855, ../sass/screen.scss */
 .tag-container .tag .close {
   margin: 2px 0px 0px 5px;
   padding: 2px 4px 2px 4px;
@@ -894,7 +914,7 @@ ul.bookmarks_list li {
   border-radius: 4px;
   color: #fff;
 }
-/* line 838, ../sass/screen.scss */
+/* line 865, ../sass/screen.scss */
 .tag-container .tag .close:hover {
   cursor: pointer;
   background: #9cc6ff;
