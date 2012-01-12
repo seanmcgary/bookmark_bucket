@@ -67,34 +67,32 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   display: block;
 }
 
-/* line 8, ../sass/screen.scss */
+/* line 12, ../sass/screen.scss */
 body {
   margin: 0px 0px 0px 0px;
   padding: 0px 0px 0px 0px;
-  font-family: 'Lato', Helvetica, Arial, sans-serif;
+  font-family: "Lato", Helvetica, Arial, sans-serif;
   font-style: normal;
   word-spacing: 0em;
   line-height: 1.2;
   color: #434343;
-  /*background:
-      url('images/background.png');*/
 }
 
-/* line 20, ../sass/screen.scss */
+/* line 22, ../sass/screen.scss */
 h1 {
   margin: 0px 0px 10px 0px;
   padding: 0px 0px 0px 0px;
   font-size: 1.6em;
 }
 
-/* line 27, ../sass/screen.scss */
+/* line 29, ../sass/screen.scss */
 h2 {
   margin: 0px 0px 10px 0px;
   padding: 0px 0px 0px 0px;
   font-size: 1.2em;
 }
 
-/* line 33, ../sass/screen.scss */
+/* line 35, ../sass/screen.scss */
 h3 {
   margin: 0px 0px 0px 0px;
   padding: 0px 0px 5px 0px;
@@ -103,7 +101,7 @@ h3 {
   border-bottom: 1px solid #eeeeee;
 }
 
-/* line 41, ../sass/screen.scss */
+/* line 43, ../sass/screen.scss */
 h4 {
   margin: 0px 0px 0px 0px;
   padding: 0px 0px 5px 0px;
@@ -111,27 +109,27 @@ h4 {
   width: 100%;
 }
 
-/* line 48, ../sass/screen.scss */
+/* line 50, ../sass/screen.scss */
 span.failure {
   color: #db0000;
 }
 
-/* line 52, ../sass/screen.scss */
+/* line 54, ../sass/screen.scss */
 span.success {
   color: #24a724;
 }
 
-/* line 56, ../sass/screen.scss */
+/* line 58, ../sass/screen.scss */
 span.working {
   color: #ff7700;
 }
 
-/* line 60, ../sass/screen.scss */
+/* line 62, ../sass/screen.scss */
 .float-right {
   float: right;
 }
 
-/* line 64, ../sass/screen.scss */
+/* line 66, ../sass/screen.scss */
 .float-left {
   float: left;
 }
@@ -142,12 +140,12 @@ span.working {
     background: #fff;
     display: none;
 }*/
-/* line 74, ../sass/screen.scss */
+/* line 76, ../sass/screen.scss */
 #simplemodal-overlay {
   background: #000;
 }
 
-/* line 78, ../sass/screen.scss */
+/* line 80, ../sass/screen.scss */
 .modal-overlay {
   margin: 0px 0px 0px 0px;
   padding: 0px 0px 0px 0px;
@@ -159,7 +157,7 @@ span.working {
   display: none;
 }
 
-/* line 89, ../sass/screen.scss */
+/* line 91, ../sass/screen.scss */
 .modal {
   margin: 0px 0px 0px 0px;
   padding: 10px 10px 10px 10px;
@@ -172,25 +170,25 @@ span.working {
   border: 5px solid #434343;
   display: none;
 }
-/* line 101, ../sass/screen.scss */
+/* line 103, ../sass/screen.scss */
 .modal .drop-delay {
   margin: 0px 0px 0px 0px;
   padding: 0px 0px 0px 0px;
 }
-/* line 105, ../sass/screen.scss */
+/* line 107, ../sass/screen.scss */
 .modal .drop-delay input[type="number"] {
   margin: 0px 0px 0px 0px;
   padding: 0px 0px 0px 0px;
   broder: 1px solid #ccccc;
 }
 
-/* line 114, ../sass/screen.scss */
+/* line 116, ../sass/screen.scss */
 .user-profile {
   margin: 0px 0px 0px 0px;
   padding: 0px 0px 0px 0px;
   overflow: hidden;
 }
-/* line 119, ../sass/screen.scss */
+/* line 121, ../sass/screen.scss */
 .user-profile .name {
   margin: 0px 0px 0px 0px;
   padding: 5px 5px 5px 5px;
@@ -198,7 +196,7 @@ span.working {
   overflow: hidden;
   border: 1px solid #aaaaaa;
 }
-/* line 127, ../sass/screen.scss */
+/* line 129, ../sass/screen.scss */
 .user-profile .name .avatar {
   margin: 0px 10px 0px 0px;
   padding: 5px 5px 2px 5px;
@@ -207,7 +205,7 @@ span.working {
   border: 1px solid #dddddd;
   background: #fff;
 }
-/* line 136, ../sass/screen.scss */
+/* line 138, ../sass/screen.scss */
 .user-profile .name .username {
   margin: 25px 10px 0px 0px;
   padding: 0px 0px 0px 0px;
@@ -215,7 +213,7 @@ span.working {
   float: left;
   font-size: 1.6em;
 }
-/* line 144, ../sass/screen.scss */
+/* line 146, ../sass/screen.scss */
 .user-profile .name .fullname {
   margin: 30px 0px 0px 0px;
   padding: 0px 0px 0px 0px;
@@ -224,20 +222,20 @@ span.working {
   font-size: 1.3em;
   color: #aaaaaa;
 }
-/* line 153, ../sass/screen.scss */
+/* line 155, ../sass/screen.scss */
 .user-profile .name .follow {
   margin: 30px 0px 0px 0px;
   padding: 0px 0px 0px 0px;
   position: relative;
   float: right;
 }
-/* line 162, ../sass/screen.scss */
+/* line 164, ../sass/screen.scss */
 .user-profile .profile {
   margin: 10px 0px 0px 0px;
   padding: 0px 0px 0px 10px;
   overflow: hidden;
 }
-/* line 168, ../sass/screen.scss */
+/* line 170, ../sass/screen.scss */
 .user-profile .profile .profile-left {
   margin: 0px 0px 0px 0px;
   padding: 0px 0px 0px 0px;
@@ -245,7 +243,7 @@ span.working {
   float: left;
   width: 356px;
 }
-/* line 176, ../sass/screen.scss */
+/* line 178, ../sass/screen.scss */
 .user-profile .profile .profile-right {
   margin: 0px 0px 0px 0px;
   padding: 0px 0px 0px 0px;
@@ -253,28 +251,28 @@ span.working {
   float: right;
   width: 362px;
 }
-/* line 185, ../sass/screen.scss */
+/* line 187, ../sass/screen.scss */
 .user-profile .profile .profile-right .top {
   margin: -5px 0px 0px 0px;
   padding: 0px 0px 0px 0px;
   position: relative;
   overflow: hidden;
 }
-/* line 192, ../sass/screen.scss */
+/* line 194, ../sass/screen.scss */
 .user-profile .profile .profile-right .top .stat {
   margin: 0px 20px 0px 0px;
   padding: 0px 0px 0px 0px;
   position: relative;
   float: left;
 }
-/* line 199, ../sass/screen.scss */
+/* line 201, ../sass/screen.scss */
 .user-profile .profile .profile-right .top .stat .number {
   margin: 0px 0px 0px 0px;
   padding: 0px 0px 0px 0px;
   font-size: 2.0em;
   position: relative;
 }
-/* line 206, ../sass/screen.scss */
+/* line 208, ../sass/screen.scss */
 .user-profile .profile .profile-right .top .stat .desc {
   margin: 0px 0px 0px 0px;
   padding: 0px 0px 0px 0px;
@@ -282,27 +280,27 @@ span.working {
   font-size: .7em;
   color: #888888;
 }
-/* line 217, ../sass/screen.scss */
+/* line 219, ../sass/screen.scss */
 .user-profile .profile .profile-right .bottom {
   margin: 5px 0px 0px 0px;
   padding: 5px 0px 5px 0px;
   position: relative;
 }
-/* line 223, ../sass/screen.scss */
+/* line 225, ../sass/screen.scss */
 .user-profile .profile .profile-right .bottom .text {
   margin: 0px 0px 3px 0px;
   padding: 0px 0px 0px 0px;
   font-size: .7em;
   position: relative;
 }
-/* line 230, ../sass/screen.scss */
+/* line 232, ../sass/screen.scss */
 .user-profile .profile .profile-right .bottom .following {
   margin: 0px 0px 3px 0px;
   padding: 0px 0px 0px 0px;
   position: relative;
   overflow: hidden;
 }
-/* line 237, ../sass/screen.scss */
+/* line 239, ../sass/screen.scss */
 .user-profile .profile .profile-right .bottom .following .image {
   padding: 2px 2px 0px 2px;
   position: relative;
@@ -312,13 +310,13 @@ span.working {
   border: 1px solid #dddddd;
 }
 
-/* line 254, ../sass/screen.scss */
+/* line 256, ../sass/screen.scss */
 table.import-bookmarks-table {
   margin: 0px 0px 0px 0px;
   padding: 0px 0px 0px 0px;
   border-collapse: collapse;
 }
-/* line 260, ../sass/screen.scss */
+/* line 262, ../sass/screen.scss */
 table.import-bookmarks-table tr th {
   margin: 0px 0px 0px 0px;
   padding: 5px 10px 5px 10px;
@@ -328,39 +326,39 @@ table.import-bookmarks-table tr th {
   text-align: left;
   border: 1px solid #3274d0;
 }
-/* line 270, ../sass/screen.scss */
+/* line 272, ../sass/screen.scss */
 table.import-bookmarks-table tr:not(:first-of-type) {
   margin: 0px 0px 0px 0px;
   padding: 0px 0px 0px 0px;
   border: 1px solid #cccccc;
 }
-/* line 276, ../sass/screen.scss */
+/* line 278, ../sass/screen.scss */
 table.import-bookmarks-table tr td {
   margin: 0px 0px 0px 0px;
   padding: 5px 10px 5px 10px;
 }
-/* line 281, ../sass/screen.scss */
+/* line 283, ../sass/screen.scss */
 table.import-bookmarks-table tr td a, table.import-bookmarks-table tr td a:visited {
   color: #3274d0;
   text-decoration: none;
 }
-/* line 286, ../sass/screen.scss */
+/* line 288, ../sass/screen.scss */
 table.import-bookmarks-table tr td a:hover {
   color: #5492e8;
   text-decoration: none;
 }
-/* line 293, ../sass/screen.scss */
+/* line 295, ../sass/screen.scss */
 table.import-bookmarks-table tr td:nth-child(1) {
   text-align: center;
 }
 
-/* line 298, ../sass/screen.scss */
+/* line 300, ../sass/screen.scss */
 .new_bookmark_form {
   margin-top: 10px;
   display: none;
 }
 
-/* line 303, ../sass/screen.scss */
+/* line 305, ../sass/screen.scss */
 input[type="text"], input[type="password"] {
   margin: 0px 0px 0px 0px;
   padding: 0px 0px 0px 0px;
@@ -369,43 +367,146 @@ input[type="text"], input[type="password"] {
   font-size: 1.1em;
 }
 
-/* line 311, ../sass/screen.scss */
-input[type="submit"], input[type="button"] {
+/* line 313, ../sass/screen.scss */
+.button, input[type="submit"], input[type="button"] {
   margin: 0px 0px 0px 0px;
   padding: 5px 10px 5px 10px;
   border-radius: 3px;
+  font-family: "Lato", Helvetica, Arial, sans-serif;
+  font-weight: bold;
+  box-shadow: #949494;
 }
 
-/* line 317, ../sass/screen.scss */
-.button-green {
-  color: #0da40d;
-  color: #ffffff;
-  border: 1px solid green;
-  background: #29ba29;
-  box-shadow: inset 2px 2px 2px rgba(255, 255, 255, 0.3);
+/* line 322, ../sass/screen.scss */
+.btn-gray {
+  border: 1px solid #8a8a8a;
+  background-color: #eeeeee;
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFEEEEEE', endColorstr='#FFCCCCCC');
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #eeeeee), color-stop(100%, #cccccc));
+  background-image: -webkit-linear-gradient(top, #eeeeee 0%, #cccccc 100%);
+  background-image: -moz-linear-gradient(top, #eeeeee 0%, #cccccc 100%);
+  background-image: -o-linear-gradient(top, #eeeeee 0%, #cccccc 100%);
+  background-image: -ms-linear-gradient(top, #eeeeee 0%, #cccccc 100%);
+  background-image: linear-gradient(top, #eeeeee 0%, #cccccc 100%);
+  color: #434343;
+  text-shadow: 0 -1px -1px rgba(255, 255, 255, 0.2);
 }
 
-/* line 327, ../sass/screen.scss */
-.button-green:hover {
+/* line 331, ../sass/screen.scss */
+.btn-gray:hover {
   cursor: pointer;
-  background: #0da40d;
-  box-shadow: inset -2px -2px 2px rgba(120, 87, 76, 0.2);
+  background-color: #cccccc;
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFCCCCCC', endColorstr='#FFEEEEEE');
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #cccccc), color-stop(100%, #eeeeee));
+  background-image: -webkit-linear-gradient(top, #cccccc 0%, #eeeeee 100%);
+  background-image: -moz-linear-gradient(top, #cccccc 0%, #eeeeee 100%);
+  background-image: -o-linear-gradient(top, #cccccc 0%, #eeeeee 100%);
+  background-image: -ms-linear-gradient(top, #cccccc 0%, #eeeeee 100%);
+  background-image: linear-gradient(top, #cccccc 0%, #eeeeee 100%);
+  box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.4);
 }
 
-/* line 333, ../sass/screen.scss */
+/* line 340, ../sass/screen.scss */
+.btn-blue {
+  border: 1px solid #3785d4;
+  background-color: #7abcff;
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF7ABCFF', endColorstr='#FF4096EE');
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #7abcff), color-stop(100%, #4096ee));
+  background-image: -webkit-linear-gradient(top, #7abcff 0%, #4096ee 100%);
+  background-image: -moz-linear-gradient(top, #7abcff 0%, #4096ee 100%);
+  background-image: -o-linear-gradient(top, #7abcff 0%, #4096ee 100%);
+  background-image: -ms-linear-gradient(top, #7abcff 0%, #4096ee 100%);
+  background-image: linear-gradient(top, #7abcff 0%, #4096ee 100%);
+  color: #fff;
+  text-shadow: 0 -1px -1px rgba(0, 0, 0, 0.2);
+}
+
+/* line 349, ../sass/screen.scss */
+.btn-blue:hover {
+  cursor: pointer;
+  background-color: #4096ee;
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF4096EE', endColorstr='#FF7ABCFF');
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #4096ee), color-stop(100%, #7abcff));
+  background-image: -webkit-linear-gradient(top, #4096ee 0%, #7abcff 100%);
+  background-image: -moz-linear-gradient(top, #4096ee 0%, #7abcff 100%);
+  background-image: -o-linear-gradient(top, #4096ee 0%, #7abcff 100%);
+  background-image: -ms-linear-gradient(top, #4096ee 0%, #7abcff 100%);
+  background-image: linear-gradient(top, #4096ee 0%, #7abcff 100%);
+  box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.4);
+}
+
+/* line 358, ../sass/screen.scss */
+.btn-red {
+  border: 1px solid #4f0310;
+  background-color: #a90329;
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFA90329', endColorstr='#FF6D0019');
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #a90329), color-stop(100%, #6d0019));
+  background-image: -webkit-linear-gradient(top, #a90329 0%, #6d0019 100%);
+  background-image: -moz-linear-gradient(top, #a90329 0%, #6d0019 100%);
+  background-image: -o-linear-gradient(top, #a90329 0%, #6d0019 100%);
+  background-image: -ms-linear-gradient(top, #a90329 0%, #6d0019 100%);
+  background-image: linear-gradient(top, #a90329 0%, #6d0019 100%);
+  color: #fff;
+  text-shadow: 0 -1px -1px rgba(0, 0, 0, 0.2);
+}
+
+/* line 367, ../sass/screen.scss */
+.btn-red:hover {
+  cursor: pointer;
+  background-color: #6d0019;
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF6D0019', endColorstr='#FFA90329');
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #6d0019), color-stop(100%, #a90329));
+  background-image: -webkit-linear-gradient(top, #6d0019 0%, #a90329 100%);
+  background-image: -moz-linear-gradient(top, #6d0019 0%, #a90329 100%);
+  background-image: -o-linear-gradient(top, #6d0019 0%, #a90329 100%);
+  background-image: -ms-linear-gradient(top, #6d0019 0%, #a90329 100%);
+  background-image: linear-gradient(top, #6d0019 0%, #a90329 100%);
+  box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.4);
+}
+
+/* line 375, ../sass/screen.scss */
+.btn-green {
+  border: 1px solid #63854e;
+  background-color: #63854e;
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF8AB66B', endColorstr='#FF398235');
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #8ab66b), color-stop(100%, #398235));
+  background-image: -webkit-linear-gradient(top, #8ab66b 0%, #398235 100%);
+  background-image: -moz-linear-gradient(top, #8ab66b 0%, #398235 100%);
+  background-image: -o-linear-gradient(top, #8ab66b 0%, #398235 100%);
+  background-image: -ms-linear-gradient(top, #8ab66b 0%, #398235 100%);
+  background-image: linear-gradient(top, #8ab66b 0%, #398235 100%);
+  color: #fff;
+  text-shadow: 0 -1px -1px rgba(0, 0, 0, 0.2);
+}
+
+/* line 384, ../sass/screen.scss */
+.btn-green:hover {
+  cursor: pointer;
+  box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.4);
+}
+
+/* line 392, ../sass/screen.scss */
 .header {
   margin: 0px 0px 0px 0px;
   padding: 0px 0px 0px 0px;
   height: 75px;
+  background: #3274d0;
 }
-/* line 340, ../sass/screen.scss */
+/* line 399, ../sass/screen.scss */
 .header .header-container {
   margin: 0px auto 0px auto;
   padding: 0px 0px 0px 0px;
   width: 960px;
   height: 75px;
 }
-/* line 347, ../sass/screen.scss */
+/* line 406, ../sass/screen.scss */
 .header .header-container .logo {
   /*margin: 0px 0px 20px -20px;
   padding:10px 10px 10px 20px;
@@ -429,17 +530,17 @@ input[type="submit"], input[type="button"] {
   color: #fff;
   background: #3274d0;
 }
-/* line 372, ../sass/screen.scss */
+/* line 431, ../sass/screen.scss */
 .header .header-container .logo a, .header .header-container .logo a:visited {
   text-decoration: none;
   color: #fff;
 }
-/* line 377, ../sass/screen.scss */
+/* line 436, ../sass/screen.scss */
 .header .header-container .logo a:hover {
   text-decoration: none;
   color: #bfdaff;
 }
-/* line 384, ../sass/screen.scss */
+/* line 443, ../sass/screen.scss */
 .header .header-container .right {
   margin: 0px 0px 0px 0px;
   padding: 0px 0px 0px 0px;
@@ -450,29 +551,28 @@ input[type="submit"], input[type="button"] {
   text-align: right;
   color: #fff;
 }
-/* line 395, ../sass/screen.scss */
+/* line 454, ../sass/screen.scss */
 .header .header-container .right .user-data {
   margin: 0px 0px 10px 0px;
   padding: 0px 0px 0px 0px;
 }
-/* line 399, ../sass/screen.scss */
+/* line 458, ../sass/screen.scss */
 .header .header-container .right .user-data a, .header .header-container .right .user-data a:visited {
   text-decoration: none;
   color: #bfdaff;
 }
-/* line 404, ../sass/screen.scss */
+/* line 463, ../sass/screen.scss */
 .header .header-container .right .user-data a:hover {
   color: #9cc6ff;
 }
-/* line 409, ../sass/screen.scss */
+/* line 468, ../sass/screen.scss */
 .header .header-container .right .bookmark_actions {
   margin: 0px 0px 0px 0px;
   padding: 5px 0px 5px 0px;
-  background: #fff;
   overflow: hidden;
 }
 
-/* line 420, ../sass/screen.scss */
+/* line 479, ../sass/screen.scss */
 .navigation {
   margin: 0px 0px 0px 0px;
   padding: 0px 0px 0px 0px;
@@ -480,34 +580,34 @@ input[type="submit"], input[type="button"] {
   border-top: 1px solid #999999;
   border-bottom: 1px solid #999999;
 }
-/* line 428, ../sass/screen.scss */
+/* line 487, ../sass/screen.scss */
 .navigation .navigation-container {
   margin: 0px auto 0px auto;
   padding: 0px 0px 0px 0px;
   height: 50px;
   width: 960px;
 }
-/* line 435, ../sass/screen.scss */
+/* line 494, ../sass/screen.scss */
 .navigation .navigation-container ul {
   margin: 0px 0px 0px 0px;
   padding: 0px 0px 0px 0px;
   list-style: none;
 }
-/* line 441, ../sass/screen.scss */
+/* line 500, ../sass/screen.scss */
 .navigation .navigation-container ul li {
   margin: 0px 0px 0px 0px;
   padding: 0px 0px 0px 0px;
   list-style: none;
 }
 
-/* line 452, ../sass/screen.scss */
+/* line 511, ../sass/screen.scss */
 .container {
   margin: 0px auto 0px auto;
   padding: 0px 10px 10px 10px;
   width: 960px;
   overflow: hidden;
 }
-/* line 459, ../sass/screen.scss */
+/* line 518, ../sass/screen.scss */
 .container .left-col {
   margin: 0px 0px 0px 0px;
   padding: 10px 0px 0px 0px;
@@ -515,7 +615,7 @@ input[type="submit"], input[type="button"] {
   position: relative;
   float: left;
 }
-/* line 467, ../sass/screen.scss */
+/* line 526, ../sass/screen.scss */
 .container .right-col {
   margin: 0px 0px 0px 10px;
   padding: 0px 0px 10px 0px;
@@ -527,19 +627,19 @@ input[type="submit"], input[type="button"] {
   border-bottom: 1px solid #eeeeee;
 }
 
-/* line 480, ../sass/screen.scss */
+/* line 539, ../sass/screen.scss */
 .bookmark-container {
   margin: 0px 0px 20px 0px;
   padding: 10px 10px 10px 10px;
   border-bottom: 1px solid #eeeeee;
 }
-/* line 486, ../sass/screen.scss */
+/* line 545, ../sass/screen.scss */
 .bookmark-container .inputbox {
   margin: 0px 0px 0px 0px;
   padding: 0px 0px 0px 0px;
   height: 50px;
 }
-/* line 492, ../sass/screen.scss */
+/* line 551, ../sass/screen.scss */
 .bookmark-container .inputbox .http {
   margin: 2px 0px 0px 0px;
   padding: 0px 0px 0px 0px;
@@ -547,7 +647,7 @@ input[type="submit"], input[type="button"] {
   width: 50px;
   float: left;
 }
-/* line 500, ../sass/screen.scss */
+/* line 559, ../sass/screen.scss */
 .bookmark-container .inputbox .title {
   margin: 2px 0px 0px 0px;
   padding: 0px 0px 0px 0px;
@@ -555,7 +655,7 @@ input[type="submit"], input[type="button"] {
   float: left;
   width: 60px;
 }
-/* line 508, ../sass/screen.scss */
+/* line 567, ../sass/screen.scss */
 .bookmark-container .inputbox .description {
   margin: 2px 0px 0px 0px;
   padding: 0px 0px 0px 0px;
@@ -563,7 +663,7 @@ input[type="submit"], input[type="button"] {
   float: left;
   width: 100px;
 }
-/* line 516, ../sass/screen.scss */
+/* line 575, ../sass/screen.scss */
 .bookmark-container .inputbox input[type="text"] {
   margin: 0px 0px 0px 2px;
   padding: 0px 0px 0px 0px;
@@ -577,45 +677,45 @@ input[type="submit"], input[type="button"] {
   float: left;
 }
 
-/* line 531, ../sass/screen.scss */
+/* line 590, ../sass/screen.scss */
 ul.bookmark-categories {
   margin: 5px 0px 0px 0px;
   padding: 0px 0px 0px 0px;
   list-style: none;
 }
-/* line 537, ../sass/screen.scss */
+/* line 596, ../sass/screen.scss */
 ul.bookmark-categories li {
   margin: 0px 0px 0px 0px;
   padding: 5px 0px 5px 10px;
   list-style: none;
   border-left: 1px solid #fff;
 }
-/* line 544, ../sass/screen.scss */
+/* line 603, ../sass/screen.scss */
 ul.bookmark-categories li:hover {
   cursor: pointer;
   border-left: 1px solid #3274d0;
   background: rgba(238, 238, 238, 0.3);
 }
-/* line 551, ../sass/screen.scss */
+/* line 610, ../sass/screen.scss */
 ul.bookmark-categories li.selected {
   border-left: 1px solid #3274d0;
   background: rgba(84, 146, 252, 0.1);
 }
 
-/* line 557, ../sass/screen.scss */
+/* line 616, ../sass/screen.scss */
 .bookmark-category-container, .account-category-container {
   margin: 0px 0px 0px 0px;
   padding: 0px 0px 0px 0px;
   overflow: hidden;
 }
 
-/* line 563, ../sass/screen.scss */
+/* line 622, ../sass/screen.scss */
 ul.manage-bookmarks_list {
   margin: 20px 0px 0px 10px;
   padding: 0px 0px 0px 0px;
   list-style: none;
 }
-/* line 568, ../sass/screen.scss */
+/* line 627, ../sass/screen.scss */
 ul.manage-bookmarks_list li {
   margin: 0px 0px 0px 0px;
   padding: 0px 0px 0px 0px;
@@ -623,7 +723,7 @@ ul.manage-bookmarks_list li {
   overflow: hidden;
 }
 
-/* line 576, ../sass/screen.scss */
+/* line 635, ../sass/screen.scss */
 .account_element {
   margin: 0px 0px 0px 0px;
   padding: 0px 0px 0px 0px;
@@ -631,14 +731,14 @@ ul.manage-bookmarks_list li {
   overflow: hidden;
 }
 
-/* line 583, ../sass/screen.scss */
+/* line 642, ../sass/screen.scss */
 ul.bookmarks_list {
   margin: 20px 0px 0px 10px;
   padding: 0px 0px 0px 0px;
   list-style: none;
   display: none;
 }
-/* line 590, ../sass/screen.scss */
+/* line 649, ../sass/screen.scss */
 ul.bookmarks_list li {
   margin: 0px 0px 0px 0px;
   padding: 0px 0px 0px 0px;
@@ -646,7 +746,7 @@ ul.bookmarks_list li {
   overflow: hidden;
 }
 
-/* line 598, ../sass/screen.scss */
+/* line 657, ../sass/screen.scss */
 .account_element {
   margin: 0px 0px 0px 0px;
   padding: 0px 0px 0px 0px;
@@ -654,7 +754,7 @@ ul.bookmarks_list li {
   overflow: hidden;
 }
 
-/* line 606, ../sass/screen.scss */
+/* line 665, ../sass/screen.scss */
 .delete-button {
   margin: 0px 0px 0px 0px;
   padding: 5px 10px 7px 10px;
@@ -668,20 +768,20 @@ ul.bookmarks_list li {
   float: left;
 }
 
-/* line 619, ../sass/screen.scss */
+/* line 678, ../sass/screen.scss */
 .delete-button:hover {
   background: #df1a1a;
   cursor: pointer;
 }
 
-/* line 624, ../sass/screen.scss */
+/* line 683, ../sass/screen.scss */
 .bookmark {
   margin: 0px 0px 0px 0px;
   padding: 10px 0px 10px 0px;
   overflow: hidden;
   border-bottom: 1px solid #eeeeee;
 }
-/* line 631, ../sass/screen.scss */
+/* line 690, ../sass/screen.scss */
 .bookmark .delete {
   margin: 0px 0px 0px 0px;
   padding: 8px 0px 0px 0px;
@@ -689,7 +789,7 @@ ul.bookmarks_list li {
   position: relative;
   float: left;
 }
-/* line 639, ../sass/screen.scss */
+/* line 698, ../sass/screen.scss */
 .bookmark .icon, .bookmark .icon-loggedout {
   margin: 0px 0px 0px 0px;
   padding: 5px 0px 0px 0px;
@@ -698,7 +798,7 @@ ul.bookmarks_list li {
   float: left;
   cursor: pointer;
 }
-/* line 648, ../sass/screen.scss */
+/* line 707, ../sass/screen.scss */
 .bookmark .bookmark-data {
   margin: 0px 0px 0px 0px;
   padding: 0px 0px 0px 0px;
@@ -706,30 +806,30 @@ ul.bookmarks_list li {
   float: left;
   overflow: hidden;
 }
-/* line 656, ../sass/screen.scss */
+/* line 715, ../sass/screen.scss */
 .bookmark .title {
   margin: 0px 0px 0px 0px;
   padding: 0px 0px 0px 0px;
   font-size: 1.1em;
   word-wrap: break-word;
 }
-/* line 663, ../sass/screen.scss */
+/* line 722, ../sass/screen.scss */
 .bookmark .title .bookmark_url {
   font-size: .8em;
   color: #cccccc;
 }
-/* line 668, ../sass/screen.scss */
+/* line 727, ../sass/screen.scss */
 .bookmark .title a, .bookmark .title a:visited {
   text-decoration: none;
   color: #3274d0;
   font-size: 1em;
   font-family: 'Lato', Helvetica, Arial, sans-serif;
 }
-/* line 675, ../sass/screen.scss */
+/* line 734, ../sass/screen.scss */
 .bookmark .title .bookmark .bookmark-data .title a:hover {
   color: #5492e8;
 }
-/* line 680, ../sass/screen.scss */
+/* line 739, ../sass/screen.scss */
 .bookmark .meta {
   margin: 5px 0px 0px 0px;
   padding: 0px 0px 0px 0px;
@@ -737,7 +837,7 @@ ul.bookmarks_list li {
   font-size: .9em;
   width: 100%;
 }
-/* line 688, ../sass/screen.scss */
+/* line 747, ../sass/screen.scss */
 .bookmark .tags {
   margin: 10px 0px 0px 0px;
   padding: 0px 0px 0px 0px;
@@ -745,7 +845,7 @@ ul.bookmarks_list li {
   width: 100%;
   overflow: hidden;
 }
-/* line 696, ../sass/screen.scss */
+/* line 755, ../sass/screen.scss */
 .bookmark .tags a {
   margin: 0px 5px 0px 0px;
   padding: 3px 3px 3px 3px;
@@ -757,41 +857,41 @@ ul.bookmarks_list li {
   font-size: .8em;
   text-decoration: none;
 }
-/* line 708, ../sass/screen.scss */
+/* line 767, ../sass/screen.scss */
 .bookmark .tags a.user-tag {
   background: #97e297;
 }
-/* line 712, ../sass/screen.scss */
+/* line 771, ../sass/screen.scss */
 .bookmark .tags a:hover {
   background: #e7f1ff;
 }
-/* line 716, ../sass/screen.scss */
+/* line 775, ../sass/screen.scss */
 .bookmark .tags a.user-tag:hover {
   background: #bef4be;
 }
 
-/* line 723, ../sass/screen.scss */
+/* line 782, ../sass/screen.scss */
 .options {
   display: none;
 }
 
-/* line 727, ../sass/screen.scss */
+/* line 786, ../sass/screen.scss */
 .show_options {
   display: block;
 }
 
-/* line 731, ../sass/screen.scss */
+/* line 790, ../sass/screen.scss */
 .row-padding-10 {
   padding: 10px 0px 10px 0px;
 }
 
-/* line 735, ../sass/screen.scss */
+/* line 794, ../sass/screen.scss */
 .div-row-mini {
   margin: 0px 0px 5px 0px;
   padding: 0px 0px 0px 0px;
   overflow: hidden;
 }
-/* line 741, ../sass/screen.scss */
+/* line 800, ../sass/screen.scss */
 .div-row-mini .field-label-small {
   margin: 0px 10px 0px 0px;
   padding: 0px 0px 0px 0px;
@@ -800,7 +900,7 @@ ul.bookmarks_list li {
   float: left;
   font-size: .8em;
 }
-/* line 750, ../sass/screen.scss */
+/* line 809, ../sass/screen.scss */
 .div-row-mini .field-value-small {
   margin: 0px 0px 0px 0px;
   padding: 0px 0px 0px 0px;
@@ -809,13 +909,13 @@ ul.bookmarks_list li {
   font-size: .8em;
 }
 
-/* line 759, ../sass/screen.scss */
+/* line 818, ../sass/screen.scss */
 .div-row {
   margin: 0px 0px 0px 0px;
   padding: 10px 0px 10px 0px;
   overflow: hidden;
 }
-/* line 765, ../sass/screen.scss */
+/* line 824, ../sass/screen.scss */
 .div-row .left-half {
   margin: 0px 0px 0px 0px;
   padding: 0px 0px 0px 0px;
@@ -824,7 +924,7 @@ ul.bookmarks_list li {
   float: left;
   min-height: 10px;
 }
-/* line 774, ../sass/screen.scss */
+/* line 833, ../sass/screen.scss */
 .div-row .right-half {
   margin: 0px 0px 0px 0px;
   padding: 0px 0px 0px 0px;
@@ -833,7 +933,7 @@ ul.bookmarks_list li {
   float: left;
   min-height: 10px;
 }
-/* line 783, ../sass/screen.scss */
+/* line 842, ../sass/screen.scss */
 .div-row .field-label {
   margin: 0px 0px 0px 0px;
   padding: 2px 0px 0px 0px;
@@ -841,7 +941,7 @@ ul.bookmarks_list li {
   position: relative;
   float: left;
 }
-/* line 791, ../sass/screen.scss */
+/* line 850, ../sass/screen.scss */
 .div-row .field-value {
   margin: 0px 0px 0px 0px;
   padding: 0px 0px 0px 0px;
@@ -849,7 +949,7 @@ ul.bookmarks_list li {
   float: left;
   min-width: 300px;
 }
-/* line 798, ../sass/screen.scss */
+/* line 857, ../sass/screen.scss */
 .div-row .field-value input[type="text"], .div-row .field-value input[type="password"] {
   margin: 0px 5px 0px 2px;
   padding: 0px 0px 0px 0px;
@@ -860,11 +960,11 @@ ul.bookmarks_list li {
   font-family: 'Lato', Helvetica, Arial, sans-serif;
   color: #434343;
 }
-/* line 809, ../sass/screen.scss */
+/* line 868, ../sass/screen.scss */
 .div-row .field-value .text {
   margin: 3px 0px 0px 0px;
 }
-/* line 814, ../sass/screen.scss */
+/* line 873, ../sass/screen.scss */
 .div-row .field-status {
   margin: 0px 0px 0px 0px;
   padding: 0px 0px 0px 0px;
@@ -873,12 +973,12 @@ ul.bookmarks_list li {
   width: 250px;
   word-wrap: break-word;
 }
-/* line 823, ../sass/screen.scss */
+/* line 882, ../sass/screen.scss */
 .div-row .field-status span.gray_text {
   color: #666666;
   font-size: .8em;
 }
-/* line 828, ../sass/screen.scss */
+/* line 887, ../sass/screen.scss */
 .div-row .field-status input[type="text"], .div-row .field-status input[type="password"] {
   margin: 0px 5px 0px 2px;
   padding: 0px 0px 0px 0px;
@@ -890,12 +990,12 @@ ul.bookmarks_list li {
   color: #434343;
 }
 
-/* line 841, ../sass/screen.scss */
+/* line 900, ../sass/screen.scss */
 .tag-container {
   margin: 0px 0px 0px 0px;
   padding: 0px 0px 0px 0px;
 }
-/* line 846, ../sass/screen.scss */
+/* line 905, ../sass/screen.scss */
 .tag-container .tag {
   margin: 0px 10px 10px 0px;
   padding: 5px 5px 5px 5px;
@@ -904,7 +1004,7 @@ ul.bookmarks_list li {
   float: left;
   border-radius: 5px;
 }
-/* line 855, ../sass/screen.scss */
+/* line 914, ../sass/screen.scss */
 .tag-container .tag .close {
   margin: 2px 0px 0px 5px;
   padding: 2px 4px 2px 4px;
@@ -914,7 +1014,7 @@ ul.bookmarks_list li {
   border-radius: 4px;
   color: #fff;
 }
-/* line 865, ../sass/screen.scss */
+/* line 924, ../sass/screen.scss */
 .tag-container .tag .close:hover {
   cursor: pointer;
   background: #9cc6ff;

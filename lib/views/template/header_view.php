@@ -72,8 +72,8 @@
                         echo 'Welcome, '.$_SESSION['loggedIn']['username'].' | <a href="'.site_url('account').'">Account</a> | <a href="'.site_url('login/logout').'">Logout</a>';
                         echo '</div>
                              <div class="bookmark_actions">
-                                <input type="button" class="button-green" value="Add Bookmark">
-                                <input type="button" class="button-green" value="Add Bucket">
+                                <input type="button" class="button btn-green" value="Add Bookmark">
+                                <input type="button" class="button btn-green" value="Add Bucket">
                              </div>';
                     }
                     else

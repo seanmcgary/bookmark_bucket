@@ -4,17 +4,19 @@
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
 
 @import "compass/reset";
+@import "compass";
+$box_shadow: rgba(148, 148, 148, 1);
+
+$default_font: 'Lato', Helvetica, Arial, sans-serif;
 
 body {
     margin: 0px 0px 0px 0px;
     padding: 0px 0px 0px 0px;
-    font-family: 'Lato', Helvetica, Arial, sans-serif;
+    font-family: $default_font;
     font-style: normal;
     word-spacing: 0em;
     line-height: 1.2;
     color: #434343;
-    /*background:
-        url('images/background.png');*/
 }
 
 h1 {
@@ -308,33 +310,90 @@ input[type="text"], input[type="password"] {
     font-size: 1.1em;
 }
 
-input[type="submit"], input[type="button"] {
-    margin: 0px 0px 0px 0px;
-    padding: 5px 10px 5px 10px;
-    border-radius: 3px;
+.button, input[type="submit"], input[type="button"] {
+	margin: 0px 0px 0px 0px;
+	padding: 5px 10px 5px 10px;
+	border-radius: 3px;
+	font-family: $default_font;
+	font-weight: bold;
+    box-shadow: $box_shadow;
 }
 
-.button-green {
-    color: #0da40d;
-    color: #ffffff;
-    border: 1px solid green;
+.btn-gray {
+	border: 1px solid #8a8a8a;
+	background-color: #eeeeee; // Old browsers
+	@include filter-gradient(#eeeeee, #cccccc, vertical); // IE6-9
+	@include background-image(linear-gradient(top, #eeeeee 0%,#cccccc 100%));
+	color: #434343;
+	text-shadow: 0 -1px -1px rgba(255, 255, 255, .2);
+}
 
-    background: #29ba29;
-    box-shadow: inset 2px 2px 2px rgba(255, 255, 255, .3);
+.btn-gray:hover {
+	cursor: pointer;
+	background-color: #cccccc; // Old browsers
+	@include filter-gradient(#cccccc, #eeeeee, vertical); // IE6-9
+	@include background-image(linear-gradient(top, #cccccc 0%,#eeeeee 100%));
+	box-shadow: inset 0 0 15px rgba(0, 0, 0, .4);
 
 }
 
-.button-green:hover {
-    cursor: pointer;
-    background: #0da40d;
-    box-shadow: inset -2px -2px 2px rgba(120, 87, 76, .2);
+.btn-blue {
+	border: 1px solid #3785d4;
+	background-color: #7abcff; // Old browsers
+	@include filter-gradient(#7abcff, #4096ee, vertical); // IE6-9
+	@include background-image(linear-gradient(top, #7abcff 0%,#4096ee 100%));
+	color: #fff;
+	text-shadow: 0 -1px -1px rgba(0, 0, 0, .2);
 }
+
+.btn-blue:hover {
+	cursor: pointer;
+	background-color: #4096ee; // Old browsers
+	@include filter-gradient(#4096ee, #7abcff, vertical); // IE6-9
+	@include background-image(linear-gradient(top, #4096ee 0%,#7abcff 100%));
+	box-shadow: inset 0 0 15px rgba(0, 0, 0, .4);
+
+}
+
+.btn-red {
+	 border: 1px solid #4f0310;
+	 background-color: #a90329; // Old browsers
+	 @include filter-gradient(#a90329, #6d0019, vertical); // IE6-9
+	 @include background-image(linear-gradient(top, #a90329 0%,#6d0019 100%));
+	 color: #fff;
+	 text-shadow: 0 -1px -1px rgba(0, 0, 0, .2);
+ }
+
+ .btn-red:hover {
+	 cursor: pointer;
+	 background-color: #6d0019; // Old browsers
+	 @include filter-gradient(#6d0019, #a90329, vertical); // IE6-9
+	 @include background-image(linear-gradient(top, #6d0019 0%,#a90329 100%));
+	 box-shadow: inset 0 0 15px rgba(0, 0, 0, .4);
+ }
+
+ .btn-green {
+	 border: 1px solid #63854e;
+	 background-color: #63854e; // Old browsers
+	 @include filter-gradient(#8ab66b, #398235, vertical); // IE6-9
+	 @include background-image(linear-gradient(top, #8ab66b 0%,#398235 100%));
+	 color: #fff;
+	 text-shadow: 0 -1px -1px rgba(0, 0, 0, .2);
+ }
+
+ .btn-green:hover {
+	cursor: pointer;
+	// background-color: #398235; // Old browsers
+	 //@include filter-gradient(#398235, #8ab66b, vertical); // IE6-9
+	 //@include background-image(linear-gradient(top, #398235 0%,#8ab66b 100%));
+	 box-shadow: inset 0 0 15px rgba(0, 0, 0, .4);
+ }
 
 .header {
     margin: 0px 0px 0px 0px;
     padding: 0px 0px 0px 0px;
     height: 75px;
-    //background: #3274d0;
+    background: #3274d0;
 
 
     .header-container {
@@ -409,7 +468,7 @@ input[type="submit"], input[type="button"] {
             .bookmark_actions {
                 margin:  0px 0px 0px 0px;
                 padding:  5px 0px 5px 0px;
-                background: #fff;
+
                 overflow: hidden;
             }
         }
