@@ -2,7 +2,7 @@
  * In this file you should write your main styles. (or centralize your imports)
  * Import this file using the following HTML or equivalent:
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
-/* line 17, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.11.5/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 17, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.11.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -24,45 +24,45 @@ time, mark, audio, video {
   vertical-align: baseline;
 }
 
-/* line 20, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.11.5/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 20, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.11.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 body {
   line-height: 1;
 }
 
-/* line 22, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.11.5/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 22, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.11.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 ol, ul {
   list-style: none;
 }
 
-/* line 24, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.11.5/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 24, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.11.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-/* line 26, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.11.5/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 26, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.11.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 caption, th, td {
   text-align: left;
   font-weight: normal;
   vertical-align: middle;
 }
 
-/* line 28, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.11.5/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 28, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.11.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 q, blockquote {
   quotes: none;
 }
-/* line 101, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.11.5/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 101, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.11.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 q:before, q:after, blockquote:before, blockquote:after {
   content: "";
   content: none;
 }
 
-/* line 30, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.11.5/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 30, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.11.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 a img {
   border: none;
 }
 
-/* line 114, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.11.5/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 114, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.11.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
   display: block;
 }
@@ -700,13 +700,19 @@ ul.manage-bookmarks_list li {
 }
 
 /* line 609, ../sass/screen.scss */
-ul.bookmarks_list {
-  margin: 20px 0px 0px 10px;
+.list-container {
+  margin: 0px 0px 0px 0px;
   padding: 0px 0px 0px 0px;
-  list-style: none;
   display: none;
 }
-/* line 616, ../sass/screen.scss */
+
+/* line 615, ../sass/screen.scss */
+ul.bookmarks_list {
+  margin: 0px 0px 0px 10px;
+  padding: 0px 0px 0px 0px;
+  list-style: none;
+}
+/* line 621, ../sass/screen.scss */
 ul.bookmarks_list li {
   margin: 0px 0px 0px 0px;
   padding: 0px 0px 0px 0px;
@@ -714,7 +720,7 @@ ul.bookmarks_list li {
   overflow: hidden;
 }
 
-/* line 624, ../sass/screen.scss */
+/* line 629, ../sass/screen.scss */
 .account_element {
   margin: 0px 0px 0px 0px;
   padding: 0px 0px 0px 0px;
@@ -722,7 +728,7 @@ ul.bookmarks_list li {
   overflow: hidden;
 }
 
-/* line 632, ../sass/screen.scss */
+/* line 637, ../sass/screen.scss */
 .delete-button {
   margin: 0px 0px 0px 0px;
   padding: 5px 10px 7px 10px;
@@ -736,20 +742,20 @@ ul.bookmarks_list li {
   float: left;
 }
 
-/* line 645, ../sass/screen.scss */
+/* line 650, ../sass/screen.scss */
 .delete-button:hover {
   background: #df1a1a;
   cursor: pointer;
 }
 
-/* line 650, ../sass/screen.scss */
+/* line 655, ../sass/screen.scss */
 .bookmark {
   margin: 0px 0px 0px 0px;
   padding: 10px 0px 10px 0px;
   overflow: hidden;
   border-bottom: 1px solid #eeeeee;
 }
-/* line 657, ../sass/screen.scss */
+/* line 662, ../sass/screen.scss */
 .bookmark .delete {
   margin: 0px 0px 0px 0px;
   padding: 8px 0px 0px 0px;
@@ -757,7 +763,7 @@ ul.bookmarks_list li {
   position: relative;
   float: left;
 }
-/* line 665, ../sass/screen.scss */
+/* line 670, ../sass/screen.scss */
 .bookmark .icon, .bookmark .icon-loggedout {
   margin: 0px 0px 0px 0px;
   padding: 5px 0px 0px 0px;
@@ -766,7 +772,7 @@ ul.bookmarks_list li {
   float: left;
   cursor: pointer;
 }
-/* line 674, ../sass/screen.scss */
+/* line 679, ../sass/screen.scss */
 .bookmark .bookmark-data {
   margin: 0px 0px 0px 0px;
   padding: 0px 0px 0px 0px;
@@ -774,38 +780,38 @@ ul.bookmarks_list li {
   float: left;
   overflow: hidden;
 }
-/* line 682, ../sass/screen.scss */
+/* line 687, ../sass/screen.scss */
 .bookmark .title {
   margin: 0px 0px 0px 0px;
   padding: 0px 0px 0px 0px;
-  font-size: 1.1em;
+  font-size: 1em;
   word-wrap: break-word;
 }
-/* line 689, ../sass/screen.scss */
+/* line 694, ../sass/screen.scss */
 .bookmark .title .bookmark_url {
-  font-size: .8em;
+  font-size: .6em;
   color: #cccccc;
 }
-/* line 694, ../sass/screen.scss */
+/* line 699, ../sass/screen.scss */
 .bookmark .title a, .bookmark .title a:visited {
   text-decoration: none;
   color: #3274d0;
   font-size: 1em;
   font-family: 'Lato', Helvetica, Arial, sans-serif;
 }
-/* line 701, ../sass/screen.scss */
+/* line 706, ../sass/screen.scss */
 .bookmark .title .bookmark .bookmark-data .title a:hover {
   color: #5492e8;
 }
-/* line 706, ../sass/screen.scss */
+/* line 711, ../sass/screen.scss */
 .bookmark .meta {
   margin: 5px 0px 0px 0px;
   padding: 0px 0px 0px 0px;
   color: #a7a6a6;
-  font-size: .9em;
+  font-size: .8em;
   width: 100%;
 }
-/* line 714, ../sass/screen.scss */
+/* line 719, ../sass/screen.scss */
 .bookmark .tags {
   margin: 10px 0px 0px 0px;
   padding: 0px 0px 0px 0px;
@@ -813,7 +819,7 @@ ul.bookmarks_list li {
   width: 100%;
   overflow: hidden;
 }
-/* line 722, ../sass/screen.scss */
+/* line 727, ../sass/screen.scss */
 .bookmark .tags a {
   margin: 0px 5px 0px 0px;
   padding: 3px 3px 3px 3px;
@@ -822,44 +828,44 @@ ul.bookmarks_list li {
   position: relative;
   float: left;
   border-radius: 5px;
-  font-size: .8em;
+  font-size: .7em;
   text-decoration: none;
 }
-/* line 734, ../sass/screen.scss */
+/* line 739, ../sass/screen.scss */
 .bookmark .tags a.user-tag {
   background: #97e297;
 }
-/* line 738, ../sass/screen.scss */
+/* line 743, ../sass/screen.scss */
 .bookmark .tags a:hover {
   background: #e7f1ff;
 }
-/* line 742, ../sass/screen.scss */
+/* line 747, ../sass/screen.scss */
 .bookmark .tags a.user-tag:hover {
   background: #bef4be;
 }
 
-/* line 749, ../sass/screen.scss */
+/* line 754, ../sass/screen.scss */
 .options {
   display: none;
 }
 
-/* line 753, ../sass/screen.scss */
+/* line 758, ../sass/screen.scss */
 .show_options {
   display: block;
 }
 
-/* line 757, ../sass/screen.scss */
+/* line 762, ../sass/screen.scss */
 .row-padding-10 {
   padding: 10px 0px 10px 0px;
 }
 
-/* line 761, ../sass/screen.scss */
+/* line 766, ../sass/screen.scss */
 .div-row-mini {
   margin: 0px 0px 5px 0px;
   padding: 0px 0px 0px 0px;
   overflow: hidden;
 }
-/* line 767, ../sass/screen.scss */
+/* line 772, ../sass/screen.scss */
 .div-row-mini .field-label-small {
   margin: 0px 10px 0px 0px;
   padding: 0px 0px 0px 0px;
@@ -868,7 +874,7 @@ ul.bookmarks_list li {
   float: left;
   font-size: .8em;
 }
-/* line 776, ../sass/screen.scss */
+/* line 781, ../sass/screen.scss */
 .div-row-mini .field-value-small {
   margin: 0px 0px 0px 0px;
   padding: 0px 0px 0px 0px;
@@ -877,13 +883,13 @@ ul.bookmarks_list li {
   font-size: .8em;
 }
 
-/* line 785, ../sass/screen.scss */
+/* line 790, ../sass/screen.scss */
 .div-row {
   margin: 0px 0px 0px 0px;
   padding: 10px 0px 10px 0px;
   overflow: hidden;
 }
-/* line 791, ../sass/screen.scss */
+/* line 796, ../sass/screen.scss */
 .div-row .left-half {
   margin: 0px 0px 0px 0px;
   padding: 0px 0px 0px 0px;
@@ -892,7 +898,7 @@ ul.bookmarks_list li {
   float: left;
   min-height: 10px;
 }
-/* line 800, ../sass/screen.scss */
+/* line 805, ../sass/screen.scss */
 .div-row .right-half {
   margin: 0px 0px 0px 0px;
   padding: 0px 0px 0px 0px;
@@ -901,7 +907,7 @@ ul.bookmarks_list li {
   float: left;
   min-height: 10px;
 }
-/* line 809, ../sass/screen.scss */
+/* line 814, ../sass/screen.scss */
 .div-row .field-label {
   margin: 0px 0px 0px 0px;
   padding: 2px 0px 0px 0px;
@@ -909,7 +915,7 @@ ul.bookmarks_list li {
   position: relative;
   float: left;
 }
-/* line 817, ../sass/screen.scss */
+/* line 822, ../sass/screen.scss */
 .div-row .field-value {
   margin: 0px 0px 0px 0px;
   padding: 0px 0px 0px 0px;
@@ -917,7 +923,7 @@ ul.bookmarks_list li {
   float: left;
   min-width: 300px;
 }
-/* line 824, ../sass/screen.scss */
+/* line 829, ../sass/screen.scss */
 .div-row .field-value input[type="text"], .div-row .field-value input[type="password"] {
   margin: 0px 5px 0px 2px;
   padding: 0px 0px 0px 0px;
@@ -928,11 +934,11 @@ ul.bookmarks_list li {
   font-family: 'Lato', Helvetica, Arial, sans-serif;
   color: #434343;
 }
-/* line 835, ../sass/screen.scss */
+/* line 840, ../sass/screen.scss */
 .div-row .field-value .text {
   margin: 3px 0px 0px 0px;
 }
-/* line 840, ../sass/screen.scss */
+/* line 845, ../sass/screen.scss */
 .div-row .field-status {
   margin: 0px 0px 0px 0px;
   padding: 0px 0px 0px 0px;
@@ -941,12 +947,12 @@ ul.bookmarks_list li {
   width: 250px;
   word-wrap: break-word;
 }
-/* line 849, ../sass/screen.scss */
+/* line 854, ../sass/screen.scss */
 .div-row .field-status span.gray_text {
   color: #666666;
   font-size: .8em;
 }
-/* line 854, ../sass/screen.scss */
+/* line 859, ../sass/screen.scss */
 .div-row .field-status input[type="text"], .div-row .field-status input[type="password"] {
   margin: 0px 5px 0px 2px;
   padding: 0px 0px 0px 0px;
@@ -958,12 +964,12 @@ ul.bookmarks_list li {
   color: #434343;
 }
 
-/* line 867, ../sass/screen.scss */
+/* line 872, ../sass/screen.scss */
 .tag-container {
   margin: 0px 0px 0px 0px;
   padding: 0px 0px 0px 0px;
 }
-/* line 872, ../sass/screen.scss */
+/* line 877, ../sass/screen.scss */
 .tag-container .tag {
   margin: 0px 10px 10px 0px;
   padding: 5px 5px 5px 5px;
@@ -972,7 +978,7 @@ ul.bookmarks_list li {
   float: left;
   border-radius: 5px;
 }
-/* line 881, ../sass/screen.scss */
+/* line 886, ../sass/screen.scss */
 .tag-container .tag .close {
   margin: 2px 0px 0px 5px;
   padding: 2px 4px 2px 4px;
@@ -982,7 +988,7 @@ ul.bookmarks_list li {
   border-radius: 4px;
   color: #fff;
 }
-/* line 891, ../sass/screen.scss */
+/* line 896, ../sass/screen.scss */
 .tag-container .tag .close:hover {
   cursor: pointer;
   background: #9cc6ff;

@@ -21,7 +21,8 @@ $(document).ready(function() {
             console.log($(this).attr('id'));
             //console.log($('.bookmark-category-container ul'));
             if ($(this).attr('class') == 'selected') {
-                $('#bookmark-category-container').find('ul[category="' + $(this).attr('id') + '"]').css('display', 'block');
+
+                $('#bookmark-category-container').find('.list-container[category="' + $(this).attr('id') + '"]').css('display', 'block');
             }
         });
     });
@@ -163,7 +164,7 @@ $(document).ready(function() {
     $('ul#bookmark-categories li').live('click', function() {
         if ($(this).attr('class') != 'selected') {
 
-            $('#bookmark-category-container').find('ul').each(function(index) {
+            $('#bookmark-category-container').find('.list-container').each(function(index) {
                 if ($(this).css('display') == 'block') {
                     $(this).css('display', 'none');
                 }
@@ -173,8 +174,8 @@ $(document).ready(function() {
                 $(this).removeClass('selected');
             });
 
-            $('#bookmark-category-container').find('ul[category="' + $(this).attr('id') + '"]').css('display', 'block');
-
+            //$('#bookmark-category-container').find('ul[category="' + $(this).attr('id') + '"]').css('display', 'block');
+            $('#bookmark-category-container').find('.list-container[category="' + $(this).attr('id') + '"]').css('display', 'block');
             $(this).addClass('selected');
         }
 

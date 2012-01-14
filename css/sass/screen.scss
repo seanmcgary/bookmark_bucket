@@ -606,11 +606,16 @@ ul.manage-bookmarks_list {
     overflow:  hidden;
 }
 
+.list-container {
+	margin: 0px 0px 0px 0px;
+	padding: 0px 0px 0px 0px;
+	display: none;
+}
+
 ul.bookmarks_list {
-    margin: 20px 0px 0px 10px;
+    margin: 0px 0px 0px 10px;
     padding: 0px 0px 0px 0px;
     list-style: none;
-    display: none;
 
 
     li {
@@ -682,12 +687,12 @@ ul.bookmarks_list {
     .title {
         margin: 0px 0px 0px 0px;
         padding: 0px 0px 0px 0px;
-        font-size: 1.1em;
+        font-size: 1em;
         word-wrap: break-word;
 
 
         .bookmark_url {
-            font-size: .8em;
+            font-size: .6em;
             color: #cccccc;
         }
 
@@ -707,7 +712,7 @@ ul.bookmarks_list {
         margin: 5px 0px 0px 0px;
         padding: 0px 0px 0px 0px;
         color: #a7a6a6;
-        font-size: .9em;
+        font-size: .8em;
         width: 100%;
     }
 
@@ -727,7 +732,7 @@ ul.bookmarks_list {
             position: relative;
             float: left;
             border-radius: 5px;
-            font-size: .8em;
+            font-size: .7em;
             text-decoration: none;
         }
 

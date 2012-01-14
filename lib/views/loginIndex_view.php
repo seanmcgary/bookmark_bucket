@@ -16,7 +16,6 @@
 <div class="right-col">
     <div class="bookmark-container">
         <h2>Login</h2>
-
         <form name="login" id="login" method="post" action="<?=site_url('login/process_login')?>">
             <div class="div-row">
                 <div class="field-label">
@@ -39,7 +38,7 @@
             </div>
             <div class="div-row">
                 <div class="field-label">
-                    <input type="submit" class="submit-form" value="Login">
+                    <input type="submit" class="submit-form btn-green" value="Login">
                 </div>
                 <div class="field-value" id="register-status">
                     <?=$status_msg?>
