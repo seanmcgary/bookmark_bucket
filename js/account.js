@@ -215,6 +215,8 @@ $('document').ready(function(){
                     if(obj.status == 'true'){
                         console.log(obj.buckets);
                         $('#bucket-list').html(obj.buckets);
+
+                        // TODO - reset the form
                     }
                 },
                 failure: function(response, opts){
