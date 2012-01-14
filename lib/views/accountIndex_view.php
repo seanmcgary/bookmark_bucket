@@ -44,7 +44,7 @@
                     </div>
                     <div class="div-row">
                         <div class="field-label">
-                            <input type="submit" class="submit-form" value="Save">
+                            <input type="submit" class="submit-form btn-green" value="Save">
                         </div>
                         <div class="field-value" id="edit-account-status">
 

@@ -18,9 +18,6 @@ $('document').ready(function(){
     var location = document.location.href.split("/#");
 
 
-    console.log(location);
-
-
     $(function(){
         if(location.length > 0 && location[1] != ''){
             $('.account_element').each(function(){
@@ -86,7 +83,7 @@ $('document').ready(function(){
         return false;
     });
 
-    $('.delete-button[button-type="delete-bookmark"]').live('click', function(){
+    $('input[button-type="delete-bookmark"]').live('click', function(){
         var id = $(this).attr('bookmark_id');
 
         Ext.Ajax.request({
@@ -108,7 +105,7 @@ $('document').ready(function(){
         return false;
     });
 
-    $('.delete-button[button-type="delete-bucket"]').live('click', function(){
+    $('input[button-type="delete-bucket"]').live('click', function(){
             var id = $(this).attr('bucket_id');
 
             Ext.Ajax.request({

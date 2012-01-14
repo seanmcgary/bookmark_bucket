@@ -27,7 +27,8 @@ foreach($bookmarks as $bookmark)
         <?php
             if($manage == true)
             {
-                echo '<div class="delete"><div class="delete-button" button-type="delete-bookmark" bookmark_id="'.$bookmark['bookmark_id'].'">Delete</div></div>';
+                //echo '<div class="delete"><div class="delete-button" button-type="delete-bookmark" bookmark_id="'.$bookmark['bookmark_id'].'">Delete</div></div>';
+                echo '<div class="delete"><input type="button" class="btn-red" button-type="delete-bookmark" bookmark_id="'.$bookmark['bookmark_id'].'" value="Delete"></div>';
             }
 
             $icon_class = 'icon-loggedout';
