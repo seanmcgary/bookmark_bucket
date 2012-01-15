@@ -168,37 +168,6 @@ class lib_models_userModel extends lib_models_baseModel
 
     public function delete_bookmark($bookmark_id, $user_id)
     {
-
-
-        /*$user = $this->get_user_for_id($user_id);
-
-        if(in_array($bookmark_id, $user['bookmarks']))
-        {
-
-            for($i = 0; $i < count($user['bookmarks']); $i++)
-            {
-                if($user['bookmarks'][$i] == $bookmark_id);
-                {
-                    unset($user['bookmarks'][$i]);
-
-                    $user['bookmarks'] = array_values($user['bookmarks']);
-
-                    $this->update_user($user);
-
-                    break;
-                }
-            }
-
-            $this->bookmark_model->
-
-            $this->bookmark_model->delete_user_bookmark_tags($bookmark_id, $user_id);
-
-
-
-            return true;
-
-        }*/
-
         $bookmark = $this->bookmark_model->get_bookmark_for_id($bookmark_id);
 
         if($bookmark != null)
@@ -206,6 +175,9 @@ class lib_models_userModel extends lib_models_baseModel
             $this->bookmark_model->delete_user_bookmark($bookmark_id, $user_id);
 
             $this->bucket_model->remove_bookmark_from_bucket_by_user($bookmark_id, $user_id);
+
+            // decrement the bookmark count
+            $this->bookmark_model->decrement_bookmarked_count($bookmark_id);
 
             return true;
         }

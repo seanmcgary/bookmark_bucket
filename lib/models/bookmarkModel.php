@@ -170,14 +170,16 @@ class lib_models_bookmarkModel extends lib_models_baseModel
 
         $bookmark['times_bookmarked'] += 1;
 
-        try
-        {
-            $this->bookmark_collection->update(array('bookmark_id' => $bookmark['bookmark_id']), $bookmark);
-        }
-        catch(MongoCursorException $e)
-        {
-            return false;
-        }
+        $this->update_bookmark($bookmark);
+    }
+
+    public function decrement_bookmarked_count($id)
+    {
+        $bookmark = $this->get_bookmark_for_id($id);
+
+        $bookmark['times_bookmarked'] -= 1;
+
+        $this->update_bookmark($bookmark);
     }
 
     public function increment_clicked_count($id)

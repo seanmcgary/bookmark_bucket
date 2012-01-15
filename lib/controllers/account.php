@@ -151,6 +151,8 @@ class lib_controllers_account extends lib_controllers_baseController
 
         $res = $this->user_model->delete_bookmark($bookmark_id, $this->session->get_session_attr('user_id'));
 
+
+
         if($res == true)
         {
             echo json_encode(array('status' => 'true'));
