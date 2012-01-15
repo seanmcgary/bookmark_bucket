@@ -75,7 +75,8 @@ class lib_controllers_bookmark extends lib_controllers_baseController
                 'user_tags' => $bookmark['tags'],
                 'privacy' => 'public',
                 'date_bookmarked' => time(),
-                'bookmark_id' => $bookmark_id
+                'bookmark_id' => $bookmark_id,
+                'title' => $bookmark['title']
             );
 
             $res = $this->bookmark_model->add_user_bookmark($user_bookmark);

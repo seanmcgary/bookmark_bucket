@@ -43,6 +43,4 @@ class lib_controllers_main extends lib_controllers_baseController
 
         $this->page->render('mainIndex_view', $page_data, 'template/leftCol_bookmarks_view');
     }
-
-
 }
