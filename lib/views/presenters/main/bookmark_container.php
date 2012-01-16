@@ -6,7 +6,7 @@
         ?>
         <div class="list-container" category="yours">
             <h2>Your Bookmarks</h2>
-            <ul class="bookmarks_list" >
+            <ul class="bookmarks_list">
                 <?=$your_bookmarks?>
             </ul>
         </div>

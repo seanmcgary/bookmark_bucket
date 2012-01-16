@@ -86,9 +86,9 @@ $(document).ready(function() {
                     //console.log(icon);
                     icon.removeClass('bookmark-icon');
                     icon.attr('src', 'images/bookmark_1_icon&16_blue.png');
-
-                    $('.bookmarks_list[category="yours"]').html('');
-                    $('.bookmarks_list[category="yours"]').append(obj.user_bookmarks);
+                    console.log(obj.user_bookmarks);
+                    $('.list-container[category="yours"] ul').html('');
+                    $('.list-container[category="yours"] ul').append(obj.user_bookmarks);
 
                 } else {
                     icon.attr('src', 'images/bookmark_1_icon&16_gray.png');

@@ -93,7 +93,7 @@ $form_data = array('fullname' => '',
             ?>
             <div class="div-row">
                 <div class="field-label">
-                    <input type="submit" class="submit-form" value="Register">
+                    <input type="submit" class="submit-form btn-green" value="Register">
                 </div>
                 <div class="field-value" id="register-status">
                     <?=$status_msg?>
