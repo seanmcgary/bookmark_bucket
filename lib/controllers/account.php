@@ -30,6 +30,8 @@ class lib_controllers_account extends lib_controllers_baseController
 
         $data['buckets'] = $this->load->view('presenters/account/bucket_list', array('buckets' => $buckets, 'account' => true), true);
 
+        $data['new_bucket_form'] = $this->load->view('presenters/new_bucket_form', array(), true);
+
         $this->page->load_javascript(site_url('js/account.js'));
         $this->page->load_javascript(site_url('js/tags.js'));
 

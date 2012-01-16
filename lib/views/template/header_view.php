@@ -11,6 +11,7 @@
         <script src="<?=site_url('js/simplemodal/js/jquery.simplemodal.js')?>" type="text/javascript"></script>
         <script src="<?=site_url('js/jquery-checkbox/jquery.checkbox.js')?>" type="text/javascript"></script>
         <script src="<?=site_url('js/dropdown_select.js')?>" type="text/javascript"></script>
+        <script src="<?=site_url('js/modals.js')?>" type="text/javascript"></script>
         <?php
             $account = '';
 
@@ -73,7 +74,7 @@
                         echo '</div>
                              <div class="bookmark_actions">
                                 <input type="button" class="button btn-green" value="Add Bookmark" id="create_new_bookmark">
-                                <input type="button" class="button btn-green" value="Add Bucket">
+                                <input type="button" class="button btn-green" value="Add Bucket" id="create_new_bucket">
                              </div>';
                     }
                     else

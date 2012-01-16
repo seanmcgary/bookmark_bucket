@@ -29,12 +29,8 @@ class lib_controllers_main extends lib_controllers_baseController
 
         if($this->session->session_exists())
         {
-            $user_buckets = $this->bucket_model->get_all_user_buckets($this->session->get_session_attr('user_id'));
 
-            $bucket_dropdown_select = $this->load->view('presenters/bucket_dropdown_select', array('buckets' => $user_buckets), true);
-
-            $new_bookmark_form = $this->load->view('presenters/new_bookmark_form', array('bucket_dropdown_select' => $bucket_dropdown_select), true);
-            $page_data['page'] = $this->load->view('presenters/main/main_logged_in', array('new_bookmark_form' => $new_bookmark_form, 'bookmark_container' => $bookmark_container), true);
+            $page_data['page'] = $this->load->view('presenters/main/main_logged_in', array('bookmark_container' => $bookmark_container), true);
         }
         else
         {

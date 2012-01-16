@@ -150,14 +150,6 @@ $('document').ready(function(){
 
     });
 
-    $('#auto_fill').live('change', function(){
-        if($(this).attr('checked') == 'checked'){
-            $('#bucket_options').slideToggle();
-        } else {
-            $('#bucket_options').slideToggle();
-        }
-    });
-
     $('#bookmark_file').live('change', function(event){
         var files = event.target.files;
 
@@ -188,48 +180,6 @@ $('document').ready(function(){
                 }
             }
         }
-    });
-
-    $('#new_bucket').live('submit', function(){
-        console.log('foobar');
-
-        if($('#bucket_name').val().length > 0){
-
-            var tag_list =  new Array();
-            $('#tag-container .tag').each(function(index){
-                console.log($(this).find('span').html());
-                tag_list.push($(this).find('span').html());
-            });
-
-            console.log(tag_list);
-
-            Ext.Ajax.request({
-                url: new_bucket,
-                form: 'new_bucket',
-                success: function(response, opts){
-                    var obj = Ext.decode(response.responseText);
-
-                    if(obj.status == 'true'){
-                        console.log(obj.buckets);
-                        $('#bucket-list').html(obj.buckets);
-
-                        // TODO - reset the form
-                    }
-                },
-                failure: function(response, opts){
-
-                },
-                params: {tag_list: JSON.stringify(tag_list)}
-            });
-        } else {
-            $('#new_bucket_status').html('<span class="failure">Please enter a name for your bucket</span>');
-        }
-
-        setTimeout(function(){
-            $('#new_bucket_status').html('');
-        }, 5000);
-
-        return false;
     });
 });
  
